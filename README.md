@@ -8,6 +8,7 @@ Features so far:
 - Logging
 - Service locator/provider
 - Module factory / Dependency Injection container
+- Reflection-based abstract class saving members to XML.
 
 Disclaimer: Some of the feature names might be poorly chosen. Please let me know. Also, please let me know if I'm doing something bad.
 
