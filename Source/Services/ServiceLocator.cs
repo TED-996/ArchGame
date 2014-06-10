@@ -49,10 +49,11 @@ namespace SFMLGame.Services {
 		/// <typeparam name="T">The ABSTRACT/INTERFACE type to get.</typeparam>
 		/// <returns>The service of the requested type, if the provider exists.</returns>
 		public static T GetService<T>() where T : class {
-			IServiceProvider provider = Providers[typeof (T)];
-			if (provider == null) {
+			Type type = typeof(T);
+			if (!Providers.ContainsKey(type)) {
 				throw new ApplicationException("ServiceProvider not found.");
 			}
+			IServiceProvider provider = Providers[type];
 			return (T) provider.GetService();
 		}
 

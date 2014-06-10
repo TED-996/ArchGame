@@ -37,6 +37,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FarseerPhysics">
+      <HintPath>..\..\sdk\extlibs\FarseerPhysics.dll</HintPath>
+    </Reference>
     <Reference Include="sfmlnet-audio-2">
       <HintPath>..\sdk\lib\sfmlnet-audio-2.dll</HintPath>
     </Reference>
@@ -45,6 +48,10 @@
     </Reference>
     <Reference Include="sfmlnet-window-2">
       <HintPath>..\sdk\lib\sfmlnet-window-2.dll</HintPath>
+    </Reference>
+    <Reference Include="Spooker, Version=1.5.5272.28335, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Spooker\Build\Spooker.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -55,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="LoadableSet.cs" />
     <Compile Include="Logger.cs" />
@@ -69,12 +77,6 @@
     <Compile Include="Services\ServiceProviders.cs" />
     <Compile Include="Services\ServiceLocator.cs" />
     <Compile Include="XML\XMLAble.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Spooker\Spooker.csproj">
-      <Project>{CFA1A620-238E-4917-9831-B19B7F2C23B4}</Project>
-      <Name>Spooker</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

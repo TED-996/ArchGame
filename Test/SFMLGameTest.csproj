@@ -46,6 +46,10 @@
     <Reference Include="sfmlnet-window-2">
       <HintPath>..\sdk\lib\sfmlnet-window-2.dll</HintPath>
     </Reference>
+    <Reference Include="Spooker, Version=1.5.5259.40582, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Spooker\Build\Spooker.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -67,10 +71,6 @@
     <ProjectReference Include="..\Source\SFMLGame.csproj">
       <Project>{F253772F-28A1-420E-A792-6DFE850B4B24}</Project>
       <Name>SFMLGame</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Spooker\Spooker.csproj">
-      <Project>{CFA1A620-238E-4917-9831-B19B7F2C23B4}</Project>
-      <Name>Spooker</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

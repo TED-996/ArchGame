@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Spooker.Content;
 
 namespace SFMLGame.Modules {
 	/// <summary>
 	/// Responsible for building the modules.
 	/// </summary>
-	public class ModuleFactory : IDisposable {
+	public class ModuleFactory : IDisposable, ILoadable {
 		readonly ModuleCollection moduleCollection;
 		readonly List<IModuleRequester> requesters;
 
 		readonly List<IModuleConstructor> constructors;
 		readonly List<IModule> modules;
 
+		readonly List<ILoadable> loadables; 
 		readonly List<IDisposable> disposables; 
 		
 		internal ModuleFactory() {
@@ -25,6 +27,7 @@ namespace SFMLGame.Modules {
 			moduleCollection.AddProviders(GetDefaultProviders());
 
 			disposables = new List<IDisposable>();
+			loadables = new List<ILoadable>();
 		}
 
 		IEnumerable<IModuleProvider> GetDefaultProviders() {
@@ -156,6 +159,9 @@ namespace SFMLGame.Modules {
 				if (module is IDisposable) {
 					disposables.Add(module as IDisposable);
 				}
+				if (module is ILoadable) {
+					loadables.Add(module as ILoadable);
+				}
 
 				try {
 					moduleCollection.SetModule(module, constructor.GetInterfaceType());
@@ -172,6 +178,16 @@ namespace SFMLGame.Modules {
 		public void Dispose() {
 			foreach (IDisposable disposable in disposables) {
 				disposable.Dispose();
+			}
+		}
+
+		/// <summary>
+		/// Calls LoadContent on the modules that implement ILoadable.
+		/// </summary>
+		/// <param name="content"></param>
+		public void LoadContent(ContentManager content) {
+			foreach (ILoadable loadable in loadables) {
+				loadable.LoadContent(content);
 			}
 		}
 	}

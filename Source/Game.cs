@@ -5,6 +5,7 @@ using SFMLGame.Modules;
 using SFMLGame.Services;
 using Spooker.Content;
 using Spooker.Core;
+using Spooker.Graphics;
 
 namespace SFMLGame {
 	public abstract class Game : GameWindow {
@@ -30,7 +31,7 @@ namespace SFMLGame {
 				new GameSettings {
 					AntialiasingLevel = 4,
 					BitsPerPixel = 32,
-					ClearColor = Spooker.Graphics.Color.Black,
+					ClearColor = Color.Black,
 					ContentDirectory = contentRoot,
 					DepthBits = 0,
 					FramerateLimit = framerate,
@@ -99,6 +100,14 @@ namespace SFMLGame {
 
 		void LoadThreaded(ContentManager content) {
 			loadableSet.Load(content);
+
+			moduleFactory.LoadContent(content);
+		}
+
+		public override void Draw(SpriteBatch spriteBatch, SpriteEffects effects = SpriteEffects.None) {
+			spriteBatch.Begin();
+			base.Draw(spriteBatch, effects);
+			spriteBatch.End();
 		}
 
 		public override void Dispose() {
