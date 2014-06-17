@@ -2,25 +2,25 @@
 
 namespace SFMLGame.Modules {
 	public interface IModuleConstructor {
-		IModule Construct();
+		Object Construct();
 
-		IModule GetItem();
+		Object GetItem();
 		Type GetInterfaceType();
 	}
 
 	public class ModuleConstructor<TImpl, TInterface> : IModuleConstructor
 		where TImpl : TInterface, new()
-		where TInterface : class, IModule {
+		where TInterface : class {
 
 		TImpl item;
 
-		public IModule Construct() {
+		public Object Construct() {
 			item = new TImpl();
 
 			return item;
 		}
 
-		public IModule GetItem() {
+		public Object GetItem() {
 			return item;
 		}
 

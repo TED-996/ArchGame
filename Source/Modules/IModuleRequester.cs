@@ -1,10 +1,6 @@
 ﻿using System.Collections.Generic;
 
 namespace SFMLGame.Modules {
-	public interface IModule {
-
-	}
-
 	public interface IModuleRequester {
 		IEnumerable<string> GetRequestedModules(); 
 		void SetModules(ModuleCollection collection);

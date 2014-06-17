@@ -12,7 +12,7 @@ namespace SFMLGame.Modules {
 		readonly List<IModuleRequester> requesters;
 
 		readonly List<IModuleConstructor> constructors;
-		readonly List<IModule> modules;
+		readonly List<Object> modules;
 
 		readonly List<ILoadable> loadables; 
 		readonly List<IDisposable> disposables; 
@@ -23,7 +23,7 @@ namespace SFMLGame.Modules {
 
 			constructors = new List<IModuleConstructor>();
 
-			modules = new List<IModule>();
+			modules = new List<Object>();
 			moduleCollection.AddProviders(GetDefaultProviders());
 
 			disposables = new List<IDisposable>();
@@ -44,14 +44,14 @@ namespace SFMLGame.Modules {
 
 		/// <summary>
 		/// Registers a provider with a module already set.
-		/// The module must not be of type IModule, this will break lookups. Use a type (or interface) derived from IModule.
+		/// The module must not be of type Object, this will break lookups. Use a more derived type or interface.
 		/// </summary>
 		/// <typeparam name="T">The module type.</typeparam>
 		/// <param name="module">The module to be set.</param>
-		public void RegisterProvider<T>(T module) where T : class, IModule {
-			if (typeof (T) == typeof (IModule)) {
-				throw new ArgumentException("Module must not be of type IModule, this will break lookups." +
-					"Use a type (or interface) derived from IModule.");
+		public void RegisterProvider<T>(T module) where T : class {
+			if (typeof (T) == typeof (Object)) {
+				throw new ArgumentException("Module must not be of type Object, this will break lookups." +
+					"Use a more specific type or interface.");
 			}
 			moduleCollection.AddProvider(new GenericModuleProvider<T>());
 			moduleCollection.SetModule(module);
@@ -72,10 +72,10 @@ namespace SFMLGame.Modules {
 		/// <typeparam name="T">The type of the module. If an interface type was registered, this must be the interface type too.
 		/// (e.g. IModule1)</typeparam>
 		/// <returns>The module that was constructed.</returns>
-		public T GetModule<T>() where T : class, IModule {
-			if (typeof(T) == typeof(IModule)) {
-				throw new ArgumentException("Module must not be of type IModule, this will break lookups." +
-					"Use a type (or interface) derived from IModule.");
+		public T GetModule<T>() where T : class {
+			if (typeof(T) == typeof(Object)) {
+				throw new ArgumentException("Module must not be of type Object, this will break lookups." +
+					"Use a more specific type or interface.");
 			}
 			return moduleCollection.GetModule<T>();
 		}
@@ -103,8 +103,8 @@ namespace SFMLGame.Modules {
 		/// Register a constructor.
 		/// </summary>
 		/// <typeparam name="TImpl">The implementation type. (e.g Module1)</typeparam>
-		/// <typeparam name="TInterface">The interface type for the module (NOT IModule) (e.g. IModule1)</typeparam>
-		public void RegisterConstructor<TImpl, TInterface>() where TImpl : TInterface, new() where TInterface : class, IModule {
+		/// <typeparam name="TInterface">The interface type for the module (NOT Object) (e.g. IModule1)</typeparam>
+		public void RegisterConstructor<TImpl, TInterface>() where TImpl : TInterface, new() where TInterface : class {
 			RegisterConstructor(new ModuleConstructor<TImpl, TInterface>());
 		}
 
@@ -112,8 +112,8 @@ namespace SFMLGame.Modules {
 		/// Regster a module.
 		/// </summary>
 		/// <typeparam name="TImpl">The implementation type. (e.g Module1)</typeparam>
-		/// <typeparam name="TInterface">The interface type for the module (NOT IModule) (e.g. IModule1)</typeparam>
-		public void RegisterModule<TImpl, TInterface>() where TImpl : TInterface, new() where TInterface : class, IModule {
+		/// <typeparam name="TInterface">The interface type for the module (NOT Object) (e.g. IModule1)</typeparam>
+		public void RegisterModule<TImpl, TInterface>() where TImpl : TInterface, new() where TInterface : class {
 			RegisterConstructor<TImpl, TInterface>();
 			moduleCollection.AddProvider(new GenericModuleProvider<TInterface>());
 		}
@@ -122,7 +122,7 @@ namespace SFMLGame.Modules {
 		/// Register a module.
 		/// </summary>
 		/// <typeparam name="TImpl">The module type (e.g. Module1)</typeparam>
-		public void RegisterModule<TImpl>() where TImpl : class, IModule, new() {
+		public void RegisterModule<TImpl>() where TImpl : class, new() {
 			RegisterModule<TImpl, TImpl>();
 		}
 
@@ -150,7 +150,7 @@ namespace SFMLGame.Modules {
 		/// </summary>
 		internal void ConstructModules() {
 			foreach (IModuleConstructor constructor in constructors) {
-				IModule module = constructor.Construct();
+				Object module = constructor.Construct();
 
 				modules.Add(module);
 				if (module is IModuleRequester) {

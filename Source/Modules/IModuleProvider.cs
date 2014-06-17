@@ -7,7 +7,7 @@ namespace SFMLGame.Modules {
 		Type GetModuleType();
 	}
 
-	public abstract class ModuleProvider<T> : IModuleProvider where T : class, IModule {
+	public abstract class ModuleProvider<T> : IModuleProvider where T : class {
 		T module;
 
 		protected ModuleProvider() {

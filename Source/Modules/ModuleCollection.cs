@@ -48,7 +48,7 @@ namespace SFMLGame.Modules {
 		/// </summary>
 		/// <typeparam name="T">The ABSTRACT/INTERFACE type to get.</typeparam>
 		/// <returns>The module of the requested type, if the provider exists.</returns>
-		public T GetModule<T>() where T : class, IModule {
+		public T GetModule<T>() where T : class {
 			Type type = typeof (T);
 			if (!typeToPair.ContainsKey(type)) {
 				throw new InvalidOperationException("ModuleProvider not found.");
@@ -62,17 +62,17 @@ namespace SFMLGame.Modules {
 		/// </summary>
 		/// <typeparam name="T">The type to set. May be exact type or derived.</typeparam>
 		/// <param name="module">The module to set.</param>
-		public void SetModule<T>(T module) where T : class, IModule {
+		public void SetModule<T>(T module) where T : class {
 			SetModule(module, typeof (T));
 		}
 
 		/// <summary>
 		/// Sets the module for a provider of the specified type.
-		/// Use this if module is IModule, with type being the interface/implementation type.
+		/// Use this if module is Object, with type being the interface/implementation type.
 		/// </summary>
 		/// <param name="module">The module to set.</param>
 		/// <param name="type">The type of the module.</param>
-		public void SetModule(IModule module, Type type) {
+		public void SetModule(Object module, Type type) {
 			if (!typeToPair.ContainsKey(type)) {
 				throw new InvalidOperationException("ModuleProvider not found.");
 			}
@@ -85,7 +85,7 @@ namespace SFMLGame.Modules {
 		/// </summary>
 		/// <typeparam name="T">The type that the provider provides.</typeparam>
 		/// <returns></returns>
-		internal IModuleProvider GetProvider<T>() where T : class, IModule {
+		internal IModuleProvider GetProvider<T>() where T : class {
 			Type type = typeof(T);
 			if (!typeToPair.ContainsKey(type)) {
 				throw new InvalidOperationException("ModuleProvider not found.");

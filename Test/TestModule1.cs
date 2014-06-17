@@ -2,7 +2,7 @@
 using SFMLGame.Modules;
 
 namespace SFMLGameTest {
-	public interface ITestModule1 : IModule {
+	public interface ITestModule1 {
 		int GetData();
 	}
 
