@@ -14,6 +14,10 @@ namespace SFMLGame.Modules {
 			module = null;
 		}
 
+		protected ModuleProvider(T item) {
+			module = item;
+		} 
+
 		public object GetModule() {
 			return module ?? GetMockModule();
 		}

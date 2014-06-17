@@ -53,8 +53,7 @@ namespace SFMLGame.Modules {
 				throw new ArgumentException("Module must not be of type Object, this will break lookups." +
 					"Use a more specific type or interface.");
 			}
-			moduleCollection.AddProvider(new GenericModuleProvider<T>());
-			moduleCollection.SetModule(module);
+			moduleCollection.AddProvider(new GenericModuleProvider<T>(module));
 		}
 
 		/// <summary>
