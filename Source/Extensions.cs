@@ -1,10 +1,15 @@
-﻿using FarseerPhysics;
+﻿using System;
+using FarseerPhysics;
 using Microsoft.Xna.Framework;
 using SFML.Graphics;
 using SFML.Window;
 
 namespace SFMLGame {
 	public static class Extensions {
+		/*
+		 * ConvertUnits as extensions. 
+		 */
+
 		public static float ToSimUnits(this int displayUnits) {
 			return ConvertUnits.ToSimUnits(displayUnits);
 		}
@@ -50,5 +55,16 @@ namespace SFMLGame {
 			return new Vertex(new Vector2f(vector.X, vector.Y));
 		}
 
+		/*
+		 * Math as extensions
+		 */
+
+		public static int Abs(this int value) {
+			return Math.Abs(value);
+		}
+
+		public static float Abs(this float value) {
+			return Math.Abs(value);
+		}
 	}
 }

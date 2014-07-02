@@ -6,10 +6,4 @@ namespace SFMLGame.Services {
 			return new NullLogger();
 		}
 	}
-
-	public class FactoryProvider : ServiceProvider<ModuleFactory> {
-		protected override ModuleFactory GetMockService() {
-			return null;
-		}
-	}
 }

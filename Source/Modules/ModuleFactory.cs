@@ -71,7 +71,7 @@ namespace SFMLGame.Modules {
 		/// <typeparam name="T">The type of the module. If an interface type was registered, this must be the interface type too.
 		/// (e.g. IModule1)</typeparam>
 		/// <returns>The module that was constructed.</returns>
-		public T GetModule<T>() where T : class {
+		internal T GetModule<T>() where T : class {
 			if (typeof(T) == typeof(Object)) {
 				throw new ArgumentException("Module must not be of type Object, this will break lookups." +
 					"Use a more specific type or interface.");
@@ -131,7 +131,7 @@ namespace SFMLGame.Modules {
 		/// </summary>
 		internal void FullfillRequests() {
 			foreach (IModuleRequester requester in requesters) {
-				requester.SetModules(BuildCollection(requester.GetRequestedModules().ToArray()));
+				requester.SetModules(BuildCollection(requester.GetRequestedModules().ToArray()), this);
 			}
 		}
 
@@ -140,7 +140,7 @@ namespace SFMLGame.Modules {
 		/// </summary>
 		/// <param name="requester">The requester to receive the dependencies.</param>
 		public void FullfillRequestNow(IModuleRequester requester) {
-			requester.SetModules(BuildCollection(requester.GetRequestedModules().ToArray()));
+			requester.SetModules(BuildCollection(requester.GetRequestedModules().ToArray()), this);
 		}
 
 		/// <summary>

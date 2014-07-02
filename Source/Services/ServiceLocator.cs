@@ -7,8 +7,7 @@ namespace SFMLGame.Services {
 		public static IServiceProvider[] DefaultProviders {
 			get {
 				return new IServiceProvider[] {
-					new LoggerProvider(),
-					new FactoryProvider()
+					new LoggerProvider()
 				};
 			}
 		}

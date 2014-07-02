@@ -3,7 +3,7 @@
 namespace SFMLGame.Modules {
 	public interface IModuleRequester {
 		IEnumerable<string> GetRequestedModules(); 
-		void SetModules(ModuleCollection collection);
+		void SetModules(ModuleCollection collection, ModuleFactory factory);
 	}
 
 	/* How things go: A module must have an empty constructor. The factory maintains a list of IModuleConstructors. The

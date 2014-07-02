@@ -5,6 +5,7 @@ using SFMLGame.Modules;
 using SFMLGame.Services;
 using Spooker.Content;
 using Spooker.Core;
+using Spooker.GameStates;
 using Spooker.Graphics;
 
 namespace SFMLGame {
@@ -57,7 +58,6 @@ namespace SFMLGame {
 			ServiceLocator.AddProviders(ServiceLocator.DefaultProviders);
 
 			ServiceLocator.SetService(logger);
-			ServiceLocator.SetService(moduleFactory);
 		}
 
 		protected virtual void GetServices() {
@@ -102,6 +102,13 @@ namespace SFMLGame {
 			loadableSet.Load(content);
 
 			moduleFactory.LoadContent(content);
+		}
+
+		public void SetStateAndRequest(State newState) {
+			StateFactory.SetState(newState);
+			if (newState is IModuleRequester) {
+				moduleFactory.FullfillRequestNow(newState as IModuleRequester);
+			}
 		}
 
 		public override void Draw(SpriteBatch spriteBatch, SpriteEffects effects = SpriteEffects.None) {

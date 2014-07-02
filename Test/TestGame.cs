@@ -30,11 +30,6 @@ namespace SFMLGameTest {
 		}
 
 		protected override void AfterLoadContent() {
-			logger.Log("TestModule1.GetData() = " + moduleFactory.GetModule<TestModule1>().GetData(), "TestGame");
-
-			irregularRequester1.Initialize();
-
-			logger.Log("IrregularRequester1.GetData() = " + irregularRequester1.GetData(), "TestGame");
 		}
 	}
 }

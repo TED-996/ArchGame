@@ -13,7 +13,7 @@ namespace SFMLGameTest {
 			return new[] {"TestModule2"};
 		}
 
-		public void SetModules(ModuleCollection collection) {
+		public void SetModules(ModuleCollection collection, ModuleFactory factory) {
 			module2 = collection.GetModule<TestModule2>();
 		}
 
