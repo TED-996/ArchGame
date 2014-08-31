@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SFMLGame.Modules {
+namespace ArchGame.Modules {
 	public interface IModuleProvider {
 		Object GetModule();
 		void SetModule(Object newModule);

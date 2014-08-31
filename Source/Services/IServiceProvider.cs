@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SFMLGame.Services {
+namespace ArchGame.Services {
 	public interface IServiceProvider {
 		Object GetService();
 		void SetService(Object newService);

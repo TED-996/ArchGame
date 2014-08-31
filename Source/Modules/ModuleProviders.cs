@@ -1,4 +1,4 @@
-﻿namespace SFMLGame.Modules {
+﻿namespace ArchGame.Modules {
 	public class GenericModuleProvider<T> : ModuleProvider<T> where T : class {
 		public GenericModuleProvider(){
 			

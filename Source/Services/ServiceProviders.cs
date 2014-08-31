@@ -1,6 +1,6 @@
-﻿using SFMLGame.Modules;
+﻿using ArchGame.Modules;
 
-namespace SFMLGame.Services {
+namespace ArchGame.Services {
 	public class LoggerProvider : ServiceProvider<ILogger> {
 		protected override ILogger GetMockService() {
 			return new NullLogger();

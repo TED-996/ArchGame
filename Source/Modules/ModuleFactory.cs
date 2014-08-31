@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Spooker.Content;
+using ArchGame.Components;
+using Microsoft.Xna.Framework.Content;
 
-namespace SFMLGame.Modules {
+namespace ArchGame.Modules {
 	/// <summary>
 	/// Responsible for building the modules.
 	/// </summary>
-	public class ModuleFactory : IDisposable, ILoadable {
+	public class ModuleFactory : IDisposable, IArchLoadable {
 		readonly ModuleCollection moduleCollection;
 		readonly List<IModuleRequester> requesters;
 
 		readonly List<IModuleConstructor> constructors;
 		readonly List<Object> modules;
 
-		readonly List<ILoadable> loadables; 
+		readonly List<IArchLoadable> loadables; 
 		readonly List<IDisposable> disposables; 
 		
 		internal ModuleFactory() {
@@ -27,7 +28,7 @@ namespace SFMLGame.Modules {
 			moduleCollection.AddProviders(GetDefaultProviders());
 
 			disposables = new List<IDisposable>();
-			loadables = new List<ILoadable>();
+			loadables = new List<IArchLoadable>();
 		}
 
 		IEnumerable<IModuleProvider> GetDefaultProviders() {
@@ -82,11 +83,11 @@ namespace SFMLGame.Modules {
 		/// <summary>
 		/// Builds a collection of modules.
 		/// </summary>
-		/// <param name="providers">An array of strings, containing the name (without namespace) of the types to request.</param>
+		/// <param name="providerTypeNames">An array of strings, containing the name (without namespace) of the types to request.</param>
 		/// <returns>A ModuleCollection that contains the requested modules.</returns>
-		ModuleCollection BuildCollection(params string[] providers) {
+		ModuleCollection BuildCollection(params string[] providerTypeNames) {
 			ModuleCollection collection = new ModuleCollection();
-			collection.AddProviders(providers.Select(typeName => moduleCollection.GetProvider(typeName)));
+			collection.AddProviders(providerTypeNames.Select(typeName => moduleCollection.GetProvider(typeName)));
 			return collection;
 		}
 
@@ -108,6 +109,17 @@ namespace SFMLGame.Modules {
 		}
 
 		/// <summary>
+		/// Register a constructor.
+		/// </summary>
+		/// <param name="constructorFunction">A function that constructs an object of type TImpl</param>
+		/// <typeparam name="TImpl">The implementation type. (e.g Module1)</typeparam>
+		/// <typeparam name="TInterface">The interface type for the module (NOT Object) (e.g. IModule1)</typeparam>
+		public void RegisterConstructor<TImpl, TInterface>(Func<TImpl> constructorFunction) 
+			where TImpl : class, TInterface where TInterface : class {
+			RegisterConstructor(new LambdaConstructor<TImpl, TInterface>(constructorFunction));
+		}
+
+		/// <summary>
 		/// Regster a module.
 		/// </summary>
 		/// <typeparam name="TImpl">The implementation type. (e.g Module1)</typeparam>
@@ -123,6 +135,44 @@ namespace SFMLGame.Modules {
 		/// <typeparam name="TImpl">The module type (e.g. Module1)</typeparam>
 		public void RegisterModule<TImpl>() where TImpl : class, new() {
 			RegisterModule<TImpl, TImpl>();
+		}
+
+		/// <summary>
+		/// Regster a module.
+		/// </summary>
+		/// <typeparam name="TImpl">The implementation type. (e.g Module1)</typeparam>
+		/// <typeparam name="TInterface">The interface type for the module (NOT Object) (e.g. IModule1)</typeparam>
+		public void RegisterModule<TImpl, TInterface>(Func<TImpl> constructorFunction)
+			where TImpl :class, TInterface
+			where TInterface :class {
+			RegisterConstructor<TImpl, TInterface>(constructorFunction);
+			moduleCollection.AddProvider(new GenericModuleProvider<TInterface>());
+		}
+
+		/// <summary>
+		/// Register a module.
+		/// </summary>
+		/// <typeparam name="TImpl">The module type (e.g. Module1)</typeparam>
+		public void RegisterModule<TImpl>(Func<TImpl> constructorFunction) where TImpl : class {
+			RegisterModule<TImpl, TImpl>(constructorFunction);
+		}
+
+		/// <summary>
+		/// Register an already constructed object.
+		/// Requests will be fullfilled and it will be loaded and disposed at the appropriate time.
+		/// </summary>
+		/// <param name="module"></param>
+		public void RegisterObject(Object module) {
+			modules.Add(module);
+			if (module is IModuleRequester) {
+				requesters.Add(module as IModuleRequester);
+			}
+			if (module is IDisposable) {
+				disposables.Add(module as IDisposable);
+			}
+			if (module is IArchLoadable) {
+				loadables.Add(module as IArchLoadable);
+			}
 		}
 
 		/// <summary>
@@ -144,29 +194,19 @@ namespace SFMLGame.Modules {
 		}
 
 		/// <summary>
-		/// Constructs the modules and adds them as requesters if necessary. Called by Game, only once, after the content has
+		/// Constructs the modules and adds them as requesters if necessary. Called by ArchGame, only once, after the content has
 		/// been loaded.
+		/// Also adds the constructed modules as requesters, disposables and loadables, and also sets the modules to be requested,
+		/// if a requester has been registered (automatically done through RegisterModule)
 		/// </summary>
 		internal void ConstructModules() {
 			foreach (IModuleConstructor constructor in constructors) {
 				Object module = constructor.Construct();
 
-				modules.Add(module);
-				if (module is IModuleRequester) {
-					requesters.Add(module as IModuleRequester);
-				}
-				if (module is IDisposable) {
-					disposables.Add(module as IDisposable);
-				}
-				if (module is ILoadable) {
-					loadables.Add(module as ILoadable);
-				}
+				RegisterObject(module);
 
-				try {
+				if (moduleCollection.DoesProviderExist(constructor.GetInterfaceType())) {
 					moduleCollection.SetModule(module, constructor.GetInterfaceType());
-				}
-				catch(InvalidOperationException) {
-					//Provider not set. Ignore.
 				}
 			}
 		}
@@ -185,7 +225,7 @@ namespace SFMLGame.Modules {
 		/// </summary>
 		/// <param name="content"></param>
 		public void LoadContent(ContentManager content) {
-			foreach (ILoadable loadable in loadables) {
+			foreach (IArchLoadable loadable in loadables) {
 				loadable.LoadContent(content);
 			}
 		}

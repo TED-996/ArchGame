@@ -1,24 +1,25 @@
 ﻿using System.Collections.Generic;
-using Spooker.Content;
+using ArchGame.Components;
+using Microsoft.Xna.Framework.Content;
 
-namespace SFMLGame {
+namespace ArchGame {
 	public class LoadableSet {
-		readonly List<ILoadable> loadables;
-		readonly List<ILoadable> preLoadables;
+		readonly List<IArchLoadable> loadables;
+		readonly List<IArchLoadable> preLoadables;
 
-		public LoadableSet(IEnumerable<ILoadable> newLoadables, IEnumerable<ILoadable> newPreloadables) {
-			loadables = new List<ILoadable>(newLoadables);
-			preLoadables = new List<ILoadable>(newPreloadables);
+		public LoadableSet(IEnumerable<IArchLoadable> newLoadables, IEnumerable<IArchLoadable> newPreloadables) {
+			loadables = new List<IArchLoadable>(newLoadables);
+			preLoadables = new List<IArchLoadable>(newPreloadables);
 		}
 
 		public void Load(ContentManager contentManager) {
-			foreach (ILoadable loadable in loadables) {
+			foreach (IArchLoadable loadable in loadables) {
 				loadable.LoadContent(contentManager);
 			}
 		}
 
 		public void Preload(ContentManager contentManager) {
-			foreach (ILoadable loadable in preLoadables) {
+			foreach (IArchLoadable loadable in preLoadables) {
 				loadable.LoadContent(contentManager);
 			}
 		}

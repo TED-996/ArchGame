@@ -1,0 +1,9 @@
+D:\Elementalist\ArchGame\Source\TestingExtensions\bin\Debug\TestingExtensions.dll
+D:\Elementalist\ArchGame\Source\TestingExtensions\bin\Debug\TestingExtensions.pdb
+D:\Elementalist\ArchGame\Source\TestingExtensions\bin\Debug\ArchGame.dll
+D:\Elementalist\ArchGame\Source\TestingExtensions\bin\Debug\ArchGame.pdb
+D:\Elementalist\ArchGame\Source\TestingExtensions\bin\Debug\ArchGame_Accessor.dll
+D:\Elementalist\ArchGame\Source\TestingExtensions\bin\Debug\ArchGame_Accessor.pdb
+D:\Elementalist\ArchGame\Source\TestingExtensions\obj\Debug\TestingExtensions.csprojResolveAssemblyReference.cache
+D:\Elementalist\ArchGame\Source\TestingExtensions\obj\Debug\TestingExtensions.dll
+D:\Elementalist\ArchGame\Source\TestingExtensions\obj\Debug\TestingExtensions.pdb

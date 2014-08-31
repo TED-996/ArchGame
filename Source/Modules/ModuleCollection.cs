@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SFMLGame.Modules {
+namespace ArchGame.Modules {
 	public class ModuleCollection {
 		readonly Dictionary<TypeStringPair, IModuleProvider> providers;
 
@@ -10,9 +10,9 @@ namespace SFMLGame.Modules {
 		readonly Dictionary<string, TypeStringPair> stringToPair; 
 
 		/// <summary>
-		/// Instantiates a new ModuleLocator
+		/// Instantiates a new ModuleCollection
 		/// </summary>
-		public ModuleCollection() {
+		internal ModuleCollection() {
 			providers = new Dictionary<TypeStringPair, IModuleProvider>();
 
 			typeToPair = new Dictionary<Type, TypeStringPair>();
@@ -22,7 +22,7 @@ namespace SFMLGame.Modules {
 		/// <summary>
 		/// Adds a provider.
 		/// </summary>
-		public void AddProvider(IModuleProvider provider) {
+		internal void AddProvider(IModuleProvider provider) {
 			Type providerType = provider.GetModuleType();
 			if (typeToPair.ContainsKey(providerType)) {
 				return;
@@ -37,7 +37,7 @@ namespace SFMLGame.Modules {
 		/// <summary>
 		/// Adds providers.
 		/// </summary>
-		public void AddProviders(IEnumerable<IModuleProvider> newProviders) {
+		internal void AddProviders(IEnumerable<IModuleProvider> newProviders) {
 			foreach (IModuleProvider provider in newProviders) {
 				AddProvider(provider);
 			}
@@ -59,10 +59,11 @@ namespace SFMLGame.Modules {
 
 		/// <summary>
 		/// Sets the module for a provider of the specified type.
+		/// TODO: Maybe delete?
 		/// </summary>
 		/// <typeparam name="T">The type to set. May be exact type or derived.</typeparam>
 		/// <param name="module">The module to set.</param>
-		public void SetModule<T>(T module) where T : class {
+		internal void SetModule<T>(T module) where T : class {
 			SetModule(module, typeof (T));
 		}
 
@@ -72,7 +73,7 @@ namespace SFMLGame.Modules {
 		/// </summary>
 		/// <param name="module">The module to set.</param>
 		/// <param name="type">The type of the module.</param>
-		public void SetModule(Object module, Type type) {
+		internal void SetModule(Object module, Type type) {
 			if (!typeToPair.ContainsKey(type)) {
 				throw new InvalidOperationException("ModuleProvider not found.");
 			}
@@ -82,6 +83,7 @@ namespace SFMLGame.Modules {
 
 		/// <summary>
 		/// Gets a provider from type.
+		/// TODO: Maybe delete?
 		/// </summary>
 		/// <typeparam name="T">The type that the provider provides.</typeparam>
 		/// <returns></returns>
@@ -104,6 +106,15 @@ namespace SFMLGame.Modules {
 			}
 
 			return providers[stringToPair[typeName]];
+		}
+
+		/// <summary>
+		/// Returns true if there exists a provider with the specified type.
+		/// </summary>
+		/// <param name="providerType">The type of the provider to search</param>
+		/// <returns>True if the provider exists, false otherwise.</returns>
+		internal bool DoesProviderExist(Type providerType) {
+			return typeToPair.ContainsKey(providerType);
 		}
 	}
 

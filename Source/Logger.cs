@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading;
 
-namespace SFMLGame {
+namespace ArchGame {
 	public interface ILogger : IDisposable {
 		void Log(string newMessage, string newSender = null, LogMessageType newType = LogMessageType.Information);
 		void Log(string newMessage, DateTime newDateTime, string newSender = null,

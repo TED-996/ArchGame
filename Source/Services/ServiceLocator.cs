@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SFMLGame.Services {
+namespace ArchGame.Services {
 	public static class ServiceLocator {
 		public static IServiceProvider[] DefaultProviders {
 			get {
