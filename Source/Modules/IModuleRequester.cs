@@ -17,7 +17,7 @@ namespace ArchGame.Modules {
 	 * RegisterProvider: manually make a module requestable, but not construct it or fullfill its requests
 	 * RegisterModule: register a module that will be constructed, will have requests fullfilled, etc and will be requestable.
 	 * 
-	 * Feature:				RegisterConstructor		RegisterProvier		RegisterModule	RegisterRequester	RegisterModule
+	 * Feature:				RegisterConstructor		RegisterProvier		RegisterModule	RegisterRequester	RegisterObject
 	 * Construct			yes						no					yes				no					no
 	 * Requests fullfilled	yes						no					yes				yes					yes
 	 * Content loaded		yes						no					yes				no					yes

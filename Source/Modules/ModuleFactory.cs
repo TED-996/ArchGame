@@ -36,37 +36,6 @@ namespace ArchGame.Modules {
 		}
 
 		/// <summary>
-		/// Register a module provider.
-		/// </summary>
-		/// <param name="provider">The provider to be registered.</param>
-		public void RegisterProvider(IModuleProvider provider) {
-			moduleCollection.AddProvider(provider);
-		}
-
-		/// <summary>
-		/// Registers a provider with a module already set.
-		/// The module must not be of type Object, this will break lookups. Use a more derived type or interface.
-		/// </summary>
-		/// <typeparam name="T">The module type.</typeparam>
-		/// <param name="module">The module to be set.</param>
-		public void RegisterProvider<T>(T module) where T : class {
-			if (typeof (T) == typeof (Object)) {
-				throw new ArgumentException("Module must not be of type Object, this will break lookups." +
-					"Use a more specific type or interface.");
-			}
-			moduleCollection.AddProvider(new GenericModuleProvider<T>(module));
-		}
-
-		/// <summary>
-		/// Register a module requester. The request will be fullfilled after the content has been loaded.
-		/// It you want to fullfill the request immediately, use FullfillRequestNow(IModuleRequester).
-		/// </summary>
-		/// <param name="requester">An object that implements IModuleRequester.</param>
-		public void RegisterRequester(IModuleRequester requester) {
-			requesters.Add(requester);
-		}
-
-		/// <summary>
 		/// Gets a constructed module.
 		/// </summary>
 		/// <typeparam name="T">The type of the module. If an interface type was registered, this must be the interface type too.
@@ -89,6 +58,37 @@ namespace ArchGame.Modules {
 			ModuleCollection collection = new ModuleCollection();
 			collection.AddProviders(providerTypeNames.Select(typeName => moduleCollection.GetProvider(typeName)));
 			return collection;
+		}
+
+		/// <summary>
+		/// Register a module provider.
+		/// </summary>
+		/// <param name="provider">The provider to be registered.</param>
+		public void RegisterProvider(IModuleProvider provider) {
+			moduleCollection.AddProvider(provider);
+		}
+
+		/// <summary>
+		/// Registers a provider with a module already set.
+		/// The module must not be of type Object, this will break lookups. Use a more derived type or interface.
+		/// </summary>
+		/// <typeparam name="T">The module type.</typeparam>
+		/// <param name="module">The module to be set.</param>
+		public void RegisterProvider<T>(T module) where T : class {
+			if (typeof (T) == typeof (Object)) {
+				throw new ArgumentException("Module must not be of type Object, this will break lookups." +
+				                            "Use a more specific type or interface.");
+			}
+			moduleCollection.AddProvider(new GenericModuleProvider<T>(module));
+		}
+
+		/// <summary>
+		/// Register a module requester. The request will be fullfilled after the content has been loaded.
+		/// It you want to fullfill the request immediately, use FullfillRequestNow(IModuleRequester).
+		/// </summary>
+		/// <param name="requester">An object that implements IModuleRequester.</param>
+		public void RegisterRequester(IModuleRequester requester) {
+			requesters.Add(requester);
 		}
 
 		/// <summary>
