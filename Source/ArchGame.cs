@@ -85,7 +85,7 @@ namespace ArchGame {
 			State loadingState = GetLoadingState();
 			if (loadingState != null) {
 				stateManager.PushState(loadingState);
-			}
+			} 
 
 			logger.Log("Ended preloading content.", "Game");
 
