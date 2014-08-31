@@ -23,5 +23,10 @@ namespace ArchGame {
 				loadable.LoadContent(contentManager);
 			}
 		}
+
+		public void Discard() {
+			loadables.Clear();
+			preLoadables.Clear();
+		}
 	}
 }

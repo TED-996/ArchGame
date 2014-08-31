@@ -37,6 +37,7 @@ namespace ArchGame.Modules {
 
 		/// <summary>
 		/// Gets a constructed module.
+		/// TODO: Maybe delete?
 		/// </summary>
 		/// <typeparam name="T">The type of the module. If an interface type was registered, this must be the interface type too.
 		/// (e.g. IModule1)</typeparam>
@@ -54,7 +55,7 @@ namespace ArchGame.Modules {
 		/// </summary>
 		/// <param name="providerTypeNames">An array of strings, containing the name (without namespace) of the types to request.</param>
 		/// <returns>A ModuleCollection that contains the requested modules.</returns>
-		ModuleCollection BuildCollection(params string[] providerTypeNames) {
+		ModuleCollection BuildCollection(IEnumerable<string> providerTypeNames) {
 			ModuleCollection collection = new ModuleCollection();
 			collection.AddProviders(providerTypeNames.Select(typeName => moduleCollection.GetProvider(typeName)));
 			return collection;
@@ -181,7 +182,7 @@ namespace ArchGame.Modules {
 		/// </summary>
 		internal void FullfillRequests() {
 			foreach (IModuleRequester requester in requesters) {
-				requester.SetModules(BuildCollection(requester.GetRequestedModules().ToArray()), this);
+				requester.SetModules(BuildCollection(requester.GetRequestedModules()), this);
 			}
 		}
 

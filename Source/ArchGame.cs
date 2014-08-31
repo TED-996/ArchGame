@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using ArchGame.Components;
 using ArchGame.States;
 using Microsoft.Xna.Framework;
 using ArchGame.Modules;
@@ -9,7 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace ArchGame {
 	public abstract class ArchGame : Game {
-		readonly LoadableSet loadableSet;
+		LoadableSet loadableSet;
 
 		protected readonly ILogger logger;
 
@@ -24,14 +25,13 @@ namespace ArchGame {
 		/// Initialize a new Game object.
 		/// </summary>
 		/// <param name="gameName">The name of the game window</param>
-		/// <param name="newLoadableSet">The LoadableSet of ILoadables to load in the LoadContent stage.</param>
 		/// <param name="screenWidth"></param>
 		/// <param name="screenHeight"></param>
 		/// <param name="newLogger">The logger to use.</param>
 		/// <param name="contentRoot">Name of the content root folder</param>
 		/// <param name="fullscreen">Whether the game should be full-screen</param>
-		protected ArchGame(string gameName, int screenWidth, int screenHeight, LoadableSet newLoadableSet,
-			ILogger newLogger, string contentRoot = "Content", bool fullscreen = false) {
+		protected ArchGame(string gameName, int screenWidth, int screenHeight, ILogger newLogger, string contentRoot = "Content",
+			bool fullscreen = false) {
 			graphicsDevice = new GraphicsDeviceManager(this) {
 				IsFullScreen = fullscreen,
 				PreferredBackBufferWidth = screenWidth,
@@ -41,8 +41,6 @@ namespace ArchGame {
 
 			Window.Title = gameName;
 			Content.RootDirectory = contentRoot;
-
-			loadableSet = newLoadableSet;
 
 			logger = newLogger ?? new ThreadedLogger();
 
@@ -66,6 +64,10 @@ namespace ArchGame {
 
 		}
 
+		protected virtual LoadableSet GetLoadableSet() {
+			return new LoadableSet(new IArchLoadable[0], new IArchLoadable[0]);
+		}
+
 		protected virtual void AfterLoadContent(ContentManager contentManager) {
 			stateManager.ReplaceTopState(GetAfterLoadState());
 		}
@@ -77,6 +79,7 @@ namespace ArchGame {
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 
 			logger.Log("Started preloading content.", "Game");
+			loadableSet = GetLoadableSet();
 			loadableSet.Preload(Content);
 
 			stateManager = new StateManager(moduleFactory);
@@ -106,6 +109,8 @@ namespace ArchGame {
 			LoadThreaded((ContentManager) content);
 			logger.Log("Ended threaded loading.", "Game");
 
+			loadableSet.Discard();
+
 			AfterLoadContent(Content);
 		}
 
@@ -115,10 +120,16 @@ namespace ArchGame {
 			moduleFactory.LoadContent(Content);
 		}
 
+		protected override void Update(GameTime gameTime) {
+			stateManager.Update(gameTime);
+		}
 
 		protected override void Draw(GameTime gameTime) {
 			GraphicsDevice.Clear(Color.Black);
 
+			spriteBatch.Begin();
+			stateManager.Draw(spriteBatch);
+			spriteBatch.End();
 		}
 
 		protected override void UnloadContent() {
