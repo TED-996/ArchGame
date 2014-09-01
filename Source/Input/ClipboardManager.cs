@@ -19,10 +19,18 @@ namespace ArchGame.Input {
 
 		static IntPtr windowHandle;
 
+		/// <summary>
+		/// Intialize the ClipboardManager with the GameWindow handle.
+		/// </summary>
+		/// <param name="window">The window to initalize the ClipboardManager with</param>
 		public static void Initialize(GameWindow window) {
 			windowHandle = window.Handle;
 		}
 
+		/// <summary>
+		/// Save a string to the clipboard.
+		/// </summary>
+		/// <param name="value">The string to save</param>
 		public static void SaveToClipboard(string value) {
 			OpenClipboard(windowHandle);
 			EmptyClipboard();
@@ -31,6 +39,10 @@ namespace ArchGame.Input {
 			CloseClipboard();
 		}
 
+		/// <summary>
+		/// Get a string from the clipboard.
+		/// </summary>
+		/// <returns>The string currently on the clipboard</returns>
 		public static string GetClipboard() {
 			OpenClipboard(windowHandle);
 

@@ -30,14 +30,29 @@ namespace ArchGame.Extensions {
 			return Math.Abs(value);
 		}
 
+		/// <summary>
+		/// Constrains thisValue to be at least minValue.
+		/// Returns thisValue if it's greater than minValue or minValue otherwise.
+		/// Equvalent to Math.Max(thisValue, minValue) or { thisValue &gt; minValue ? thisValue : minValue }
+		/// </summary>
 		public static T AtLeast<T>(this T thisValue, T minValue) where T : IComparable<T> {
 			return thisValue.CompareTo(minValue) > 0 ? thisValue : minValue;
 		}
 
+		/// <summary>
+		/// Constrains thisValue to be at most maxValue.
+		/// Returns thisValue if it's less than maxValue or maxValue otherwise.
+		/// Equvalent to Math.Min(thisValue, maxValue) or { thisValue &lt; maxValue ? thisValue : maxValue }
+		/// </summary>
 		public static T AtMost<T>(this T thisValue, T maxValue) where T : IComparable<T> {
 			return thisValue.CompareTo(maxValue) < 0 ? thisValue : maxValue;
 		}
 
+		/// <summary>
+		/// Clamps val between min and max.
+		/// Returns min if val is less than min, max if val is greater than max or val otherwise.
+		/// Equivalent to { val &lt; min ? min : (val &gt; max ? max : val) }
+		/// </summary>
 		public static T Clamp<T>(this T val, T min, T max) where T :IComparable<T> {
 			if (val.CompareTo(min) < 0) {
 				return min;

@@ -3,33 +3,76 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace ArchGame.Components.XnaComponents {
+	/// <summary>
+	/// A Text draws a string on screen with configurable parameters (font, position, color)
+	/// </summary>
 	public class Text : IArchLoadable, IArchDrawable {
 		readonly string filename;
 		SpriteFont spriteFont;
 		
+		/// <summary>
+		/// The text to draw.
+		/// </summary>
 		public string TextToDraw {
-			get { return text; }
+			get { return _text; }
 			set {
-				text = value;
+				_text = value;
 				sizeDirty = true;
 			}
 		}
+		string _text;
 
-		string text;
+		/// <summary>
+		/// The position of the text.
+		/// Default: {0, 0}
+		/// </summary>
 		public Vector2 Position;
-		public Rectangle? SourceRectangle;
+
+		/// <summary>
+		/// The Color of the text.
+		/// Default: Color.Black
+		/// </summary>
 		public Color Color;
+
+		/// <summary>
+		/// The rotation of the text.
+		/// Default: 0
+		/// </summary>
 		public float Rotation;
+
+		/// <summary>
+		/// The origin of the text.
+		/// Default: Size / 2 if centered; {0, 0} otherwise.
+		/// </summary>
 		public Vector2 Origin;
+
+		/// <summary>
+		/// The scale of the text.
+		/// Default: {1, 1}
+		/// </summary>
 		public Vector2 Scale;
+
+		/// <summary>
+		/// The SpriteEffects of the text.
+		/// Default: SpriteEffects.None
+		/// </summary>
 		public SpriteEffects Effects;
+
+		/// <summary>
+		/// The layer depth of the text.
+		/// Default: 0
+		/// </summary>
 		public int LayerDepth;
 
-		Vector2 size;
-		bool sizeDirty;
-
+		/// <summary>
+		/// The ZIndex of the text.
+		/// Default: 0
+		/// </summary>
 		public int ZIndex { get; set; }
 
+		/// <summary>
+		/// Whether to center the text.
+		/// </summary>
 		public bool Center {
 			get { return _center; }
 			set {
@@ -38,14 +81,22 @@ namespace ArchGame.Components.XnaComponents {
 			}
 		}
 
+		Vector2 size;
+		bool sizeDirty;
 		bool _center;
 
+		/// <summary>
+		/// Intialize a new instance of type Text
+		/// </summary>
+		/// <param name="newFilename">The filename (from the Content project) of the SpriteFont</param>
+		/// <param name="newText">The string to be drawn</param>
+		/// <param name="newZIndex">The ZIndex of the text</param>
+		/// <param name="newCenter">Whether to center the text</param>
 		public Text(string newFilename, string newText, int newZIndex = 0, bool newCenter = false) {
 			filename = newFilename;
-			text = newText;
+			_text = newText;
 			Position = new Vector2();
-			SourceRectangle = null;
-			Color = Color.White;
+			Color = Color.Black;
 			Rotation = 0;
 			Origin = new Vector2();
 			Scale = new Vector2(1);
@@ -57,17 +108,43 @@ namespace ArchGame.Components.XnaComponents {
 			sizeDirty = true;
 		}
 
+		/// <summary>
+		/// Intialize a new instance of type Text
+		/// </summary>
+		/// <param name="newFilename">The filename (from the Content project) of the SpriteFont</param>
+		/// <param name="newText">The string to be drawn</param>
+		/// <param name="newPosition">The position of the text</param>
+		/// <param name="newZIndex">The ZIndex of the text</param>
+		/// <param name="newCenter">Whether to center the text</param>
 		public Text(string newFilename, string newText, Vector2 newPosition, int newZIndex = 0, bool newCenter = false)
 			: this (newFilename, newText, newZIndex, newCenter) {
 			Position = newPosition;
 		}
 
+		/// <summary>
+		/// Intialize a new instance of type Text
+		/// </summary>
+		/// <param name="newFilename">The filename (from the Content project) of the SpriteFont</param>
+		/// <param name="newText">The string to be drawn</param>
+		/// <param name="newPosition">The position of the text</param>
+		/// <param name="newColor">The color of the text</param>
+		/// <param name="newZIndex">The ZIndex of the text</param>
+		/// <param name="newCenter">Whether to center the text</param>
+		public Text(string newFilename, string newText, Vector2 newPosition, Color newColor, int newZIndex = 0, bool newCenter = false)
+			: this(newFilename, newText, newZIndex, newCenter) {
+			Position = newPosition;
+			Color = newColor;
+		}
+
+		/// <summary>
+		/// Intitialize a new instance of type Text as a copy of another Text
+		/// </summary>
+		/// <param name="other">The Text to copy drawing parameters from</param>
 		public Text(Text other) {
 			filename = other.filename;
 			spriteFont = other.spriteFont;
-			text = other.text;
+			_text = other._text;
 			Position = other.Position;
-			SourceRectangle = other.SourceRectangle;
 			Color = other.Color;
 			Rotation = other.Rotation;
 			Origin = other.Origin;
@@ -80,15 +157,23 @@ namespace ArchGame.Components.XnaComponents {
 			sizeDirty = other.sizeDirty;
 		}
 
+		/// <summary>
+		/// Loads the SpriteFont of the text
+		/// </summary>
+		/// <param name="contentManager">The ContentManager</param>
 		public void LoadContent(ContentManager contentManager) {
 			spriteFont = contentManager.Load<SpriteFont>(filename);
 		}
 
+		/// <summary>
+		/// Draws the text
+		/// </summary>
+		/// <param name="spriteBatch">The SpriteBatch</param>
 		public void Draw(SpriteBatch spriteBatch) {
 			if (_center) {
 				CenterText();
 			}
-			spriteBatch.DrawString(spriteFont, text, Position, Color, Rotation, Origin, Scale, Effects, LayerDepth);
+			spriteBatch.DrawString(spriteFont, _text, Position, Color, Rotation, Origin, Scale, Effects, LayerDepth);
 		}
 
 		void CenterText() {
@@ -99,7 +184,7 @@ namespace ArchGame.Components.XnaComponents {
 		}
 
 		void CleanSize() {
-			size = spriteFont.MeasureString(text);
+			size = spriteFont.MeasureString(_text);
 			sizeDirty = false;
 		}
 	}

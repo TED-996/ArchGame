@@ -7,6 +7,10 @@ using Microsoft.Xna.Framework.Graphics;
 using ArchGame.Extensions;
 
 namespace ArchGame.Components {
+	/// <summary>
+	/// The ComponentList keeps lists of IArchLoadables, IArchUpdateables, IArchDrawables and IDisposables and performs the requested
+	/// operations on all components. Use it to declaratively add behaviour and appearance to your states.
+	/// </summary>
 	public class ComponentList : IArchLoadable, IArchUpdateable, IArchDrawable, IDisposable {
 		readonly List<IArchLoadable> loadables;
 		readonly List<IArchUpdateable> updateables;
@@ -24,6 +28,9 @@ namespace ArchGame.Components {
 		bool updateablesDirty;
 		bool drawablesDirty;
 
+		/// <summary>
+		/// Initialize a new instance of type ComponentList
+		/// </summary>
 		public ComponentList() {
 			loadables = new List<IArchLoadable>();
 			updateables = new List<IArchUpdateable>();
@@ -34,10 +41,18 @@ namespace ArchGame.Components {
 			drawablesDirty = false;
 		}
 
+		/// <summary>
+		/// Initialize a new instance of type ComponentList, as a copy of another.
+		/// </summary>
+		/// <param name="other">The list to copy from</param>
 		public ComponentList(ComponentList other) : this() {
 			AppendList(other);
 		}
 
+		/// <summary>
+		/// Add a new component to the ComponentList
+		/// </summary>
+		/// <param name="component">The component to add</param>
 		public void Add(Object component) {
 			IArchLoadable loadable = component as IArchLoadable;
 			if (loadable != null) {
@@ -59,6 +74,10 @@ namespace ArchGame.Components {
 			}
 		}
 
+		/// <summary>
+		/// Append a ComponentList to this list.
+		/// </summary>
+		/// <param name="other">The ComponentList to append</param>
 		public void AppendList(ComponentList other) {
 			loadables.AddRange(other.Loadables);
 			updateables.AddRange(other.Updateables);
@@ -69,6 +88,10 @@ namespace ArchGame.Components {
 			updateablesDirty = true;
 		}
 
+		/// <summary>
+		/// Remove a component from the ComponentList
+		/// </summary>
+		/// <param name="component">The component to remove</param>
 		public void Remove(Object component) {
 			IArchLoadable loadable = component as IArchLoadable;
 			if (loadable != null) {
@@ -88,10 +111,18 @@ namespace ArchGame.Components {
 			}
 		}
 
+		/// <summary>
+		/// Loads the content of each IArchLoadable in the ComponentList
+		/// </summary>
+		/// <param name="contentManager">The content manager</param>
 		public void LoadContent(ContentManager contentManager) {
 			loadables.ForEach(loadable => loadable.LoadContent(contentManager));
 		}
 
+		/// <summary>
+		/// Updates each IArchUpdateable
+		/// </summary>
+		/// <param name="gameTime">The GameTime</param>
 		public void Update(GameTime gameTime) {
 			if (updateablesDirty) {
 				CleanUpdateables();
@@ -104,6 +135,10 @@ namespace ArchGame.Components {
 			updateablesDirty = false;
 		}
 
+		/// <summary>
+		/// Draw each IArchDrawable
+		/// </summary>
+		/// <param name="spriteBatch">The SpriteBatch</param>
 		public void Draw(SpriteBatch spriteBatch) {
 			if (drawablesDirty) {
 				CleanDrawables();
@@ -116,6 +151,9 @@ namespace ArchGame.Components {
 			drawablesDirty = false;
 		}
 
+		/// <summary>
+		/// Dispose each IDisposable
+		/// </summary>
 		public void Dispose() {
 			disposables.ForEach(disposable => disposable.Dispose());
 		}

@@ -23,7 +23,8 @@ namespace Test.States {
 		static readonly TimeSpan Interval = TimeSpan.FromSeconds(1);
 
 		public GameState() {
-			//sprite taken from http://opengameart.org/content/6-sci-fi-symbols; under CC-BY-SA 3.0
+			//The sprite was taken from http://opengameart.org/content/6-sci-fi-symbols; It is licensed under CC-BY-SA 3.0
+			//The sprite was cropped from a larger image.
 			sprite = new Sprite("logo", 2) {Color = Color.LightBlue};
 			text = new Text("font", "SPAACE", new Vector2(0, 50), 2) {Color = Color.White};
 			componentList.Add(sprite);

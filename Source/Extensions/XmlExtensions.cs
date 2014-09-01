@@ -4,6 +4,9 @@ using System.Xml.Serialization;
 
 namespace ArchGame.Extensions {
 	public static class XmlExtensions {
+		/// <summary>
+		/// Serialize an object to a string in XML format.
+		/// </summary>
 		public static string XmlSerialize<T>(this T obj) where T : class, new() {
 			if (obj == null) {
 				throw new ArgumentNullException("obj", "Cannot serialize a null object");
@@ -17,6 +20,9 @@ namespace ArchGame.Extensions {
 			}
 		}
 		
+		/// <summary>
+		/// Deserialize an object from a string in XML format.
+		/// </summary>
 		public static T XmlDeserialize<T>(this string xml) where T : class, new() {
 			if (xml == null) {
 				throw new ArgumentNullException("xml", "Cannot deserialize from a null string");
