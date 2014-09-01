@@ -52,6 +52,8 @@
     <Compile Include="Components\ComponentList.cs" />
     <Compile Include="Components\IArchDrawable.cs" />
     <Compile Include="Components\IArchUpdateable.cs" />
+    <Compile Include="Components\XnaComponents\Sprite.cs" />
+    <Compile Include="Components\XnaComponents\Text.cs" />
     <Compile Include="Extensions\MathAsExtensions.cs" />
     <Compile Include="Extensions\MiscExtensions.cs" />
     <Compile Include="Extensions\SpriteBatchExtensions.cs" />

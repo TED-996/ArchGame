@@ -1,15 +1,29 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 
 namespace ArchGame.Extensions {
 	public static class MiscExtensions {
+		/// <summary>
+		/// Multiplies a TimeSpan a certain number of times.
+		/// </summary>
+		/// <param name="timeSpan">The TimeSpan to multiply</param>
+		/// <param name="factor">The factor to multiply the TimeSpan with</param>
+		/// <returns></returns>
 		public static TimeSpan Multiply(this TimeSpan timeSpan, double factor) {
 			return new TimeSpan((long)(timeSpan.Ticks * factor));
 		}
 
+		/// <summary>
+		/// Returns a string multiplied a certain number of times.
+		/// "123".Multiply(3) returns "123123123"
+		/// </summary>
+		/// <param name="thisString">The string to multiply</param>
+		/// <param name="times">How many times to multiply the string.</param>
 		public static string Multiply(this string thisString, int times) {
-			const int efficiencyTreshold = 2;
+			const int efficiencyTreshold = 3;
 			if (times <= efficiencyTreshold) {
 				return MultiplyShortPath(thisString, times);
 			}
@@ -64,8 +78,36 @@ namespace ArchGame.Extensions {
 			return list.Contains(value);
 		}
 
+		/// <summary>
+		/// String.Format as extension method
+		/// </summary>
 		public static string Format(this string value, params object[] args) {
 			return string.Format(value, args);
 		}
+
+		/// <summary>
+		/// Sorts a list using LINQ's stable sort.
+		/// Potentially expensive for large list sizes.
+		/// </summary>
+		/// <typeparam name="T">The list type</typeparam>
+		/// <param name="list">The list to sort</param>
+		/// <param name="comparer">A Comparison&lt;T&gt; to use when sorting</param>
+		public static void StableSort<T>(this List<T> list, Comparison<T> comparer) {
+			List<T> orderedList = list.OrderBy(k => k, new ComparisonToIComparer<T>(comparer)).ToList();
+			list.Clear();
+			list.AddRange(orderedList);
+		}
+
+		class ComparisonToIComparer<T> : IComparer<T> {
+			readonly Comparison<T> comparison;
+
+			public ComparisonToIComparer(Comparison<T> newComparison) {
+				comparison = newComparison;
+			}  
+
+			public int Compare(T x, T y) {
+				return comparison(x, y);
+			}
+		} 
 	}
 }

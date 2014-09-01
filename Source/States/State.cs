@@ -20,19 +20,19 @@ namespace ArchGame.States {
 			componentList = new ComponentList();
 		}
 
-		public void LoadContent(ContentManager contentManager) {
+		public virtual void LoadContent(ContentManager contentManager) {
 			componentList.LoadContent(contentManager);
 		}
 
-		public void Update(GameTime gameTime) {
+		public virtual void Update(GameTime gameTime) {
 			componentList.Update(gameTime);
 		}
 
-		public void Draw(SpriteBatch spriteBatch) {
+		public virtual void Draw(SpriteBatch spriteBatch) {
 			componentList.Draw(spriteBatch);
 		}
 
-		public void Dispose() {
+		public virtual void Dispose() {
 			componentList.Dispose();
 		}
 	}

@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using ArchGame.Extensions;
 
 namespace ArchGame.Components {
 	public class ComponentList : IArchLoadable, IArchUpdateable, IArchDrawable, IDisposable {
@@ -99,7 +100,7 @@ namespace ArchGame.Components {
 		}
 
 		void CleanUpdateables() {
-			updateables.Sort((u1, u2) => u2.UpdatePriority.CompareTo(u1.UpdatePriority));
+			updateables.StableSort((u1, u2) => u2.UpdatePriority.CompareTo(u1.UpdatePriority));
 			updateablesDirty = false;
 		}
 
@@ -111,7 +112,7 @@ namespace ArchGame.Components {
 		}
 
 		void CleanDrawables() {
-			drawables.Sort((d1, d2) => d1.ZIndex.CompareTo(d2.ZIndex));
+			drawables.StableSort((d1, d2) => d1.ZIndex.CompareTo(d2.ZIndex));
 			drawablesDirty = false;
 		}
 

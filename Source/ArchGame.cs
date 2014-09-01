@@ -54,6 +54,17 @@ namespace ArchGame {
 
 			ClipboardManager.Initialize(Window);
 			EventInputManager.Initialize(Window);
+			AppDomain.CurrentDomain.UnhandledException += OnException;
+		}
+
+		void OnException(object sender, UnhandledExceptionEventArgs e) {
+			Exception exception = e.ExceptionObject as Exception;
+			if (exception == null) {
+				logger.Log("Unhandled, unknown exception occured. Things have probably gone very wrong.");
+			}
+			else {
+				logger.Log(exception);
+			}
 		}
 
 		/// <summary>
