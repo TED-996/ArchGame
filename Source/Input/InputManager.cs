@@ -187,6 +187,7 @@ namespace ArchGame.Input {
 
 		/// <summary>
 		/// Returns true if the mouse button is currently pressed.
+		/// TODO: Use an enum for the mouse button
 		/// </summary>
 		/// <param name="mouseButton">The pressed mouse button</param>
 		/// <param name="obstructable">Wheteher obstructions should be considered</param>
