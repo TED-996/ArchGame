@@ -112,6 +112,7 @@
     <Compile Include="Game1.cs" />
     <Compile Include="States\GameState.cs" />
     <Compile Include="States\LoadingState.cs" />
+    <Compile Include="States\MenuState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
