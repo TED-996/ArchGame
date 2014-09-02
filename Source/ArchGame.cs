@@ -11,6 +11,10 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
 namespace ArchGame {
+	/// <summary>
+	/// This is the base class for your game.
+	/// Read the wiki for more info.
+	/// </summary>
 	public abstract class ArchGame : Game {
 		LoadableSet loadableSet;
 
@@ -126,6 +130,7 @@ namespace ArchGame {
 
 			stateManager = new StateManager(moduleFactory);
 			stateManager.LoadContent(Content);
+			moduleFactory.RegisterProvider(stateManager);
 
 			State loadingState = GetLoadingState();
 			if (loadingState != null) {

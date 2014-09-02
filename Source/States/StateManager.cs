@@ -12,6 +12,7 @@ namespace ArchGame.States {
 	/// The stateManager keeps a stack of States and manages operations on that stack.
 	/// It also delegates calls to Update(), Draw() and ObstructArea() to the top state
 	/// Also, it loads and disposes states when pushed or popped from the stack.
+	/// The StateManager is accesible to implementation code through the ModuleFactory, where it's requestable.
 	/// See the wiki for more information.
 	/// </summary>
 	public class StateManager : IArchLoadable, IArchUpdateable, IArchObstruction, IArchDrawable, IDisposable {
