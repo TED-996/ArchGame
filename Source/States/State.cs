@@ -1,5 +1,6 @@
 ﻿using System;
 using ArchGame.Components;
+using ArchGame.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -11,7 +12,7 @@ namespace ArchGame.States {
 	/// The states' Update and Draw methods are almost the only calls to implementation code during normal program execution.
 	/// See the github wiki for more info.
 	/// </summary>
-	public abstract class State : IArchLoadable, IArchUpdateable, IArchDrawable, IDisposable {
+	public abstract class State : IArchLoadable, IArchUpdateable, IArchObstruction, IArchDrawable, IDisposable {
 		/// <summary>
 		/// The ComponentList
 		/// </summary>
@@ -20,7 +21,6 @@ namespace ArchGame.States {
 		public int UpdatePriority {
 			get { return 0; }
 		}
-
 		public int ZIndex {
 			get { return 0; }
 		}
@@ -51,10 +51,18 @@ namespace ArchGame.States {
 		}
 
 		/// <summary>
+		/// Prompt the components in the State to obstruct their area.
+		/// </summary>
+		/// <param name="inputManager">The InputManager to register obstructions in</param>
+		public void ObstructArea(InputManager inputManager) {
+			componentList.ObstructArea(inputManager);
+		}
+
+		/// <summary>
 		/// Draw the State.
 		/// The base implementation draws the componentList items.
 		/// </summary>
-		/// <param name="spriteBatch"></param>
+		/// <param name="spriteBatch">The SpriteBatch to draw with</param>
 		public virtual void Draw(SpriteBatch spriteBatch) {
 			componentList.Draw(spriteBatch);
 		}

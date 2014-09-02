@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using ArchGame.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -8,18 +9,39 @@ using ArchGame.Extensions;
 
 namespace ArchGame.Components {
 	/// <summary>
-	/// The ComponentList keeps lists of IArchLoadables, IArchUpdateables, IArchDrawables and IDisposables and performs the requested
-	/// operations on all components. Use it to declaratively add behaviour and appearance to your states.
+	/// The ComponentList keeps lists of IArchLoadables, IArchUpdateables, IArchObstructables IArchDrawables and IDisposables 
+	/// Performs the requested operations on all components. Use it to declaratively add behaviour and appearance to your states.
 	/// </summary>
-	public class ComponentList : IArchLoadable, IArchUpdateable, IArchDrawable, IDisposable {
+	public class ComponentList : IArchLoadable, IArchUpdateable, IArchDrawable, IArchObstruction, IDisposable {
 		readonly List<IArchLoadable> loadables;
 		readonly List<IArchUpdateable> updateables;
+		readonly List<IArchObstruction> obstructions; 
 		readonly List<IArchDrawable> drawables;
 		readonly List<IDisposable> disposables;
 
+		/// <summary>
+		/// Get the IArchLoadables as a read-only collection.
+		/// </summary>
 		public ReadOnlyCollection<IArchLoadable> Loadables { get { return loadables.AsReadOnly(); } }
+
+		/// <summary>
+		/// Get the IArchUpdateables as a read-only collection.
+		/// </summary>
 		public ReadOnlyCollection<IArchUpdateable> Updateables { get { return updateables.AsReadOnly(); } }
+
+		/// <summary>
+		/// Get the IArchObstructions as a read-only collection.
+		/// </summary>
+		public ReadOnlyCollection<IArchObstruction> Obstructions { get { return obstructions.AsReadOnly(); } }
+
+		/// <summary>
+		/// Get the IArchDrawables as a read-only collection.
+		/// </summary>
 		public ReadOnlyCollection<IArchDrawable> Drawables { get { return drawables.AsReadOnly(); } }
+
+		/// <summary>
+		/// Get the IArchDisposables as a read-only collection.
+		/// </summary>
 		public ReadOnlyCollection<IDisposable> Disposables { get { return disposables.AsReadOnly(); } }
 
 		public int ZIndex { get { return 0; } }
@@ -34,6 +56,7 @@ namespace ArchGame.Components {
 		public ComponentList() {
 			loadables = new List<IArchLoadable>();
 			updateables = new List<IArchUpdateable>();
+			obstructions = new List<IArchObstruction>();
 			drawables = new List<IArchDrawable>();
 			disposables = new List<IDisposable>();
 
@@ -63,6 +86,10 @@ namespace ArchGame.Components {
 				updateables.Add(updateable);
 				updateablesDirty = true;
 			}
+			IArchObstruction obstruction = component as IArchObstruction;
+			if (obstruction != null) {
+				obstructions.Add(obstruction);
+			}
 			IArchDrawable drawable = component as IArchDrawable;
 			if (drawable != null) {
 				drawables.Add(drawable);
@@ -81,6 +108,7 @@ namespace ArchGame.Components {
 		public void AppendList(ComponentList other) {
 			loadables.AddRange(other.Loadables);
 			updateables.AddRange(other.Updateables);
+			obstructions.AddRange(other.obstructions);
 			drawables.AddRange(other.Drawables);
 			disposables.AddRange(other.Disposables);
 
@@ -100,6 +128,10 @@ namespace ArchGame.Components {
 			IArchUpdateable updateable = component as IArchUpdateable;
 			if (updateable != null) {
 				updateables.Remove(updateable);
+			}
+			IArchObstruction obstruction = component as IArchObstruction;
+			if (obstruction != null) {
+				obstructions.Remove(obstruction);
 			}
 			IArchDrawable drawable = component as IArchDrawable;
 			if (drawable != null) {
@@ -133,6 +165,13 @@ namespace ArchGame.Components {
 		void CleanUpdateables() {
 			updateables.StableSort((u1, u2) => u2.UpdatePriority.CompareTo(u1.UpdatePriority));
 			updateablesDirty = false;
+		}
+
+		/// <summary>
+		/// Prompt each IArchObstruction to obstruct its area.
+		/// </summary>
+		public void ObstructArea(InputManager inputManager) {
+			obstructions.ForEach(obstruction => obstruction.ObstructArea(inputManager));
 		}
 
 		/// <summary>

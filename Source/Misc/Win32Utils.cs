@@ -10,7 +10,13 @@ namespace ArchGame.Misc {
 
 		[DllImport("user32.dll")]
 		private static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);
-		public static void ChangeWindow(GameWindow window, WindowStyle windowStyle) {
+
+		/// <summary>
+		/// Change the window style (normal, minimized, maximized)
+		/// </summary>
+		/// <param name="window">The window to change</param>
+		/// <param name="windowStyle">The style to apply</param>
+		public static void ChangeWindowSize(GameWindow window, WindowStyle windowStyle) {
 			ShowWindowAsync(window.Handle, (int) windowStyle);
 		} 
 

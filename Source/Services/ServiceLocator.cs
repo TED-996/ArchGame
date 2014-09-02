@@ -3,7 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace ArchGame.Services {
+	/// <summary>
+	/// The ServiceLocator is a class that contains a list of services and makes them globally accesible by type.
+	/// Use this feature sparingly, global access is often missused.
+	/// </summary>
 	public static class ServiceLocator {
+		/// <summary>
+		/// Get the default providers.
+		/// </summary>
 		public static IServiceProvider[] DefaultProviders {
 			get {
 				return new IServiceProvider[] {
@@ -12,11 +19,10 @@ namespace ArchGame.Services {
 			}
 		}
 
-		
 		static readonly Dictionary<Type, IServiceProvider> Providers;
 
 		/// <summary>
-		/// Instantiates a new ServiceLocator
+		/// Initializes the static ServiceProvider class.
 		/// </summary>
 		static ServiceLocator() {
 			Providers = new Dictionary<Type, IServiceProvider>();
@@ -34,7 +40,7 @@ namespace ArchGame.Services {
 		}
 
 		/// <summary>
-		/// Adds providers.
+		/// Adds providers from an IEnumerable.
 		/// </summary>
 		public static void AddProviders(IEnumerable<IServiceProvider> providers) {
 			foreach (IServiceProvider provider in providers) {
@@ -44,8 +50,9 @@ namespace ArchGame.Services {
 
 		/// <summary>
 		/// Gets a service.
+		/// The type must be the same as the one used when registering.
 		/// </summary>
-		/// <typeparam name="T">The ABSTRACT/INTERFACE type to get.</typeparam>
+		/// <typeparam name="T">The ABSTRACT/INTERFACE (if it exists) type to get.</typeparam>
 		/// <returns>The service of the requested type, if the provider exists.</returns>
 		public static T GetService<T>() where T : class {
 			Type type = typeof(T);

@@ -50,8 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\ComponentList.cs" />
+    <Compile Include="Components\ContentToIArchLoadable.cs" />
     <Compile Include="Components\IArchDrawable.cs" />
     <Compile Include="Components\IArchUpdateable.cs" />
+    <Compile Include="Components\IArchObstruction.cs" />
+    <Compile Include="Components\IZIndexComponent.cs" />
     <Compile Include="Components\XnaComponents\Sprite.cs" />
     <Compile Include="Components\XnaComponents\Text.cs" />
     <Compile Include="Extensions\MathAsExtensions.cs" />
@@ -63,7 +66,7 @@
     <Compile Include="Components\IArchLoadable.cs" />
     <Compile Include="Input\ClipboardManager.cs" />
     <Compile Include="Input\EventInputManager.cs" />
-    <Compile Include="Input\InputState.cs" />
+    <Compile Include="Input\InputManager.cs" />
     <Compile Include="Input\StringInputProcessor.cs" />
     <Compile Include="LoadableSet.cs" />
     <Compile Include="Logger.cs" />

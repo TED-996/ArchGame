@@ -3,6 +3,9 @@ using System.Runtime.InteropServices;
 using Microsoft.Xna.Framework;
 
 namespace ArchGame.Input {
+	/// <summary>
+	/// Class that allows access to the system clipboard.
+	/// </summary>
 	public static class ClipboardManager {
 		[DllImport("user32.dll")]
 		static extern bool OpenClipboard(IntPtr hWndNewOwner);
@@ -23,7 +26,7 @@ namespace ArchGame.Input {
 		/// Intialize the ClipboardManager with the GameWindow handle.
 		/// </summary>
 		/// <param name="window">The window to initalize the ClipboardManager with</param>
-		public static void Initialize(GameWindow window) {
+		internal static void Initialize(GameWindow window) {
 			windowHandle = window.Handle;
 		}
 

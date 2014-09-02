@@ -3,14 +3,9 @@
 namespace ArchGame.Components {
 	/// <summary>
 	/// IArchDrawable is an interface for components that should draw objects on the screen.
+	/// Requires IZIndexComponent to get the order in which the components should be drawn.
 	/// </summary>
-	public interface IArchDrawable {
-		/// <summary>
-		/// The ZIndex is a number that represents the order in which components should be drawn on the screen.
-		/// An IArchDrawable with a lower ZIndex will be drawn before, and therefore behind IArchDrawables with a higher ZIndex.
-		/// </summary>
-		int ZIndex { get; }
-
+	public interface IArchDrawable : IZIndexComponent {
 		/// <summary>
 		/// Draw the IArchDrawable.
 		/// </summary>

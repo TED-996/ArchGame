@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace ArchGame.Modules {
+	/// <summary>
+	/// The ModuleCollection is a class that contains a list of modules and allows their retrieval by type.
+	/// </summary>
 	public class ModuleCollection {
 		readonly Dictionary<TypeStringPair, IModuleProvider> providers;
 
@@ -45,21 +48,21 @@ namespace ArchGame.Modules {
 
 		/// <summary>
 		/// Gets a module.
+		/// The type must be the same type as the one used when registering.
 		/// </summary>
-		/// <typeparam name="T">The ABSTRACT/INTERFACE type to get.</typeparam>
+		/// <typeparam name="T">The ABSTRACT/INTERFACE (if it exists) type to get.</typeparam>
 		/// <returns>The module of the requested type, if the provider exists.</returns>
 		public T GetModule<T>() where T : class {
 			Type type = typeof (T);
 			if (!typeToPair.ContainsKey(type)) {
 				throw new InvalidOperationException("ModuleProvider not found.");
 			}
-			IModuleProvider provider = providers[typeToPair[typeof (T)]];
+			IModuleProvider provider = providers[typeToPair[type]];
 			return (T) provider.GetModule();
 		}
 
 		/// <summary>
 		/// Sets the module for a provider of the specified type.
-		/// TODO: Maybe delete?
 		/// </summary>
 		/// <typeparam name="T">The type to set. May be exact type or derived.</typeparam>
 		/// <param name="module">The module to set.</param>
@@ -86,7 +89,6 @@ namespace ArchGame.Modules {
 		/// TODO: Maybe delete?
 		/// </summary>
 		/// <typeparam name="T">The type that the provider provides.</typeparam>
-		/// <returns></returns>
 		internal IModuleProvider GetProvider<T>() where T : class {
 			Type type = typeof(T);
 			if (!typeToPair.ContainsKey(type)) {
@@ -99,7 +101,6 @@ namespace ArchGame.Modules {
 		/// Gets a provider from type name.
 		/// </summary>
 		/// <param name="typeName">The name of the type that the provider provides.</param>
-		/// <returns></returns>
 		internal IModuleProvider GetProvider(string typeName) {
 			if (!stringToPair.ContainsKey(typeName)) {
 				throw new InvalidOperationException("ModuleProvider not found.");

@@ -16,7 +16,7 @@ namespace Test.States {
 		readonly Sprite sprite;
 		readonly Text text;
 
-		InputState inputState;
+		InputManager inputManager;
 
 		TimeSpan accumulator;
 
@@ -37,27 +37,27 @@ namespace Test.States {
 
 			Vector2 direction = new Vector2();
 			const float velocity = 2;
-			if (inputState.IsKeyPressed(Keys.Up)) {
+			if (inputManager.IsKeyPressed(Keys.Up)) {
 				direction += new Vector2(0, -1);
 			}
-			if (inputState.IsKeyPressed(Keys.Down)) {
+			if (inputManager.IsKeyPressed(Keys.Down)) {
 				direction += new Vector2(0, 1);
 			}
-			if (inputState.IsKeyPressed(Keys.Left)) {
+			if (inputManager.IsKeyPressed(Keys.Left)) {
 				direction += new Vector2(-1, 0);
 			}
-			if (inputState.IsKeyPressed(Keys.Right)) {
+			if (inputManager.IsKeyPressed(Keys.Right)) {
 				direction += new Vector2(1, 0);
 			}
 
 			sprite.Position = sprite.Position + direction * velocity;
 			text.Position = text.Position + direction * velocity;
 
-			if (inputState.HasKeyBeenPressed(Keys.Space)) {
+			if (inputManager.HasKeyBeenPressed(Keys.Space)) {
 				componentList.Add(new Sprite(sprite) {Color = Color.White, ZIndex = 0});
 			}
 
-			if (inputState.HasKeyBeenPressed(Keys.C)) {
+			if (inputManager.HasKeyBeenPressed(Keys.C)) {
 				sprite.Center = !sprite.Center;
 				text.Center = !text.Center;
 			}
@@ -75,11 +75,11 @@ namespace Test.States {
 		}
 
 		public IEnumerable<string> GetRequestedModules() {
-			return new[] {"InputState"};
+			return new[] {"InputManager"};
 		}
 
 		public void SetModules(ModuleCollection collection, ModuleFactory factory) {
-			inputState = collection.GetModule<InputState>();
+			inputManager = collection.GetModule<InputManager>();
 		}
 	}
 }

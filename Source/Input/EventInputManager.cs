@@ -3,6 +3,10 @@ using System.Runtime.InteropServices;
 using Microsoft.Xna.Framework;
 
 namespace ArchGame.Input {
+	/// <summary>
+	/// Class that allows event-based input.
+	/// Because it gets the entered character, not key, it is extremely useful for string (text) input.
+	/// </summary>
 	public static class EventInputManager {
 		/// <summary>
 		/// Event raised when a character has been entered.
@@ -47,7 +51,7 @@ namespace ArchGame.Input {
 		/// Initialize the TextInput with the given GameWindow.
 		/// </summary>
 		/// <param name="window">The XNA window to which text input should be linked.</param>
-		public static void Initialize(GameWindow window) {
+		internal static void Initialize(GameWindow window) {
 			if (initialized)
 				throw new InvalidOperationException("TextInput.Initialize can only be called once!");
 
@@ -93,18 +97,32 @@ namespace ArchGame.Input {
 		}
 	}
 
-
+	/// <summary>
+	/// Class that represents an entered character
+	/// </summary>
 	public class CharacterEventArgs :EventArgs {
 		private readonly char character;
 
-		public CharacterEventArgs(char character) {
+		/// <summary>
+		/// Initialize a new object of type CharacterEventArgs
+		/// </summary>
+		/// <param name="character">The entered character</param>
+		internal CharacterEventArgs(char character) {
 			this.character = character;
 		}
 
+		/// <summary>
+		/// Get the entered character
+		/// </summary>
 		public char Character {
 			get { return character; }
 		}
 	}
 
+	/// <summary>
+	/// The event handler for an entered character
+	/// </summary>
+	/// <param name="sender">The sender</param>
+	/// <param name="e">The EventArgs, containing the entered character</param>
 	public delegate void CharEnteredHandler(object sender, CharacterEventArgs e);
 }

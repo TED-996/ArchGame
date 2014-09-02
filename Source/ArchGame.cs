@@ -15,7 +15,7 @@ namespace ArchGame {
 		LoadableSet loadableSet;
 
 		protected readonly ILogger logger;
-		protected readonly InputState inputState;
+		protected readonly InputManager inputManager;
 
 		protected readonly ModuleFactory moduleFactory;
 
@@ -25,12 +25,12 @@ namespace ArchGame {
 		protected SpriteBatch spriteBatch;
 
 		/// <summary>
-		/// Initialize a new Game object.
+		/// Initialize the base class of a ArchGame implementation.
 		/// </summary>
 		/// <param name="gameName">The name of the game window</param>
 		/// <param name="screenWidth"></param>
 		/// <param name="screenHeight"></param>
-		/// <param name="newLogger">The logger to use. If null, a ThreadedLogger will be used.</param>
+		/// <param name="newLogger">The logger to use. If null, a NullLogger will be used.</param>
 		/// <param name="contentRoot">Name of the content root folder</param>
 		/// <param name="fullscreen">Whether the game should be full-screen</param>
 		protected ArchGame(string gameName, int screenWidth, int screenHeight, ILogger newLogger, string contentRoot = "Content",
@@ -45,30 +45,21 @@ namespace ArchGame {
 			Window.Title = gameName;
 			Content.RootDirectory = contentRoot;
 
-			logger = newLogger ?? new ThreadedLogger();
-			inputState = new InputState();
+			logger = newLogger ?? new NullLogger();
+			inputManager = new InputManager();
 
 			moduleFactory = new ModuleFactory();
 
-			moduleFactory.RegisterProvider(inputState);
+			moduleFactory.RegisterProvider(inputManager);
 
 			ClipboardManager.Initialize(Window);
 			EventInputManager.Initialize(Window);
 			AppDomain.CurrentDomain.UnhandledException += OnException;
 		}
 
-		void OnException(object sender, UnhandledExceptionEventArgs e) {
-			Exception exception = e.ExceptionObject as Exception;
-			if (exception == null) {
-				logger.Log("Unhandled, unknown exception occured. Things have probably gone very wrong.");
-			}
-			else {
-				logger.Log(exception);
-			}
-		}
-
 		/// <summary>
 		/// Initialize a new Game object.
+		/// The logger will be set to a ThreadedLogger.
 		/// </summary>
 		/// <param name="gameName">The name of the game window</param>
 		/// <param name="screenWidth"></param>
@@ -76,7 +67,7 @@ namespace ArchGame {
 		/// <param name="contentRoot">Name of the content root folder</param>
 		/// <param name="fullscreen">Whether the game should be full-screen</param>
 		protected ArchGame(string gameName, int screenWidth, int screenHeight, string contentRoot = "Content",
-			bool fullscreen = false) : this(gameName, screenWidth, screenHeight, null, contentRoot, fullscreen) {
+			bool fullscreen = false) : this(gameName, screenWidth, screenHeight, new ThreadedLogger(), contentRoot, fullscreen) {
 		}
 
 		/// <summary>
@@ -149,7 +140,7 @@ namespace ArchGame {
 			logger.Log("Game starting...", "Game");
 
 		}
-		
+
 		/// <summary>
 		/// Constructs the modules and loads the content on the loading thread
 		/// </summary>
@@ -184,7 +175,10 @@ namespace ArchGame {
 		/// </summary>
 		/// <param name="gameTime">The GameTime</param>
 		protected override void Update(GameTime gameTime) {
-			inputState.Update(Keyboard.GetState(), Mouse.GetState(), gameTime);
+			inputManager.Update(Keyboard.GetState(), Mouse.GetState(), gameTime);
+
+			stateManager.ObstructArea(inputManager);
+
 			stateManager.Update(gameTime);
 		}
 
@@ -209,6 +203,19 @@ namespace ArchGame {
 			moduleFactory.Dispose();
 
 			logger.Dispose();
+		}
+
+		/// <summary>
+		/// Logs the exception if one occurs.
+		/// </summary>
+		void OnException(object sender, UnhandledExceptionEventArgs e) {
+			Exception exception = e.ExceptionObject as Exception;
+			if (exception == null) {
+				logger.Log("Unhandled, unknown exception occured. Things have probably gone very wrong.");
+			}
+			else {
+				logger.Log(exception);
+			}
 		}
 	}
 }

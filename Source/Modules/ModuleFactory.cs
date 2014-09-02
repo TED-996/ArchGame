@@ -6,7 +6,8 @@ using Microsoft.Xna.Framework.Content;
 
 namespace ArchGame.Modules {
 	/// <summary>
-	/// Responsible for building the modules.
+	/// Responsible for building the modules and fullfilling their requests.
+	/// Also loads the content of and disposes modules at the appropriate time.
 	/// </summary>
 	public class ModuleFactory : IDisposable, IArchLoadable {
 		readonly ModuleCollection moduleCollection;
@@ -18,6 +19,9 @@ namespace ArchGame.Modules {
 		readonly List<IArchLoadable> loadables; 
 		readonly List<IDisposable> disposables; 
 		
+		/// <summary>
+		/// Initializes a new instance of type ModuleFactory.
+		/// </summary>
 		internal ModuleFactory() {
 			moduleCollection = new ModuleCollection();
 			requesters = new List<IModuleRequester>();
@@ -37,7 +41,6 @@ namespace ArchGame.Modules {
 
 		/// <summary>
 		/// Gets a constructed module.
-		/// TODO: Maybe delete?
 		/// </summary>
 		/// <typeparam name="T">The type of the module. If an interface type was registered, this must be the interface type too.
 		/// (e.g. IModule1)</typeparam>

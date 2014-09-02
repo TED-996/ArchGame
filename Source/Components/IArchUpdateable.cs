@@ -8,7 +8,7 @@ namespace ArchGame.Components {
 		/// <summary>
 		/// The UpdatePriority is a number that represents the order in which components should be updated.
 		/// An IArchUpdateable with a higher UpdatePriority will be updated before an IArchUpdateable with a lower UpdatePriority.
-		/// Take note that this is reverse to IArchDrawable.ZIndex.
+		/// Take note that this is reverse to IZIndexComponent.ZIndex (required by IArchDrawable and IArchObstruction).
 		/// </summary>
 		int UpdatePriority { get; }
 
