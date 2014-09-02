@@ -375,7 +375,6 @@ namespace ArchGame {
 		Warning,
 		/// <summary>
 		/// This message signals a severe problem.
-		/// This message signals a severe problem.
 		/// </summary>
 		Error
 	}
