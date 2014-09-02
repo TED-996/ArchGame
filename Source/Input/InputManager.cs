@@ -1,22 +1,36 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using ArchGame.Components;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using ArchGame.Extensions;
 
 namespace ArchGame.Input {
-	public delegate void KeyEnteredDelegate();
-
-	public class InputState {
+	/// <summary>
+	/// Represents the current state of mouse and keyboard input.
+	/// See the wiki for help on how the input in ArchGame works.
+	/// </summary>
+	public class InputManager {
 		KeyboardState keyboardState;
 		KeyboardState oldKeyboardState;
 
 		MouseState mouseState;
 		MouseState oldMouseState;
 
+		/// <summary>
+		/// The X coordinate of the mouse
+		/// </summary>
 		public int MouseX { get { return (int)((mouseState.X - mouseOffsetX) / mouseScale); } }
-		public int TimeSinceLastKeypress { get; private set; }
+
+		/// <summary>
+		/// The Y coordinate of the mouse
+		/// </summary>
 		public int MouseY { get { return (int)((mouseState.Y - mouseOffsetY) / mouseScale); } }
+
+		/// <summary>
+		/// How much time has passed since the last keypress
+		/// </summary>
+		public int TimeSinceLastKeypress { get; private set; }
 
 		int mouseOffsetX;
 		int mouseOffsetY;
@@ -24,6 +38,9 @@ namespace ArchGame.Input {
 
 		readonly List<ObstructedSpot> obstructions;
 
+		/// <summary>
+		/// The StringInputProcessor
+		/// </summary>
 		public readonly StringInputProcessor StringInputProcessor;
 
 		readonly int[] keyTimeOut;
@@ -32,7 +49,10 @@ namespace ArchGame.Input {
 
 		bool isPaused;
 
-		internal InputState() {
+		/// <summary>
+		/// Initializes a new instance of type InputManager.
+		/// </summary>
+		internal InputManager() {
 			oldKeyboardState = new KeyboardState();
 			oldMouseState = new MouseState();
 
@@ -54,6 +74,12 @@ namespace ArchGame.Input {
 			mouseScale = 1;
 		}
 
+		/// <summary>
+		/// Updates the InputManager
+		/// </summary>
+		/// <param name="newKeyboardState">The keyboard state at this moment</param>
+		/// <param name="newMouseState">The mouse state at this moment</param>
+		/// <param name="gameTime">The GameTime</param>
 		internal void Update(KeyboardState newKeyboardState, MouseState newMouseState, GameTime gameTime) {
 			obstructions.Clear();
 			if (isPaused) {
@@ -93,10 +119,16 @@ namespace ArchGame.Input {
 			StringInputProcessor.Update();
 		}
 
+		/// <summary>
+		/// Returns true if a key is currently down.
+		/// </summary>
 		public bool IsKeyPressed(Keys key) {
 			return keyboardState.IsKeyDown(key);
 		}
 
+		/// <summary>
+		/// Returns true if a key has been pressed during this update cycle.
+		/// </summary>
 		public bool HasKeyBeenPressed(Keys key) {
 			if (isPaused) {
 				return false;
@@ -104,6 +136,9 @@ namespace ArchGame.Input {
 			return keyboardState.IsKeyDown(key) && oldKeyboardState.IsKeyUp(key);
 		}
 
+		/// <summary>
+		/// Returns true if a key has been depressed during this update cycle.
+		/// </summary>
 		public bool HasKeyBeenReleased(Keys key) {
 			if (isPaused) {
 				return false;
@@ -111,6 +146,13 @@ namespace ArchGame.Input {
 			return oldKeyboardState.IsKeyDown(key) && keyboardState.IsKeyUp(key);
 		}
 
+		/// <summary>
+		/// Returns true if a key has been pressed during this update cycle.
+		/// Also returns true if the key is held and a certain time interval has passed; the timer is then reset to allow for another 
+		/// keypress.
+		/// This attempts to simulate Windows' behaviour with held keys.
+		/// Press -> longer interval -> auto-press -> shorter interval -> auto-press (repeat until key is up)
+		/// </summary>
 		public bool HasKeyBeenPressedContinuous(Keys key) {
 			if (isPaused) {
 				return false;
@@ -120,15 +162,35 @@ namespace ArchGame.Input {
 			return keyTimeOut[index] == 0 || keyTimeOut[index] == DefaultTimeout;
 		}
 
+		/// <summary>
+		/// Returns true if the pixel at the given coordinates is currently obstructed.
+		/// </summary>
 		public bool IsPixelObstructed(int x, int y, int zIndex) {
 			return obstructions.Any(spot => spot.ZIndex > zIndex && spot.Rectangle.Contains(x, y));
 		}
 
+		/// <summary>
+		/// Adds a rectangle to the obstruction list.
+		/// </summary>
+		/// <param name="rectangle">The rectangle to be obstructed</param>
+		/// <param name="zIndex">The ZIndex of the rectangle</param>
 		public void ObstructArea(Rectangle rectangle, int zIndex) {
 			obstructions.Add(new ObstructedSpot { Rectangle = rectangle, ZIndex = zIndex });
 		}
 
+		/// <summary>
+		/// Prompt an IArchObstruction to register its obstruction.
+		/// </summary>
+		public void ObstructArea(IArchObstruction obstruction) {
+			obstruction.ObstructArea(this);
+		}
 
+		/// <summary>
+		/// Returns true if the mouse button is currently pressed.
+		/// </summary>
+		/// <param name="mouseButton">The pressed mouse button</param>
+		/// <param name="obstructable">Wheteher obstructions should be considered</param>
+		/// <param name="zIndex">The ZIndex of the clicked element, used if obstructions are considered</param>
 		public bool IsMouseButtonPressed(int mouseButton, bool obstructable = false, int zIndex = 0) {
 			if (obstructable && IsPixelObstructed(MouseX, MouseY, zIndex)) {
 				return false;
@@ -151,6 +213,12 @@ namespace ArchGame.Input {
 			return false;
 		}
 
+		/// <summary>
+		/// Returns true if the mouse button has been pressed in the last update cycle.
+		/// </summary>
+		/// <param name="mouseButton">The pressed mouse button</param>
+		/// <param name="obstructable">Wheteher obstructions should be considered</param>
+		/// <param name="zIndex">The ZIndex of the clicked element, used if obstructions are considered</param>
 		public bool HasMouseButtonBeenPressed(int mouseButton, bool obstructable = false, int zIndex = 0) {
 			if (isPaused) {
 				return false;
@@ -176,8 +244,14 @@ namespace ArchGame.Input {
 			return false;
 		}
 
-		public bool HasMouseButtonBeenReleased(int mouseButton, bool obstructable = false, int zIndex = 0,
-			bool defaultObstructed = true) {
+		/// <summary>
+		/// Returns true if the mouse button has been released in the last update cycle
+		/// </summary>
+		/// <param name="mouseButton">The pressed mouse button</param>
+		/// <param name="obstructable">Wheteher obstructions should be considered</param>
+		/// <param name="zIndex">The ZIndex of the clicked element, used if obstructions are considered</param>
+		/// <param name="defaultObstructed">The returned value if the element is obstructed</param>
+		public bool HasMouseButtonBeenReleased(int mouseButton, bool obstructable = false, int zIndex = 0, bool defaultObstructed = true) {
 			if (isPaused) {
 				return false;
 			}
@@ -211,19 +285,39 @@ namespace ArchGame.Input {
 			mouseScale = scale;
 		}
 
+		/// <summary>
+		/// Get the mouse coordinates.
+		/// </summary>
 		public void GetMouseCoordinates(out int mouseX, out int mouseY) {
 			mouseX = MouseX;
 			mouseY = MouseY;
 		}
 
+		/// <summary>
+		/// Get the mouse position as a Vector2
+		/// </summary>
+		public Vector2 GetMouseVector() {
+			return new Vector2(MouseX, MouseY);
+		}
+
+		/// <summary>
+		/// Get the movement of the mouse in the last update cycle as a Vector2
+		/// </summary>
 		public Vector2 GetMouseDisplacement() {
 			return new Vector2(mouseState.X - oldMouseState.X, mouseState.Y - oldMouseState.Y) / mouseScale;
 		}
 
+		/// <summary>
+		/// Get the movement of the scroll wheel in the last update cycle.
+		/// </summary>
 		public int GetScrollWheelDisplacement() {
 			return mouseState.ScrollWheelValue - oldMouseState.ScrollWheelValue;
 		}
 
+		/// <summary>
+		/// Returns true if one of the modifier is pressed.
+		/// It considers both keys in the case of pairs (for example, IsModifierPressed(Keys.LeftAlt) will also consider Keys.RightAlt)
+		/// </summary>
 		public bool IsModifierPressed(Keys modifier) {
 			if (modifier == Keys.LeftAlt || modifier == Keys.RightAlt) {
 				return IsKeyPressed(Keys.LeftAlt) || IsKeyPressed(Keys.RightAlt);
@@ -240,6 +334,9 @@ namespace ArchGame.Input {
 			return false;
 		}
 
+		/// <summary>
+		/// Returns an array of keys that were pressed during the last update cycle.
+		/// </summary>
 		public Keys[] GetKeysJustPressed() {
 			Keys[] currentKeys = keyboardState.GetPressedKeys();
 			Keys[] oldKeys = oldKeyboardState.GetPressedKeys();
@@ -254,12 +351,12 @@ namespace ArchGame.Input {
 			return recentKeysArray;
 		}
 
-		public void SetFocus(bool hasFocus) {
+		/// <summary>
+		/// Sets whether the window has focus (is currently active). If not, the InputManager is paused.
+		/// </summary>
+		/// <param name="hasFocus"></param>
+		internal void SetFocus(bool hasFocus) {
 			isPaused = !hasFocus;
-		}
-
-		public Vector2 GetMouseVector() {
-			return new Vector2(MouseX, MouseY);
 		}
 
 		struct ObstructedSpot {
