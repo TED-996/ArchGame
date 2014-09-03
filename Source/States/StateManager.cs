@@ -29,14 +29,14 @@ namespace ArchGame.States {
 		/// <summary>
 		/// Initializes a new instance of type StateManager.
 		/// </summary>
-		/// <param name="newFactory">The ModuleFactory to use to fullfill the requests of states.</param>
+		/// <param name="newFactory">The ModuleFactory to use to fulfill the requests of states.</param>
 		internal StateManager(ModuleFactory newFactory) {
 			factory = newFactory;
 			stateStack = new Stack<State>();
 		}
 
 		/// <summary>
-		/// Pushes a state to the stack. Its content will be loaded and its requests will be fullfilled.
+		/// Pushes a state to the stack. Its content will be loaded and its requests will be fulfilled.
 		/// </summary>
 		/// <param name="state">The state to push</param>
 		internal void PushState(State state) {
@@ -44,7 +44,7 @@ namespace ArchGame.States {
 
 			IModuleRequester stateAsRequester = state as IModuleRequester;
 			if (stateAsRequester != null) {
-				factory.FullfillRequestNow(stateAsRequester);
+				factory.FulfillRequestNow(stateAsRequester);
 			}
 
 			state.LoadContent(contentManager);
@@ -94,7 +94,7 @@ namespace ArchGame.States {
 			commandData = state;
 		}
 
-		void FullfillCommand() {
+		void FulfillCommand() {
 			if (command == Command.None) {
 				return;
 			}
@@ -132,11 +132,11 @@ namespace ArchGame.States {
 
 		/// <summary>
 		/// Prompts the current state to obstruct its area.
-		/// First, it fullfills the stack operation requests.
+		/// First, it fulfills the stack operation requests.
 		/// </summary>
 		/// <param name="inputManager">The InputManager to register the obstructions to</param>
 		public void ObstructArea(InputManager inputManager) {
-			FullfillCommand();
+			FulfillCommand();
 
 			if (stateStack.Count != 0) {
 				stateStack.Peek().ObstructArea(inputManager);

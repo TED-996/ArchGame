@@ -13,11 +13,11 @@ namespace ArchGame.Modules {
 
 		/// <summary>
 		/// Prompts the IModuleRequester to get the modules from the ModuleCollection.
-		/// It may then use ModuleFactory.FullfillRequestNow(IModuleRequester requester) to fullfill the requests of other members.
+		/// It may then use ModuleFactory.FulfillRequestNow(IModuleRequester requester) to fulfill the requests of other members.
 		/// </summary>
 		/// <param name="collection">The ModuleCollection with the requested modules. No other modules are present other than
 		/// the reqested ones.</param>
-		/// <param name="factory">The ModuleFactory for fullfilling the requests of other members</param>
+		/// <param name="factory">The ModuleFactory for fulfilling the requests of other members</param>
 		void SetModules(ModuleCollection collection, ModuleFactory factory);
 	}
 }

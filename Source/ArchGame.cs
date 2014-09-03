@@ -153,7 +153,7 @@ namespace ArchGame {
 		void LoaderThreadStart(Object content) {
 			logger.Log("Factory starting up");
 			moduleFactory.ConstructModules();
-			moduleFactory.FullfillRequests();
+			moduleFactory.FulfillRequests();
 			logger.Log("Factory done.");
 
 			logger.Log("Started threaded loading.", "Game");

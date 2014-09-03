@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace ArchGame.Modules {
 	/// <summary>
-	/// Responsible for building the modules and fullfilling their requests.
+	/// Responsible for building the modules and fulfilling their requests.
 	/// Also loads the content of and disposes modules at the appropriate time.
 	/// </summary>
 	public class ModuleFactory : IDisposable, IArchLoadable {
@@ -87,8 +87,8 @@ namespace ArchGame.Modules {
 		}
 
 		/// <summary>
-		/// Register a module requester. The request will be fullfilled after the content has been loaded.
-		/// It you want to fullfill the request immediately, use FullfillRequestNow(IModuleRequester).
+		/// Register a module requester. The request will be fulfilled after the content has been loaded.
+		/// It you want to fulfill the request immediately, use FulfillRequestNow(IModuleRequester).
 		/// </summary>
 		/// <param name="requester">An object that implements IModuleRequester.</param>
 		public void RegisterRequester(IModuleRequester requester) {
@@ -163,7 +163,7 @@ namespace ArchGame.Modules {
 
 		/// <summary>
 		/// Register an already constructed object.
-		/// Requests will be fullfilled and it will be loaded and disposed at the appropriate time.
+		/// Requests will be fulfilled and it will be loaded and disposed at the appropriate time.
 		/// </summary>
 		/// <param name="module"></param>
 		public void RegisterObject(Object module) {
@@ -180,20 +180,20 @@ namespace ArchGame.Modules {
 		}
 
 		/// <summary>
-		/// Fullfill the IModuleRequester requests. Called by Game, only once, after the content has been loaded and the
+		/// Fulfill the IModuleRequester requests. Called by Game, only once, after the content has been loaded and the
 		/// modules have been constructed.
 		/// </summary>
-		internal void FullfillRequests() {
+		internal void FulfillRequests() {
 			foreach (IModuleRequester requester in requesters) {
 				requester.SetModules(BuildCollection(requester.GetRequestedModules()), this);
 			}
 		}
 
 		/// <summary>
-		/// Fullfills a request immediately.
+		/// Fulfills a request immediately.
 		/// </summary>
 		/// <param name="requester">The requester to receive the dependencies.</param>
-		public void FullfillRequestNow(IModuleRequester requester) {
+		public void FulfillRequestNow(IModuleRequester requester) {
 			requester.SetModules(BuildCollection(requester.GetRequestedModules().ToArray()), this);
 		}
 
