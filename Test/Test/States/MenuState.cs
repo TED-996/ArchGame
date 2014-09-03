@@ -9,6 +9,9 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
 namespace Test.States {
+	/// <summary>
+	/// This will be shown right after the content has been loaded.
+	/// </summary>
 	public class MenuState : State, IModuleRequester {
 		InputManager inputManager;
 		StateManager stateManager;
@@ -18,6 +21,7 @@ namespace Test.States {
 		}
 
 		public IEnumerable<string> GetRequestedModules() {
+			//We need the InputManager to read the Enter key and the StateManager to request to show the GameState.
 			return new[] {"InputManager", "StateManager"};
 		}
 
@@ -30,8 +34,11 @@ namespace Test.States {
 			base.Update(gameTime);
 
 			if (inputManager.HasKeyBeenPressed(Keys.Enter)) {
+				//We use the ServiceLocator to get the logger from anywhere. See that we're getting ILogger and not Logger; the logger 
+				//may be a ThreadedLogger or a ConsoleLogger or a NullLogger (not logging anything), but we don't care.
 				ServiceLocator.GetService<ILogger>().Log("Requesting state push: stateManager.RequestPushState(new GameState())",
 					"MenuState");
+				//Request the StateManager to show the GameState instead of this.
 				stateManager.RequestPushState(new GameState());
 			}
 		}

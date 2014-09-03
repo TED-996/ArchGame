@@ -9,6 +9,7 @@ namespace Test {
         /// </summary>
         static void Main(string[] args)
         {
+			//Start the game the XNA way.
             using (Game1 game = new Game1())
             {
                 game.Run();
