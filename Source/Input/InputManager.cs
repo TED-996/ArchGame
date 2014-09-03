@@ -187,28 +187,27 @@ namespace ArchGame.Input {
 
 		/// <summary>
 		/// Returns true if the mouse button is currently pressed.
-		/// TODO: Use an enum for the mouse button
 		/// </summary>
-		/// <param name="mouseButton">The pressed mouse button</param>
+		/// <param name="mouseAction">The mouse action to return</param>
 		/// <param name="obstructable">Wheteher obstructions should be considered</param>
 		/// <param name="zIndex">The ZIndex of the clicked element, used if obstructions are considered</param>
-		public bool IsMouseButtonPressed(int mouseButton, bool obstructable = false, int zIndex = 0) {
+		public bool IsMouseButtonPressed(MouseAction mouseAction, bool obstructable = false, int zIndex = 0) {
 			if (obstructable && IsPixelObstructed(MouseX, MouseY, zIndex)) {
 				return false;
 			}
-			if (mouseButton == 1) {
+			if (mouseAction == MouseAction.Left) {
 				return mouseState.LeftButton == ButtonState.Pressed;
 			}
-			if (mouseButton == 2) {
+			if (mouseAction == MouseAction.Right) {
 				return mouseState.RightButton == ButtonState.Pressed;
 			}
-			if (mouseButton == 3) {
+			if (mouseAction == MouseAction.Middle) {
 				return mouseState.MiddleButton == ButtonState.Pressed;
 			}
-			if (mouseButton == 4) {
+			if (mouseAction == MouseAction.ScrollWheelDown) {
 				return mouseState.ScrollWheelValue > oldMouseState.ScrollWheelValue;
 			}
-			if (mouseButton == 5) {
+			if (mouseAction == MouseAction.ScrollWheelUp) {
 				return mouseState.ScrollWheelValue < oldMouseState.ScrollWheelValue;
 			}
 			return false;
@@ -217,29 +216,29 @@ namespace ArchGame.Input {
 		/// <summary>
 		/// Returns true if the mouse button has been pressed in the last update cycle.
 		/// </summary>
-		/// <param name="mouseButton">The pressed mouse button</param>
+		/// <param name="mouseAction">The mouse action to return</param>
 		/// <param name="obstructable">Wheteher obstructions should be considered</param>
 		/// <param name="zIndex">The ZIndex of the clicked element, used if obstructions are considered</param>
-		public bool HasMouseButtonBeenPressed(int mouseButton, bool obstructable = false, int zIndex = 0) {
+		public bool HasMouseButtonBeenPressed(MouseAction mouseAction, bool obstructable = false, int zIndex = 0) {
 			if (isPaused) {
 				return false;
 			}
 			if (obstructable && IsPixelObstructed(MouseX, MouseY, zIndex)) {
 				return false;
 			}
-			if (mouseButton == 1) {
+			if (mouseAction == MouseAction.Left) {
 				return mouseState.LeftButton == ButtonState.Pressed && oldMouseState.LeftButton == ButtonState.Released;
 			}
-			if (mouseButton == 2) {
+			if (mouseAction == MouseAction.Right) {
 				return mouseState.RightButton == ButtonState.Pressed && oldMouseState.RightButton == ButtonState.Released;
 			}
-			if (mouseButton == 3) {
+			if (mouseAction == MouseAction.Middle) {
 				return mouseState.MiddleButton == ButtonState.Pressed && oldMouseState.MiddleButton == ButtonState.Released;
 			}
-			if (mouseButton == 4) {
+			if (mouseAction == MouseAction.ScrollWheelDown) {
 				return mouseState.ScrollWheelValue > oldMouseState.ScrollWheelValue;
 			}
-			if (mouseButton == 5) {
+			if (mouseAction == MouseAction.ScrollWheelUp) {
 				return mouseState.ScrollWheelValue < oldMouseState.ScrollWheelValue;
 			}
 			return false;
@@ -248,30 +247,31 @@ namespace ArchGame.Input {
 		/// <summary>
 		/// Returns true if the mouse button has been released in the last update cycle
 		/// </summary>
-		/// <param name="mouseButton">The pressed mouse button</param>
+		/// <param name="mouseAction">The mouse action to return</param>
 		/// <param name="obstructable">Wheteher obstructions should be considered</param>
 		/// <param name="zIndex">The ZIndex of the clicked element, used if obstructions are considered</param>
 		/// <param name="defaultObstructed">The returned value if the element is obstructed</param>
-		public bool HasMouseButtonBeenReleased(int mouseButton, bool obstructable = false, int zIndex = 0, bool defaultObstructed = true) {
+		public bool HasMouseButtonBeenReleased(MouseAction mouseAction, bool obstructable = false, int zIndex = 0,
+			bool defaultObstructed = true) {
 			if (isPaused) {
 				return false;
 			}
 			if (obstructable && IsPixelObstructed(MouseX, MouseY, zIndex)) {
 				return defaultObstructed;
 			}
-			if (mouseButton == 1) {
+			if (mouseAction == MouseAction.Left) {
 				return mouseState.LeftButton == ButtonState.Released && oldMouseState.LeftButton == ButtonState.Pressed;
 			}
-			if (mouseButton == 2) {
+			if (mouseAction == MouseAction.Right) {
 				return mouseState.RightButton == ButtonState.Released && oldMouseState.RightButton == ButtonState.Pressed;
 			}
-			if (mouseButton == 3) {
+			if (mouseAction == MouseAction.Middle) {
 				return mouseState.MiddleButton == ButtonState.Released && oldMouseState.MiddleButton == ButtonState.Pressed;
 			}
-			if (mouseButton == 4) {
+			if (mouseAction == MouseAction.ScrollWheelDown) {
 				return mouseState.ScrollWheelValue > oldMouseState.ScrollWheelValue;
 			}
-			if (mouseButton == 5) {
+			if (mouseAction == MouseAction.ScrollWheelUp) {
 				return mouseState.ScrollWheelValue < oldMouseState.ScrollWheelValue;
 			}
 			return false;
@@ -364,6 +364,31 @@ namespace ArchGame.Input {
 			public Rectangle Rectangle;
 			public int ZIndex;
 		}
- 
+	}
+
+	/// <summary>
+	/// Represents a mouse action (one of the clicks or scroll wheel movement)
+	/// </summary>
+	public enum MouseAction {
+		/// <summary>
+		/// The left mouse button press
+		/// </summary>
+		Left,
+		/// <summary>
+		/// The right mouse button press
+		/// </summary>
+		Right,
+		/// <summary>
+		/// The middle mouse button press
+		/// </summary>
+		Middle,
+		/// <summary>
+		/// The action of scrolling up with the scroll wheel
+		/// </summary>
+		ScrollWheelUp,
+		/// <summary>
+		/// The action of scrolling down with the scroll wheel
+		/// </summary>
+		ScrollWheelDown
 	}
 }
