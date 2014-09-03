@@ -4,6 +4,9 @@ using System.Text;
 using System.Linq;
 
 namespace ArchGame.Extensions {
+	/// <summary>
+	/// Static class for extensions not fitting in other categories.
+	/// </summary>
 	public static class MiscExtensions {
 		/// <summary>
 		/// Multiplies a TimeSpan a certain number of times.

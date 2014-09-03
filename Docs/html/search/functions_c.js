@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['rectanglefromcoords',['RectangleFromCoords',['../class_arch_game_1_1_extensions_1_1_xna_extensions.html#a0d6fbf05dc09b4141251a5241f9d998e',1,'ArchGame::Extensions::XnaExtensions']]],
+  ['rectanglefrompoints',['RectangleFromPoints',['../class_arch_game_1_1_extensions_1_1_xna_extensions.html#a994a219086e05adf4cb658b693d9e2a9',1,'ArchGame::Extensions::XnaExtensions']]],
+  ['registerconstructor',['RegisterConstructor',['../class_arch_game_1_1_modules_1_1_module_factory.html#a6121701975ac8b8cee7202059a22a28a',1,'ArchGame::Modules::ModuleFactory']]],
+  ['registerconstructor_3c_20timpl_2c_20tinterface_20_3e',['RegisterConstructor&lt; TImpl, TInterface &gt;',['../class_arch_game_1_1_modules_1_1_module_factory.html#a34cc25413cc28f2d03fbf8f63aad7a3f',1,'ArchGame.Modules.ModuleFactory.RegisterConstructor&lt; TImpl, TInterface &gt;()'],['../class_arch_game_1_1_modules_1_1_module_factory.html#af25660f787224dc7c90de88198cae9a1',1,'ArchGame.Modules.ModuleFactory.RegisterConstructor&lt; TImpl, TInterface &gt;(Func&lt; TImpl &gt; constructorFunction)']]],
+  ['registermodule_3c_20timpl_20_3e',['RegisterModule&lt; TImpl &gt;',['../class_arch_game_1_1_modules_1_1_module_factory.html#a067d4eea5baa32af019582299a2dbfec',1,'ArchGame.Modules.ModuleFactory.RegisterModule&lt; TImpl &gt;()'],['../class_arch_game_1_1_modules_1_1_module_factory.html#a2b92e085a29ff32bf9920265827bff9a',1,'ArchGame.Modules.ModuleFactory.RegisterModule&lt; TImpl &gt;(Func&lt; TImpl &gt; constructorFunction)']]],
+  ['registermodule_3c_20timpl_2c_20tinterface_20_3e',['RegisterModule&lt; TImpl, TInterface &gt;',['../class_arch_game_1_1_modules_1_1_module_factory.html#a4185bebcddb194f471f38840009363dc',1,'ArchGame.Modules.ModuleFactory.RegisterModule&lt; TImpl, TInterface &gt;()'],['../class_arch_game_1_1_modules_1_1_module_factory.html#ad91c2aa4299da14ea2659cf207425c6a',1,'ArchGame.Modules.ModuleFactory.RegisterModule&lt; TImpl, TInterface &gt;(Func&lt; TImpl &gt; constructorFunction)']]],
+  ['registerobject',['RegisterObject',['../class_arch_game_1_1_modules_1_1_module_factory.html#aaa784212c39a499555969dd50e4ad710',1,'ArchGame::Modules::ModuleFactory']]],
+  ['registerprovider',['RegisterProvider',['../class_arch_game_1_1_modules_1_1_module_factory.html#a800688fcc22e463471754f997f8b5af9',1,'ArchGame::Modules::ModuleFactory']]],
+  ['registerprovider_3c_20t_20_3e',['RegisterProvider&lt; T &gt;',['../class_arch_game_1_1_modules_1_1_module_factory.html#a70f3037b6e8cc8306faff6253aad497f',1,'ArchGame::Modules::ModuleFactory']]],
+  ['registerrequester',['RegisterRequester',['../class_arch_game_1_1_modules_1_1_module_factory.html#aa82784dd18ac0dd1723742e140dd0f9a',1,'ArchGame::Modules::ModuleFactory']]],
+  ['remove',['Remove',['../class_arch_game_1_1_components_1_1_component_list.html#a39b8f83c5191cd711a19f13283695ff3',1,'ArchGame::Components::ComponentList']]],
+  ['replacetopstate',['ReplaceTopState',['../class_arch_game_1_1_states_1_1_state_manager.html#a66d4c81b1b3f1df25042a270e9a40600',1,'ArchGame::States::StateManager']]],
+  ['requestpopstate',['RequestPopState',['../class_arch_game_1_1_states_1_1_state_manager.html#ab9096c87456efe57b1920a1d6d1c886b',1,'ArchGame::States::StateManager']]],
+  ['requestpushstate',['RequestPushState',['../class_arch_game_1_1_states_1_1_state_manager.html#a22a1cd0f5e4db18b13c97ab512ae46ea',1,'ArchGame::States::StateManager']]],
+  ['requestreplacestate',['RequestReplaceState',['../class_arch_game_1_1_states_1_1_state_manager.html#aa6737e30d6a9b185e67436c22edd7cc4',1,'ArchGame::States::StateManager']]],
+  ['resetrecentkeys',['ResetRecentKeys',['../class_arch_game_1_1_input_1_1_string_input_processor.html#a2b1bb7cef77db04b314efcc9ef0a4b34',1,'ArchGame::Input::StringInputProcessor']]],
+  ['roundtoint',['RoundToInt',['../class_arch_game_1_1_extensions_1_1_math_as_extensions.html#a51c0c49659c02eaf2c61973033397a9f',1,'ArchGame.Extensions.MathAsExtensions.RoundToInt(this double thisValue)'],['../class_arch_game_1_1_extensions_1_1_math_as_extensions.html#a83ddcedede0064f74de210025be483b1',1,'ArchGame.Extensions.MathAsExtensions.RoundToInt(this float thisValue)']]]
+];

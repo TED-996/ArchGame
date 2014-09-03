@@ -2,6 +2,9 @@
 using Microsoft.Xna.Framework.Graphics;
 
 namespace ArchGame.Extensions {
+	/// <summary>
+	/// Static class with extensions for working with the XNA types.
+	/// </summary>
 	public static class XnaExtensions {
 		/// <summary>
 		/// Get a Vector3 from a Vector2. Consult the source code to see if this is an intended converison.

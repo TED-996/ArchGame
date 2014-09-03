@@ -3,11 +3,10 @@ using System.Runtime.InteropServices;
 using Microsoft.Xna.Framework;
 
 namespace ArchGame.Misc {
+	/// <summary>
+	/// Static class with methods working with the Win32 API
+	/// </summary>
 	public static class Win32Utils {
-		private const int SwShownormal = 1;
-		private const int SwShowminimized = 2;
-		private const int SwShowmaximized = 3;
-
 		[DllImport("user32.dll")]
 		private static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);
 
@@ -20,6 +19,22 @@ namespace ArchGame.Misc {
 			ShowWindowAsync(window.Handle, (int) windowStyle);
 		} 
 
-		public enum WindowStyle { Normal = 1, Minimized = 2, Maximized = 3 }
+		/// <summary>
+		/// Represents the way a window should appear.
+		/// </summary>
+		public enum WindowStyle {
+			/// <summary>
+			/// The window should not be maximized; it should fill as much space as it requests.
+			/// </summary>
+			Normal = 1,
+			/// <summary>
+			/// The window should be minimized to the taskbar.
+			/// </summary>
+			Minimized = 2, 
+			/// <summary>
+			/// The window should fill the entire desktop.
+			/// </summary>
+			Maximized = 3
+		}
 	}
 }

@@ -3,6 +3,9 @@ using System.IO;
 using System.Xml.Serialization;
 
 namespace ArchGame.Extensions {
+	/// <summary>
+	/// Static class with extensions for working with XML files.
+	/// </summary>
 	public static class XmlExtensions {
 		/// <summary>
 		/// Serialize an object to a string in XML format.

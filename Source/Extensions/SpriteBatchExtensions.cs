@@ -1,8 +1,10 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace ArchGame.Extensions {
+	/// <summary>
+	/// Static class with extensions for working with the SpriteBatch.
+	/// </summary>
 	public static class SpriteBatchExtensions {
 		/// <summary>
 		/// Draws a Texture2D with tiling.
