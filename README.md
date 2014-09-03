@@ -21,7 +21,7 @@ The example project (in the Test folder) clearly shows how easy working with Arc
 
 Disclaimer: Some of the feature names might be poorly chosen. Please let me know. Also, please let me know if I'm doing something bad.
 
-**Please read [the Wiki](wiki) for detailed explanations on how to use ArchGame.**
+**Please read [the Wiki](https://github.com/TED-996/ArchGame/wiki) for detailed explanations on how to use ArchGame.**
 
 ##License
 
