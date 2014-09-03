@@ -269,10 +269,10 @@ namespace ArchGame.Input {
 				return mouseState.MiddleButton == ButtonState.Released && oldMouseState.MiddleButton == ButtonState.Pressed;
 			}
 			if (mouseAction == MouseAction.ScrollWheelDown) {
-				return mouseState.ScrollWheelValue > oldMouseState.ScrollWheelValue;
+				return mouseState.ScrollWheelValue <= oldMouseState.ScrollWheelValue;
 			}
 			if (mouseAction == MouseAction.ScrollWheelUp) {
-				return mouseState.ScrollWheelValue < oldMouseState.ScrollWheelValue;
+				return mouseState.ScrollWheelValue >= oldMouseState.ScrollWheelValue;
 			}
 			return false;
 		}
