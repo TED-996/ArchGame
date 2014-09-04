@@ -15,13 +15,20 @@ Features so far:
 - Synchronous or asynchronous logging to file or to console.
 - Lots of useful extension methods, ranging from Math to XML to Vector2 to SpriteBatch.
 
-All the library code is documented. The project has its own Github wiki with lots of information.
+All the library code is [documented](http://ted-996.github.io/ArchGame/Docs/html/index.html). The project has its own [Github wiki](https://github.com/TED-996/ArchGame/wiki) with lots of information.
 
 The example project (in the Test folder) clearly shows how easy working with ArchGame is.
 
 Disclaimer: Some of the feature names might be poorly chosen. Please let me know. Also, please let me know if I'm doing something bad.
 
 **Please read [the Wiki](https://github.com/TED-996/ArchGame/wiki) for detailed explanations on how to use ArchGame.**
+
+##Links
+
+* [Github.io page](http://ted-996.github.io/ArchGame/)
+* [Documentation](http://ted-996.github.io/ArchGame/Docs/html/index.html)
+* [Documentation .ZIP](http://ted-996.github.io/ArchGame/Docs/Docs.zip)
+* [Github Wiki](https://github.com/TED-996/ArchGame/wiki)
 
 ##License
 
