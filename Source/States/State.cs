@@ -1,5 +1,4 @@
-﻿using System;
-using ArchGame.Components;
+﻿using ArchGame.Components;
 using ArchGame.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
@@ -12,24 +11,11 @@ namespace ArchGame.States {
 	/// The states' Update and Draw methods are almost the only calls to implementation code during normal program execution.
 	/// See the github wiki for more info.
 	/// </summary>
-	public abstract class State : IArchLoadable, IArchUpdateable, IArchObstruction, IArchDrawable, IDisposable {
-		/// <summary>
-		/// The ComponentList
-		/// </summary>
-		protected ComponentList componentList;
-
-		public int UpdatePriority {
-			get { return 0; }
-		}
-		public int ZIndex {
-			get { return 0; }
-		}
-
+	public abstract class State : ComponentListUser {
 		/// <summary>
 		/// Intialize the State base object.
 		/// </summary>
 		protected State() {
-			componentList = new ComponentList();
 		}
 
 		/// <summary>
@@ -37,8 +23,8 @@ namespace ArchGame.States {
 		/// The base implementation loads the content of the componentList items.
 		/// </summary>
 		/// <param name="contentManager">The ContentManager</param>
-		public virtual void LoadContent(ContentManager contentManager) {
-			componentList.LoadContent(contentManager);
+		public override void LoadContent(ContentManager contentManager) {
+			base.LoadContent(contentManager);
 		}
 
 		/// <summary>
@@ -46,16 +32,16 @@ namespace ArchGame.States {
 		/// The base implementation updates the componentList items.
 		/// </summary>
 		/// <param name="gameTime">The GameTime</param>
-		public virtual void Update(GameTime gameTime) {
-			componentList.Update(gameTime);
+		public override void Update(GameTime gameTime) {
+			base.Update(gameTime);
 		}
 
 		/// <summary>
 		/// Prompt the components in the State to obstruct their area.
 		/// </summary>
 		/// <param name="inputManager">The InputManager to register obstructions in</param>
-		public void ObstructArea(InputManager inputManager) {
-			componentList.ObstructArea(inputManager);
+		public override void ObstructArea(InputManager inputManager) {
+			base.ObstructArea(inputManager);
 		}
 
 		/// <summary>
@@ -63,16 +49,16 @@ namespace ArchGame.States {
 		/// The base implementation draws the componentList items.
 		/// </summary>
 		/// <param name="spriteBatch">The SpriteBatch to draw with</param>
-		public virtual void Draw(SpriteBatch spriteBatch) {
-			componentList.Draw(spriteBatch);
+		public override void Draw(SpriteBatch spriteBatch) {
+			base.Draw(spriteBatch);
 		}
 
 		/// <summary>
 		/// Dispose the State.
 		/// The base implementation disposes the componentList items.
 		/// </summary>
-		public virtual void Dispose() {
-			componentList.Dispose();
+		public override void Dispose() {
+			base.Dispose();
 		}
 	}
 }

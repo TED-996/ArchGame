@@ -1,25 +1,22 @@
 ﻿using ArchGame.Components;
 using ArchGame.Components.XnaComponents;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace Test.Network {
 	/// <summary>
 	/// Draws a response to the screen.
-	/// This is an example of drawing something without using the ComponentList.
-	/// An easier way to include the ComponentList will be made shortly.
+	/// This is an example of an entity made with the ComponentListUser.
 	/// </summary>
-	public class NetworkResponseRenderer : IArchUpdateable, IArchDrawable, IArchLoadable {
+	public class NetworkResponseRenderer : ComponentListUser {
 		readonly INetworkManager networkManager;
 		readonly Text responseText;
 
-		public int UpdatePriority { get { return -1; } }
-		public int ZIndex { get { return 5; } }
-
-		public NetworkResponseRenderer(INetworkManager newNetworkManager) {
+		public NetworkResponseRenderer(INetworkManager newNetworkManager) : base(0, 5) {
 			networkManager = newNetworkManager;
 			responseText = new Text("font", GetResponseString(), new Vector2(10, 10), Color.White);
+			
+			//Add the response Text to the component list
+			componentList.Add(responseText);
 		}
 
 		string GetResponseString() {
@@ -27,24 +24,13 @@ namespace Test.Network {
 		}
 
 		/// <summary>
-		/// Load the content of the Text, that is, the font.
-		/// </summary>
-		public void LoadContent(ContentManager contentManager) {
-			responseText.LoadContent(contentManager);
-		}
-
-		/// <summary>
 		/// Update the text with the newest response.
 		/// </summary>
-		public void Update(GameTime gameTime) {
+		public override void Update(GameTime gameTime) {
+			base.Update(gameTime);
+
 			responseText.TextToDraw = GetResponseString();
 		}
 
-		/// <summary>
-		/// Draw the Text with the response.
-		/// </summary>
-		public void Draw(SpriteBatch spriteBatch) {
-			responseText.Draw(spriteBatch);
-		}
 	}
 }

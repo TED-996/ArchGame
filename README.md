@@ -23,13 +23,15 @@ Disclaimer: Some of the feature names might be poorly chosen. Please let me know
 
 **Please read [the Wiki](https://github.com/TED-996/ArchGame/wiki) for detailed explanations on how to use ArchGame.**
 
-##Links
+**Check back here often, this project is still being developed!**
+
+## Links
 
 * [Github.io page](http://ted-996.github.io/ArchGame/)
 * [Documentation](http://ted-996.github.io/ArchGame/Docs/html/index.html)
 * [Documentation .ZIP](http://ted-996.github.io/ArchGame/Docs/Docs.zip)
 * [Github Wiki](https://github.com/TED-996/ArchGame/wiki)
 
-##License
+## License
 
 MIT

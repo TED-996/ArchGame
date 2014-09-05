@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\ComponentList.cs" />
+    <Compile Include="Components\ComponentListUser.cs" />
     <Compile Include="Components\ContentToIArchLoadable.cs" />
     <Compile Include="Components\IArchDrawable.cs" />
     <Compile Include="Components\IArchUpdateable.cs" />

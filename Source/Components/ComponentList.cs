@@ -9,7 +9,7 @@ using ArchGame.Extensions;
 
 namespace ArchGame.Components {
 	/// <summary>
-	/// The ComponentList keeps lists of IArchLoadables, IArchUpdateables, IArchObstructables IArchDrawables and IDisposables 
+	/// The ComponentList keeps lists of IArchLoadables, IArchUpdateables, IArchObstructables, IArchDrawables and IDisposables. 
 	/// Performs the requested operations on all components. Use it to declaratively add behaviour and appearance to your states.
 	/// </summary>
 	public class ComponentList : IArchLoadable, IArchUpdateable, IArchDrawable, IArchObstruction, IDisposable {
