@@ -35,7 +35,7 @@ var searchData=
   ['state',['State',['../class_arch_game_1_1_states_1_1_state.html#a651b20639d579d14612a83fdd7a01162',1,'ArchGame::States::State']]],
   ['state_2ecs',['State.cs',['../_state_8cs.html',1,'']]],
   ['statemanager',['StateManager',['../class_arch_game_1_1_states_1_1_state_manager.html',1,'ArchGame::States']]],
-  ['statemanager',['stateManager',['../class_arch_game_1_1_arch_game.html#a6ea4bcc8f7b95a22857a82330981b5e0',1,'ArchGame.ArchGame.stateManager()'],['../class_arch_game_1_1_states_1_1_state_manager.html#a4a08d71eebf8bc9a455232381e9d39ae',1,'ArchGame.States.StateManager.StateManager()']]],
+  ['statemanager',['StateManager',['../class_arch_game_1_1_states_1_1_state_manager.html#a4a08d71eebf8bc9a455232381e9d39ae',1,'ArchGame.States.StateManager.StateManager()'],['../class_arch_game_1_1_arch_game.html#a6ea4bcc8f7b95a22857a82330981b5e0',1,'ArchGame.ArchGame.stateManager()']]],
   ['statemanager_2ecs',['StateManager.cs',['../_state_manager_8cs.html',1,'']]],
   ['string',['String',['../class_arch_game_1_1_modules_1_1_type_string_pair.html#a8c4bc761c254254c1cd57052a6327e49',1,'ArchGame::Modules::TypeStringPair']]],
   ['stringinputprocessor',['StringInputProcessor',['../class_arch_game_1_1_input_1_1_input_manager.html#a1afda14cd13e350787a047c120324f0c',1,'ArchGame.Input.InputManager.StringInputProcessor()'],['../class_arch_game_1_1_input_1_1_string_input_processor.html#a020c9a89751ddc00f5ba5fd638fad916',1,'ArchGame.Input.StringInputProcessor.StringInputProcessor()']]],

@@ -13,7 +13,7 @@ var searchData=
   ['modulecollection',['ModuleCollection',['../class_arch_game_1_1_modules_1_1_module_collection.html',1,'ArchGame::Modules']]],
   ['modulecollection_2ecs',['ModuleCollection.cs',['../_module_collection_8cs.html',1,'']]],
   ['moduleconstructor_3c_20timpl_2c_20tinterface_20_3e',['ModuleConstructor&lt; TImpl, TInterface &gt;',['../class_arch_game_1_1_modules_1_1_module_constructor_3_01_t_impl_00_01_t_interface_01_4.html',1,'ArchGame::Modules']]],
-  ['modulefactory',['moduleFactory',['../class_arch_game_1_1_arch_game.html#a6ce6489d9d7d028798637a4fd9048abb',1,'ArchGame.ArchGame.moduleFactory()'],['../class_arch_game_1_1_modules_1_1_module_factory.html#aeab733075cba2d4b3637855dd049ffba',1,'ArchGame.Modules.ModuleFactory.ModuleFactory()']]],
+  ['modulefactory',['ModuleFactory',['../class_arch_game_1_1_modules_1_1_module_factory.html#aeab733075cba2d4b3637855dd049ffba',1,'ArchGame.Modules.ModuleFactory.ModuleFactory()'],['../class_arch_game_1_1_arch_game.html#a6ce6489d9d7d028798637a4fd9048abb',1,'ArchGame.ArchGame.moduleFactory()']]],
   ['modulefactory',['ModuleFactory',['../class_arch_game_1_1_modules_1_1_module_factory.html',1,'ArchGame::Modules']]],
   ['modulefactory_2ecs',['ModuleFactory.cs',['../_module_factory_8cs.html',1,'']]],
   ['moduleprovider',['ModuleProvider',['../class_arch_game_1_1_modules_1_1_module_provider_3_01_t_01_4.html#ac66cfd5553207dd9174e6beec4142ed5',1,'ArchGame.Modules.ModuleProvider&lt; T &gt;.ModuleProvider()'],['../class_arch_game_1_1_modules_1_1_module_provider_3_01_t_01_4.html#a82653c4c20b52343774684d30837cd2b',1,'ArchGame.Modules.ModuleProvider&lt; T &gt;.ModuleProvider(T item)']]],

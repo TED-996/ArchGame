@@ -33,8 +33,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_arch_game_8cs.html",
-"class_arch_game_1_1_input_1_1_string_input_processor.html#ac55af49fb60ec9240936f93e0f9644f5",
-"struct_arch_game_1_1_log_message.html#a81694cf0b25ec323f71902bea45c2034"
+"class_arch_game_1_1_input_1_1_input_manager.html#afba7028225d83da4ba22acee1194fcd2",
+"namespaces.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

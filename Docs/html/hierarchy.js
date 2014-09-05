@@ -10,20 +10,23 @@ var hierarchy =
     ] ],
     [ "ArchGame.Components.IArchLoadable", "interface_arch_game_1_1_components_1_1_i_arch_loadable.html", [
       [ "ArchGame.Components.ComponentList", "class_arch_game_1_1_components_1_1_component_list.html", null ],
+      [ "ArchGame.Components.ComponentListUser", "class_arch_game_1_1_components_1_1_component_list_user.html", [
+        [ "ArchGame.States.State", "class_arch_game_1_1_states_1_1_state.html", null ]
+      ] ],
       [ "ArchGame.Components.ContentToIArchLoadable< T >", "class_arch_game_1_1_components_1_1_content_to_i_arch_loadable_3_01_t_01_4.html", null ],
       [ "ArchGame.Components.XnaComponents.Sprite", "class_arch_game_1_1_components_1_1_xna_components_1_1_sprite.html", null ],
       [ "ArchGame.Components.XnaComponents.Text", "class_arch_game_1_1_components_1_1_xna_components_1_1_text.html", null ],
       [ "ArchGame.Modules.ModuleFactory", "class_arch_game_1_1_modules_1_1_module_factory.html", null ],
-      [ "ArchGame.States.State", "class_arch_game_1_1_states_1_1_state.html", null ],
       [ "ArchGame.States.StateManager", "class_arch_game_1_1_states_1_1_state_manager.html", null ]
     ] ],
     [ "ArchGame.Components.IArchUpdateable", "interface_arch_game_1_1_components_1_1_i_arch_updateable.html", [
       [ "ArchGame.Components.ComponentList", "class_arch_game_1_1_components_1_1_component_list.html", null ],
-      [ "ArchGame.States.State", "class_arch_game_1_1_states_1_1_state.html", null ],
+      [ "ArchGame.Components.ComponentListUser", "class_arch_game_1_1_components_1_1_component_list_user.html", null ],
       [ "ArchGame.States.StateManager", "class_arch_game_1_1_states_1_1_state_manager.html", null ]
     ] ],
     [ "IDisposable", null, [
       [ "ArchGame.Components.ComponentList", "class_arch_game_1_1_components_1_1_component_list.html", null ],
+      [ "ArchGame.Components.ComponentListUser", "class_arch_game_1_1_components_1_1_component_list_user.html", null ],
       [ "ArchGame.ILogger", "interface_arch_game_1_1_i_logger.html", [
         [ "ArchGame.ConsoleLogger", "class_arch_game_1_1_console_logger.html", null ],
         [ "ArchGame.Logger", "class_arch_game_1_1_logger.html", [
@@ -32,7 +35,6 @@ var hierarchy =
         [ "ArchGame.NullLogger", "class_arch_game_1_1_null_logger.html", null ]
       ] ],
       [ "ArchGame.Modules.ModuleFactory", "class_arch_game_1_1_modules_1_1_module_factory.html", null ],
-      [ "ArchGame.States.State", "class_arch_game_1_1_states_1_1_state.html", null ],
       [ "ArchGame.States.StateManager", "class_arch_game_1_1_states_1_1_state_manager.html", null ]
     ] ],
     [ "ArchGame.Modules.IModuleConstructor", "interface_arch_game_1_1_modules_1_1_i_module_constructor.html", [
@@ -54,14 +56,14 @@ var hierarchy =
     [ "ArchGame.Components.IZIndexComponent", "interface_arch_game_1_1_components_1_1_i_z_index_component.html", [
       [ "ArchGame.Components.IArchDrawable", "interface_arch_game_1_1_components_1_1_i_arch_drawable.html", [
         [ "ArchGame.Components.ComponentList", "class_arch_game_1_1_components_1_1_component_list.html", null ],
+        [ "ArchGame.Components.ComponentListUser", "class_arch_game_1_1_components_1_1_component_list_user.html", null ],
         [ "ArchGame.Components.XnaComponents.Sprite", "class_arch_game_1_1_components_1_1_xna_components_1_1_sprite.html", null ],
         [ "ArchGame.Components.XnaComponents.Text", "class_arch_game_1_1_components_1_1_xna_components_1_1_text.html", null ],
-        [ "ArchGame.States.State", "class_arch_game_1_1_states_1_1_state.html", null ],
         [ "ArchGame.States.StateManager", "class_arch_game_1_1_states_1_1_state_manager.html", null ]
       ] ],
       [ "ArchGame.Components.IArchObstruction", "interface_arch_game_1_1_components_1_1_i_arch_obstruction.html", [
         [ "ArchGame.Components.ComponentList", "class_arch_game_1_1_components_1_1_component_list.html", null ],
-        [ "ArchGame.States.State", "class_arch_game_1_1_states_1_1_state.html", null ],
+        [ "ArchGame.Components.ComponentListUser", "class_arch_game_1_1_components_1_1_component_list_user.html", null ],
         [ "ArchGame.States.StateManager", "class_arch_game_1_1_states_1_1_state_manager.html", null ]
       ] ]
     ] ],
