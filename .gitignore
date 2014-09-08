@@ -188,5 +188,4 @@ FakesAssemblies/
 # Automations scripts
 __*/**
 buildDocs.*
-
-
+*.py
