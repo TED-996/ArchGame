@@ -1,3 +1,7 @@
 *.suo
 Test/
 Source/
+
+__*/**
+*.bat
+*.py
