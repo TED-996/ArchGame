@@ -58,6 +58,7 @@
     <Compile Include="Components\IArchUpdateable.cs" />
     <Compile Include="Components\IArchObstruction.cs" />
     <Compile Include="Components\IZIndexComponent.cs" />
+    <Compile Include="Components\UiComponents\Button.cs" />
     <Compile Include="Components\XnaComponents\Sprite.cs" />
     <Compile Include="Components\XnaComponents\Text.cs" />
     <Compile Include="Extensions\MathAsExtensions.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Input\ClipboardManager.cs" />
     <Compile Include="Input\EventInputManager.cs" />
     <Compile Include="Input\InputManager.cs" />
+    <Compile Include="Input\IObstructionManager.cs" />
     <Compile Include="Input\StringInputProcessor.cs" />
     <Compile Include="LoadableSet.cs" />
     <Compile Include="Logger.cs" />

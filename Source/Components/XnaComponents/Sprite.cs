@@ -151,5 +151,26 @@ namespace ArchGame.Components.XnaComponents {
 		void CenterSprite() {
 			Origin = _center ? ((SourceRectangle.HasValue ? SourceRectangle.Value : texture.Bounds).Size() / 2) : new Vector2();
 		}
+
+		/// <summary>
+		/// Get the local bounds of the Sprite. (relative to the Position)
+		/// </summary>
+		public Rectangle GetLocalBounds() {
+			if (SourceRectangle.HasValue) {
+				return new Rectangle((int) (-Origin.X), (int) (-Origin.X), SourceRectangle.Value.Width, SourceRectangle.Value.Height);
+			}
+			return new Rectangle((int) (-Origin.X), (int) (-Origin.Y), texture.Bounds.Width, texture.Bounds.Height);
+		}
+
+		/// <summary>
+		/// Get the global bounds of the Sprite.
+		/// </summary>
+		public Rectangle GetGlobalBounds() {
+			Vector2 pos = Position - Origin;
+			if (SourceRectangle.HasValue) {
+				return new Rectangle((int) pos.X, (int) pos.Y, SourceRectangle.Value.Width, SourceRectangle.Value.Height);
+			}
+			return new Rectangle((int)pos.X, (int)pos.Y, texture.Bounds.Width, texture.Bounds.Height);
+		}
 	}
 }
