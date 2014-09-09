@@ -18,14 +18,34 @@ namespace ArchGame {
 	public abstract class ArchGame : Game {
 		LoadableSet loadableSet;
 
+		/// <summary>
+		/// The game's Logger. This class logs messages to the console or to a file.
+		/// </summary>
 		protected readonly ILogger logger;
+
+		/// <summary>
+		/// The game's InputManager. This class manages keyboard and mouse input.
+		/// </summary>
 		protected readonly InputManager inputManager;
 
+		/// <summary>
+		/// The game's ModuleFactory. This class construct, loads, fulfills the requests of and disposes objects at the appropriate time.
+		/// </summary>
 		protected readonly ModuleFactory moduleFactory;
 
+		/// <summary>
+		/// The game's StateManager. This class maintains the state stack.
+		/// </summary>
 		protected StateManager stateManager;
 
+		/// <summary>
+		/// The game's GraphicsDevice. This class, along with the SpriteBatch, takes care of the rendering to the screen.
+		/// </summary>
 		protected readonly GraphicsDeviceManager graphicsDevice;
+
+		/// <summary>
+		/// The game's SpriteBatch. This class, along with the GraphicsDeviceManager, takes care of the rendering to the screen.
+		/// </summary>
 		protected SpriteBatch spriteBatch;
 
 		/// <summary>

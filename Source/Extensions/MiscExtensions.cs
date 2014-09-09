@@ -47,12 +47,34 @@ namespace ArchGame.Extensions {
 			return result;
 		}
 
+		/// <summary>
+		/// Returns true if value is null, false otherwise.
+		/// </summary>
 		public static bool IsNull<T>(this T value) where T : class {
 			return value == null;
 		}
 
+		/// <summary>
+		/// Returns true if value is not null, false otherwise.
+		/// </summary>
 		public static bool IsNotNull<T>(this T value) where T : class {
 			return value != null;
+		}
+
+		/// <summary>
+		/// Returns true if value is null or an empty string.
+		/// Calls String.IsNullOrEmpty()
+		/// </summary>
+		public static bool IsNullOrEmpty(this string value) {
+			return string.IsNullOrEmpty(value);
+		}
+
+		/// <summary>
+		/// Returns true if value is null, empty or consists only of whitespace.
+		/// Calls String.IsNullOrWhitespace()
+		/// </summary>
+		public static bool IsNullOrWhitespace(this string value) {
+			return string.IsNullOrWhiteSpace(value);
 		}
 
 		/// <summary>

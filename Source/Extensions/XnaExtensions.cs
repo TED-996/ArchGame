@@ -91,6 +91,22 @@ namespace ArchGame.Extensions {
 		}
 
 		/// <summary>
+		/// Constructs a rectangle from two Vector2s.
+		/// </summary>
+		public static Rectangle RectangleFromPoints(Vector2 v1, Vector2 v2) {
+			return new Rectangle((int) v1.X.AtMost(v2.X), (int) v1.Y.AtMost(v2.Y), (int) (v1.X - v2.X).Abs(), (int) (v1.Y - v2.Y).Abs());
+		}
+
+		/// <summary>
+		/// Constructs a rectangle from 2 vectors. The vector this method extends is the position, and the parameter is the size.
+		/// </summary>
+		/// <param name="position">The position of the vector</param>
+		/// <param name="size">The size of the vector</param>
+		public static Rectangle RectangleFromThis(this Vector2 position, Vector2 size) {
+			return new Rectangle((int) position.X, (int) position.Y, (int) size.X, (int) size.Y);
+		}
+
+		/// <summary>
 		/// Construct a rectangle from two coordinates.
 		/// </summary>
 		public static Rectangle RectangleFromCoords(int x1, int y1, int x2, int y2) {
@@ -108,8 +124,7 @@ namespace ArchGame.Extensions {
 
 			model.CopyAbsoluteBoneTransformsTo(boneTransforms);
 
-			// Compute an (approximate) model center position by
-			// averaging the center of each mesh bounding sphere.
+			// Compute an (approximate) model center position by averaging the center of each mesh bounding sphere.
 
 			foreach (ModelMesh mesh in model.Meshes) {
 				modelCenter += Vector3.Transform(mesh.BoundingSphere.Center, boneTransforms[mesh.ParentBone.Index]);

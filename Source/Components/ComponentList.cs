@@ -44,7 +44,14 @@ namespace ArchGame.Components {
 		/// </summary>
 		public ReadOnlyCollection<IDisposable> Disposables { get { return disposables.AsReadOnly(); } }
 
+		/// <summary>
+		/// The ZIndex of the ComponentList
+		/// </summary>
 		public int ZIndex { get { return 0; } }
+
+		/// <summary>
+		/// The UpdatePriority of the ComponentList
+		/// </summary>
 		public int UpdatePriority { get { return 0; } }
 
 		bool updateablesDirty;

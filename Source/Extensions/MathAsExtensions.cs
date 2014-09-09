@@ -1,31 +1,55 @@
 ﻿using System;
 
 namespace ArchGame.Extensions {
+	/// <summary>
+	/// Static class that exposes several math functions as extension methods.
+	/// </summary>
 	public static class MathAsExtensions {
+		/// <summary>
+		/// Returns the absolute value of an int.
+		/// </summary>
 		public static int Abs(this int value) {
 			return Math.Abs(value);
 		}
 
+		/// <summary>
+		/// Returns the absolute value of a float.
+		/// </summary>
 		public static float Abs(this float value) {
 			return Math.Abs(value);
 		}
 
+		/// <summary>
+		/// Returns the absolute value of a double.
+		/// </summary>
 		public static double Abs(this double value) {
 			return Math.Abs(value);
 		}
 
+		/// <summary>
+		/// Returns the absolute value of a long.
+		/// </summary>
 		public static long Abs(this long value) {
 			return Math.Abs(value);
 		}
 
+		/// <summary>
+		/// Returns the absolute value of a decimal.
+		/// </summary>
 		public static decimal Abs(this decimal value) {
 			return Math.Abs(value);
 		}
 
+		/// <summary>
+		/// Returns the absolute value of a sbyte.
+		/// </summary>
 		public static sbyte Abs(this sbyte value) {
 			return Math.Abs(value);
 		}
 
+		/// <summary>
+		/// Returns the absolute value of a short.
+		/// </summary>
 		public static short Abs(this short value) {
 			return Math.Abs(value);
 		}
@@ -62,11 +86,17 @@ namespace ArchGame.Extensions {
 			}
 			return val;
 		}
-
+		
+		/// <summary>
+		/// Rounds a double value to the nearest integer.
+		/// </summary>
 		public static int RoundToInt(this double thisValue) {
 			return (int) Math.Round(thisValue);
 		}
 
+		/// <summary>
+		/// Rounds a float value to the nearest integer.
+		/// </summary>
 		public static int RoundToInt(this float thisValue) {
 			return (int) Math.Round(thisValue);
 		}
