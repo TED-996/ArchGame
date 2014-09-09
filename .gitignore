@@ -185,6 +185,9 @@ UpgradeLog*.htm
 # Microsoft Fakes
 FakesAssemblies/
 
+#gh-pages
+Docs/**
+
 # Automations scripts
 __*/**
 buildDocs.*
