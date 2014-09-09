@@ -18,8 +18,9 @@ def main():
 		build_docs(stdout)
 
 		commit_docs(stdout)
-
-		subprocess.check_call("git push origin --all --prune", stdout=stdout)
+		
+		print("Pushing changes...")
+		subprocess.check_call("git push origin --all --prune", stdout=stdout, stderr=stdout)
 
 	except subprocess.SubprocessError as ex:
 		print("The script failed to run. Execution aborted.")
@@ -94,7 +95,7 @@ def commit_docs(stdout):
 	print("Adding Download Zip link to the docs.")
 	subprocess.check_call("git cherry-pick dd434a0", stdout=stdout, stderr=stdout)
 
-	print("Done committing.")
+	print("Done committing. Checking out master...")
 	subprocess.check_call("git checkout master", stdout=stdout)
 
 
