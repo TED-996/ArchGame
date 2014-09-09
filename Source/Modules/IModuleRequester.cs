@@ -3,6 +3,7 @@
 namespace ArchGame.Modules {
 	/// <summary>
 	/// The IModuleRequester is an interface for classes that request modules registered in the ModuleFactory.
+	/// It is recommended to explicitly implement this, this methods should not be called by user code.
 	/// </summary>
 	public interface IModuleRequester {
 		/// <summary>
