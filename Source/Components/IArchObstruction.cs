@@ -10,6 +10,6 @@ namespace ArchGame.Components {
 		/// <summary>
 		/// Get the rectangles that should be obstructed.
 		/// </summary>
-		void ObstructArea(InputManager inputManager);
+		void ObstructArea(IObstructionManager obstructionManager);
 	}
 }

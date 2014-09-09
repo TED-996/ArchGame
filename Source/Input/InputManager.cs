@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ArchGame.Components;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using ArchGame.Extensions;
@@ -10,7 +9,7 @@ namespace ArchGame.Input {
 	/// Represents the current state of mouse and keyboard input.
 	/// See the wiki for help on how the input in ArchGame works.
 	/// </summary>
-	public class InputManager {
+	public class InputManager : IObstructionManager {
 		KeyboardState keyboardState;
 		KeyboardState oldKeyboardState;
 
@@ -176,13 +175,6 @@ namespace ArchGame.Input {
 		/// <param name="zIndex">The ZIndex of the rectangle</param>
 		public void ObstructArea(Rectangle rectangle, int zIndex) {
 			obstructions.Add(new ObstructedSpot { Rectangle = rectangle, ZIndex = zIndex });
-		}
-
-		/// <summary>
-		/// Prompt an IArchObstruction to register its obstruction.
-		/// </summary>
-		public void ObstructArea(IArchObstruction obstruction) {
-			obstruction.ObstructArea(this);
 		}
 
 		/// <summary>

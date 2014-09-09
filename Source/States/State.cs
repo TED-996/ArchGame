@@ -39,9 +39,9 @@ namespace ArchGame.States {
 		/// <summary>
 		/// Prompt the components in the State to obstruct their area.
 		/// </summary>
-		/// <param name="inputManager">The InputManager to register obstructions in</param>
-		public override void ObstructArea(InputManager inputManager) {
-			base.ObstructArea(inputManager);
+		/// <param name="obstructionManager">The InputManager to register obstructions in</param>
+		public override void ObstructArea(IObstructionManager obstructionManager) {
+			base.ObstructArea(obstructionManager);
 		}
 
 		/// <summary>

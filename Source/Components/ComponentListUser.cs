@@ -16,8 +16,15 @@ namespace ArchGame.Components {
 		/// </summary>
 		protected ComponentList componentList;
 
-		public int UpdatePriority { get; private set; }
+		/// <summary>
+		/// The ZIndex of the ComponentListUser
+		/// </summary>
 		public int ZIndex { get; private set; }
+
+		/// <summary>
+		/// The UpdatePriority of the ComponentListUser
+		/// </summary>
+		public int UpdatePriority { get; private set; }
 
 		/// <summary>
 		/// Intialize the ComponentListUser base object.
@@ -47,9 +54,9 @@ namespace ArchGame.Components {
 		/// <summary>
 		/// Prompt the components in the ComponentList to obstruct their area.
 		/// </summary>
-		/// <param name="inputManager">The InputManager to register obstructions to</param>
-		public virtual void ObstructArea(InputManager inputManager) {
-			componentList.ObstructArea(inputManager);
+		/// <param name="obstructionManager">The InputManager to register obstructions to</param>
+		public virtual void ObstructArea(IObstructionManager obstructionManager) {
+			componentList.ObstructArea(obstructionManager);
 		}
 
 		/// <summary>

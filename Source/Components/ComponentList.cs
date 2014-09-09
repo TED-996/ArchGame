@@ -177,8 +177,8 @@ namespace ArchGame.Components {
 		/// <summary>
 		/// Prompt each IArchObstruction to obstruct its area.
 		/// </summary>
-		public void ObstructArea(InputManager inputManager) {
-			obstructions.ForEach(obstruction => obstruction.ObstructArea(inputManager));
+		public void ObstructArea(IObstructionManager obstructionManager) {
+			obstructions.ForEach(obstruction => obstruction.ObstructArea(obstructionManager));
 		}
 
 		/// <summary>
