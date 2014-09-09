@@ -88,12 +88,12 @@ namespace Test.States {
 			}
 		}
 
-		public IEnumerable<string> GetRequestedModules() {
+		IEnumerable<string> IModuleRequester.GetRequestedModules() {
 			//This state requests the InputManager and the NetworkManager.
 			return new[] {"InputManager", "INetworkManager"};
 		}
 
-		public void SetModules(ModuleCollection collection, ModuleFactory factory) {
+		void IModuleRequester.SetModules(ModuleCollection collection, ModuleFactory factory) {
 			//Save the modules from the ModuleCollection
 			inputManager = collection.GetModule<InputManager>();
 			networkManager = collection.GetModule<INetworkManager>();

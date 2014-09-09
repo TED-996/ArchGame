@@ -20,16 +20,6 @@ namespace Test.States {
 			componentList.Add(new Text("font", "Press Enter to play", new Vector2(100, 100), Color.White));
 		}
 
-		public IEnumerable<string> GetRequestedModules() {
-			//We need the InputManager to read the Enter key and the StateManager to request to show the GameState.
-			return new[] {"InputManager", "StateManager"};
-		}
-
-		public void SetModules(ModuleCollection collection, ModuleFactory factory) {
-			inputManager = collection.GetModule<InputManager>();
-			stateManager = collection.GetModule<StateManager>();
-		}
-
 		public override void Update(GameTime gameTime) {
 			base.Update(gameTime);
 
@@ -37,10 +27,20 @@ namespace Test.States {
 				//We use the ServiceLocator to get the logger from anywhere. See that we're getting ILogger and not Logger; the logger 
 				//may be a ThreadedLogger or a ConsoleLogger or a NullLogger (not logging anything), but we don't care.
 				ServiceLocator.GetService<ILogger>().Log("Requesting state push: stateManager.RequestPushState(new GameState())",
-					"MenuState");
+				                                         "MenuState");
 				//Request the StateManager to show the GameState instead of this.
 				stateManager.RequestPushState(new GameState());
 			}
+		}
+
+		IEnumerable<string> IModuleRequester.GetRequestedModules() {
+			//We need the InputManager to read the Enter key and the StateManager to request to show the GameState.
+			return new[] {"InputManager", "StateManager"};
+		}
+
+		void IModuleRequester.SetModules(ModuleCollection collection, ModuleFactory factory) {
+			inputManager = collection.GetModule<InputManager>();
+			stateManager = collection.GetModule<StateManager>();
 		}
 	}
 }
