@@ -4,6 +4,8 @@ var class_arch_game_1_1_components_1_1_xna_components_1_1_sprite =
     [ "Sprite", "class_arch_game_1_1_components_1_1_xna_components_1_1_sprite.html#a60014a23de25bef9ae1707ee6ef477e0", null ],
     [ "Sprite", "class_arch_game_1_1_components_1_1_xna_components_1_1_sprite.html#a08d75b6103d957f1f368bda3d6fb20f9", null ],
     [ "Draw", "class_arch_game_1_1_components_1_1_xna_components_1_1_sprite.html#a602484a619a76e055d4fcc214f761725", null ],
+    [ "GetGlobalBounds", "class_arch_game_1_1_components_1_1_xna_components_1_1_sprite.html#aa6544519cc37c7d910b3c60fdc695379", null ],
+    [ "GetLocalBounds", "class_arch_game_1_1_components_1_1_xna_components_1_1_sprite.html#a662d7af4f81900a051eaca6f8472b5be", null ],
     [ "LoadContent", "class_arch_game_1_1_components_1_1_xna_components_1_1_sprite.html#a791a5ef1ba232bb21a087bf31a3f3002", null ],
     [ "Color", "class_arch_game_1_1_components_1_1_xna_components_1_1_sprite.html#a7a8d9cae99c503c4e118a33ecac8ae9b", null ],
     [ "Effects", "class_arch_game_1_1_components_1_1_xna_components_1_1_sprite.html#a8cac71c632538137b1526b1c20686fc0", null ],

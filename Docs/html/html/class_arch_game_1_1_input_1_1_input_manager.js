@@ -16,7 +16,6 @@ var class_arch_game_1_1_input_1_1_input_manager =
     [ "IsMouseButtonPressed", "class_arch_game_1_1_input_1_1_input_manager.html#a18421d12f8e02499b24cbf3972216473", null ],
     [ "IsPixelObstructed", "class_arch_game_1_1_input_1_1_input_manager.html#a278e535916d00c657721616ded2a64d0", null ],
     [ "ObstructArea", "class_arch_game_1_1_input_1_1_input_manager.html#af1d0d72ce7be0ee790d0e0a2c8349b99", null ],
-    [ "ObstructArea", "class_arch_game_1_1_input_1_1_input_manager.html#afba7028225d83da4ba22acee1194fcd2", null ],
     [ "SetFocus", "class_arch_game_1_1_input_1_1_input_manager.html#a5f460b1f9d7cd741370d0e86eda33810", null ],
     [ "SetMouseOffset", "class_arch_game_1_1_input_1_1_input_manager.html#aeede484bb6174f74ae8c62f8f2c0ce26", null ],
     [ "SetMouseScale", "class_arch_game_1_1_input_1_1_input_manager.html#adbe77969605d3bf15358e5bfc8147b9c", null ],

@@ -1,5 +1,6 @@
 var namespace_arch_game_1_1_components =
 [
+    [ "UiComponents", "namespace_arch_game_1_1_components_1_1_ui_components.html", "namespace_arch_game_1_1_components_1_1_ui_components" ],
     [ "XnaComponents", "namespace_arch_game_1_1_components_1_1_xna_components.html", "namespace_arch_game_1_1_components_1_1_xna_components" ],
     [ "ComponentList", "class_arch_game_1_1_components_1_1_component_list.html", "class_arch_game_1_1_components_1_1_component_list" ],
     [ "ComponentListUser", "class_arch_game_1_1_components_1_1_component_list_user.html", "class_arch_game_1_1_components_1_1_component_list_user" ],

@@ -4,7 +4,7 @@ var class_arch_game_1_1_states_1_1_state_manager =
     [ "Dispose", "class_arch_game_1_1_states_1_1_state_manager.html#a1c390b3e86f610801622123f6e426e96", null ],
     [ "Draw", "class_arch_game_1_1_states_1_1_state_manager.html#a8ffc2252e15dfdf3f474e49ec036c746", null ],
     [ "LoadContent", "class_arch_game_1_1_states_1_1_state_manager.html#a7b74f6cba2ee664a9c08a44365dac980", null ],
-    [ "ObstructArea", "class_arch_game_1_1_states_1_1_state_manager.html#aa0c19d964832d2a3c8fe1086dfae2d60", null ],
+    [ "ObstructArea", "class_arch_game_1_1_states_1_1_state_manager.html#ad1656cb26de8e958edef74e53101e30a", null ],
     [ "PopState", "class_arch_game_1_1_states_1_1_state_manager.html#a27653f144699510269cb89f99d2b9f6b", null ],
     [ "PushState", "class_arch_game_1_1_states_1_1_state_manager.html#a05a94fb3a151eb794e9f323100900cd5", null ],
     [ "ReplaceTopState", "class_arch_game_1_1_states_1_1_state_manager.html#a66d4c81b1b3f1df25042a270e9a40600", null ],

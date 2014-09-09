@@ -14,6 +14,7 @@ var hierarchy =
         [ "ArchGame.States.State", "class_arch_game_1_1_states_1_1_state.html", null ]
       ] ],
       [ "ArchGame.Components.ContentToIArchLoadable< T >", "class_arch_game_1_1_components_1_1_content_to_i_arch_loadable_3_01_t_01_4.html", null ],
+      [ "ArchGame.Components.UiComponents.Button", "class_arch_game_1_1_components_1_1_ui_components_1_1_button.html", null ],
       [ "ArchGame.Components.XnaComponents.Sprite", "class_arch_game_1_1_components_1_1_xna_components_1_1_sprite.html", null ],
       [ "ArchGame.Components.XnaComponents.Text", "class_arch_game_1_1_components_1_1_xna_components_1_1_text.html", null ],
       [ "ArchGame.Modules.ModuleFactory", "class_arch_game_1_1_modules_1_1_module_factory.html", null ],
@@ -22,6 +23,7 @@ var hierarchy =
     [ "ArchGame.Components.IArchUpdateable", "interface_arch_game_1_1_components_1_1_i_arch_updateable.html", [
       [ "ArchGame.Components.ComponentList", "class_arch_game_1_1_components_1_1_component_list.html", null ],
       [ "ArchGame.Components.ComponentListUser", "class_arch_game_1_1_components_1_1_component_list_user.html", null ],
+      [ "ArchGame.Components.UiComponents.Button", "class_arch_game_1_1_components_1_1_ui_components_1_1_button.html", null ],
       [ "ArchGame.States.StateManager", "class_arch_game_1_1_states_1_1_state_manager.html", null ]
     ] ],
     [ "IDisposable", null, [
@@ -46,8 +48,12 @@ var hierarchy =
         [ "ArchGame.Modules.GenericModuleProvider< T >", "class_arch_game_1_1_modules_1_1_generic_module_provider_3_01_t_01_4.html", null ]
       ] ]
     ] ],
-    [ "ArchGame.Modules.IModuleRequester", "interface_arch_game_1_1_modules_1_1_i_module_requester.html", null ],
-    [ "ArchGame.Input.InputManager", "class_arch_game_1_1_input_1_1_input_manager.html", null ],
+    [ "ArchGame.Modules.IModuleRequester", "interface_arch_game_1_1_modules_1_1_i_module_requester.html", [
+      [ "ArchGame.Components.UiComponents.Button", "class_arch_game_1_1_components_1_1_ui_components_1_1_button.html", null ]
+    ] ],
+    [ "ArchGame.Input.IObstructionManager", "interface_arch_game_1_1_input_1_1_i_obstruction_manager.html", [
+      [ "ArchGame.Input.InputManager", "class_arch_game_1_1_input_1_1_input_manager.html", null ]
+    ] ],
     [ "ArchGame.Services.IServiceProvider", "interface_arch_game_1_1_services_1_1_i_service_provider.html", [
       [ "ArchGame.Services.ServiceProvider< T >", "class_arch_game_1_1_services_1_1_service_provider_3_01_t_01_4.html", [
         [ "ArchGame.Services.LoggerProvider", "class_arch_game_1_1_services_1_1_logger_provider.html", null ]
@@ -57,6 +63,7 @@ var hierarchy =
       [ "ArchGame.Components.IArchDrawable", "interface_arch_game_1_1_components_1_1_i_arch_drawable.html", [
         [ "ArchGame.Components.ComponentList", "class_arch_game_1_1_components_1_1_component_list.html", null ],
         [ "ArchGame.Components.ComponentListUser", "class_arch_game_1_1_components_1_1_component_list_user.html", null ],
+        [ "ArchGame.Components.UiComponents.Button", "class_arch_game_1_1_components_1_1_ui_components_1_1_button.html", null ],
         [ "ArchGame.Components.XnaComponents.Sprite", "class_arch_game_1_1_components_1_1_xna_components_1_1_sprite.html", null ],
         [ "ArchGame.Components.XnaComponents.Text", "class_arch_game_1_1_components_1_1_xna_components_1_1_text.html", null ],
         [ "ArchGame.States.StateManager", "class_arch_game_1_1_states_1_1_state_manager.html", null ]
@@ -64,6 +71,7 @@ var hierarchy =
       [ "ArchGame.Components.IArchObstruction", "interface_arch_game_1_1_components_1_1_i_arch_obstruction.html", [
         [ "ArchGame.Components.ComponentList", "class_arch_game_1_1_components_1_1_component_list.html", null ],
         [ "ArchGame.Components.ComponentListUser", "class_arch_game_1_1_components_1_1_component_list_user.html", null ],
+        [ "ArchGame.Components.UiComponents.Button", "class_arch_game_1_1_components_1_1_ui_components_1_1_button.html", null ],
         [ "ArchGame.States.StateManager", "class_arch_game_1_1_states_1_1_state_manager.html", null ]
       ] ]
     ] ],

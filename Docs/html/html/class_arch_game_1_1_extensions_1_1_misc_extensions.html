@@ -126,9 +126,17 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a84ec5f171db33ec1821ddca2075e8d01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string multiplied a certain number of times. "123".Multiply(3) returns "123123123"  <a href="#a84ec5f171db33ec1821ddca2075e8d01">More...</a><br /></td></tr>
 <tr class="separator:a84ec5f171db33ec1821ddca2075e8d01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69b0b50d8ed7b02b8be9a873cb576fbb"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_extensions_1_1_misc_extensions.html#a69b0b50d8ed7b02b8be9a873cb576fbb">IsNull&lt; T &gt;</a> (this T value)</td></tr>
+<tr class="memdesc:a69b0b50d8ed7b02b8be9a873cb576fbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if value is null, false otherwise.  <a href="#a69b0b50d8ed7b02b8be9a873cb576fbb">More...</a><br /></td></tr>
 <tr class="separator:a69b0b50d8ed7b02b8be9a873cb576fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adafb00cc218b7cbd8ac5d5f1c18356af"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_extensions_1_1_misc_extensions.html#adafb00cc218b7cbd8ac5d5f1c18356af">IsNotNull&lt; T &gt;</a> (this T value)</td></tr>
+<tr class="memdesc:adafb00cc218b7cbd8ac5d5f1c18356af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if value is not null, false otherwise.  <a href="#adafb00cc218b7cbd8ac5d5f1c18356af">More...</a><br /></td></tr>
 <tr class="separator:adafb00cc218b7cbd8ac5d5f1c18356af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b5d7ad9c428d98b0c99fd046edd6db0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_extensions_1_1_misc_extensions.html#a6b5d7ad9c428d98b0c99fd046edd6db0">IsNullOrEmpty</a> (this string value)</td></tr>
+<tr class="memdesc:a6b5d7ad9c428d98b0c99fd046edd6db0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if value is null or an empty string. Calls String.IsNullOrEmpty()  <a href="#a6b5d7ad9c428d98b0c99fd046edd6db0">More...</a><br /></td></tr>
+<tr class="separator:a6b5d7ad9c428d98b0c99fd046edd6db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ae5d25e88f29a77f92a6495be31f7b0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_extensions_1_1_misc_extensions.html#a1ae5d25e88f29a77f92a6495be31f7b0">IsNullOrWhitespace</a> (this string value)</td></tr>
+<tr class="memdesc:a1ae5d25e88f29a77f92a6495be31f7b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if value is null, empty or consists only of whitespace. Calls String.IsNullOrWhitespace()  <a href="#a1ae5d25e88f29a77f92a6495be31f7b0">More...</a><br /></td></tr>
+<tr class="separator:a1ae5d25e88f29a77f92a6495be31f7b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71a1aeb08e528ffa2be92e26cf2adb6d"><td class="memItemLeft" align="right" valign="top">static T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_extensions_1_1_misc_extensions.html#a71a1aeb08e528ffa2be92e26cf2adb6d">ThrowIfNull&lt; T &gt;</a> (this T value, string argumentName=&quot;unknown&quot;)</td></tr>
 <tr class="memdesc:a71a1aeb08e528ffa2be92e26cf2adb6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throws ArgumentNullException if value is null. Returns the value for method chaining.  <a href="#a71a1aeb08e528ffa2be92e26cf2adb6d">More...</a><br /></td></tr>
 <tr class="separator:a71a1aeb08e528ffa2be92e26cf2adb6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,7 +189,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>String.Format as extension method </p>
 
-<p>Definition at line <a class="el" href="_misc_extensions_8cs_source.html#l00086">86</a> of file <a class="el" href="_misc_extensions_8cs_source.html">MiscExtensions.cs</a>.</p>
+<p>Definition at line <a class="el" href="_misc_extensions_8cs_source.html#l00108">108</a> of file <a class="el" href="_misc_extensions_8cs_source.html">MiscExtensions.cs</a>.</p>
 
 </div>
 </div>
@@ -206,6 +214,8 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns true if value is not null, false otherwise. </p>
 <div class="typeconstraint">
 <dl><dt><b>Type Constraints</b></dt><dd>
 <table border="0" cellspacing="2" cellpadding="0">
@@ -214,7 +224,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 </div>
 
-<p>Definition at line <a class="el" href="_misc_extensions_8cs_source.html#l00054">54</a> of file <a class="el" href="_misc_extensions_8cs_source.html">MiscExtensions.cs</a>.</p>
+<p>Definition at line <a class="el" href="_misc_extensions_8cs_source.html#l00060">60</a> of file <a class="el" href="_misc_extensions_8cs_source.html">MiscExtensions.cs</a>.</p>
 
 </div>
 </div>
@@ -239,6 +249,8 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns true if value is null, false otherwise. </p>
 <div class="typeconstraint">
 <dl><dt><b>Type Constraints</b></dt><dd>
 <table border="0" cellspacing="2" cellpadding="0">
@@ -247,7 +259,63 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 </div>
 
-<p>Definition at line <a class="el" href="_misc_extensions_8cs_source.html#l00050">50</a> of file <a class="el" href="_misc_extensions_8cs_source.html">MiscExtensions.cs</a>.</p>
+<p>Definition at line <a class="el" href="_misc_extensions_8cs_source.html#l00053">53</a> of file <a class="el" href="_misc_extensions_8cs_source.html">MiscExtensions.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6b5d7ad9c428d98b0c99fd046edd6db0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ArchGame.Extensions.MiscExtensions.IsNullOrEmpty </td>
+          <td>(</td>
+          <td class="paramtype">this string&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns true if value is null or an empty string. Calls String.IsNullOrEmpty() </p>
+
+<p>Definition at line <a class="el" href="_misc_extensions_8cs_source.html#l00068">68</a> of file <a class="el" href="_misc_extensions_8cs_source.html">MiscExtensions.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1ae5d25e88f29a77f92a6495be31f7b0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ArchGame.Extensions.MiscExtensions.IsNullOrWhitespace </td>
+          <td>(</td>
+          <td class="paramtype">this string&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns true if value is null, empty or consists only of whitespace. Calls String.IsNullOrWhitespace() </p>
+
+<p>Definition at line <a class="el" href="_misc_extensions_8cs_source.html#l00076">76</a> of file <a class="el" href="_misc_extensions_8cs_source.html">MiscExtensions.cs</a>.</p>
 
 </div>
 </div>
@@ -293,7 +361,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the element exists, false oftherwise</dd></dl>
 
-<p>Definition at line <a class="el" href="_misc_extensions_8cs_source.html#l00079">79</a> of file <a class="el" href="_misc_extensions_8cs_source.html">MiscExtensions.cs</a>.</p>
+<p>Definition at line <a class="el" href="_misc_extensions_8cs_source.html#l00101">101</a> of file <a class="el" href="_misc_extensions_8cs_source.html">MiscExtensions.cs</a>.</p>
 
 </div>
 </div>
@@ -435,7 +503,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_misc_extensions_8cs_source.html#l00097">97</a> of file <a class="el" href="_misc_extensions_8cs_source.html">MiscExtensions.cs</a>.</p>
+<p>Definition at line <a class="el" href="_misc_extensions_8cs_source.html#l00119">119</a> of file <a class="el" href="_misc_extensions_8cs_source.html">MiscExtensions.cs</a>.</p>
 
 </div>
 </div>
@@ -494,7 +562,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 </div>
 
-<p>Definition at line <a class="el" href="_misc_extensions_8cs_source.html#l00065">65</a> of file <a class="el" href="_misc_extensions_8cs_source.html">MiscExtensions.cs</a>.</p>
+<p>Definition at line <a class="el" href="_misc_extensions_8cs_source.html#l00087">87</a> of file <a class="el" href="_misc_extensions_8cs_source.html">MiscExtensions.cs</a>.</p>
 
 </div>
 </div>
@@ -507,7 +575,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_arch_game.html">ArchGame</a></li><li class="navelem"><a class="el" href="namespace_arch_game_1_1_extensions.html">Extensions</a></li><li class="navelem"><a class="el" href="class_arch_game_1_1_extensions_1_1_misc_extensions.html">MiscExtensions</a></li>
-    <li class="footer">Generated on Mon Sep 8 2014 12:11:44 for ArchGame by
+    <li class="footer">Generated on Tue Sep 9 2014 17:06:32 for ArchGame by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

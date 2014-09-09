@@ -119,6 +119,15 @@ $(document).ready(function(){initNavTree('class_arch_game_1_1_input_1_1_input_ma
 
 <p>Represents the current state of mouse and keyboard input. See the wiki for help on how the input in <a class="el" href="class_arch_game_1_1_arch_game.html" title="This is the base class for your game. Read the wiki for more info. ">ArchGame</a> works.  
  <a href="class_arch_game_1_1_input_1_1_input_manager.html#details">More...</a></p>
+<div class="dynheader">
+Inheritance diagram for ArchGame.Input.InputManager:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_arch_game_1_1_input_1_1_input_manager.png" usemap="#ArchGame.Input.InputManager_map" alt=""/>
+  <map id="ArchGame.Input.InputManager_map" name="ArchGame.Input.InputManager_map">
+<area href="interface_arch_game_1_1_input_1_1_i_obstruction_manager.html" title="IObstructionManager is an interface for a class that manages a list of obstructions. It is currently implemented only by the InputManager. " alt="ArchGame.Input.IObstructionManager" shape="rect" coords="0,0,226,24"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -140,9 +149,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af1d0d72ce7be0ee790d0e0a2c8349b99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_input_1_1_input_manager.html#af1d0d72ce7be0ee790d0e0a2c8349b99">ObstructArea</a> (Rectangle rectangle, int zIndex)</td></tr>
 <tr class="memdesc:af1d0d72ce7be0ee790d0e0a2c8349b99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a rectangle to the obstruction list.  <a href="#af1d0d72ce7be0ee790d0e0a2c8349b99">More...</a><br /></td></tr>
 <tr class="separator:af1d0d72ce7be0ee790d0e0a2c8349b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afba7028225d83da4ba22acee1194fcd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_input_1_1_input_manager.html#afba7028225d83da4ba22acee1194fcd2">ObstructArea</a> (<a class="el" href="interface_arch_game_1_1_components_1_1_i_arch_obstruction.html">IArchObstruction</a> obstruction)</td></tr>
-<tr class="memdesc:afba7028225d83da4ba22acee1194fcd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prompt an IArchObstruction to register its obstruction.  <a href="#afba7028225d83da4ba22acee1194fcd2">More...</a><br /></td></tr>
-<tr class="separator:afba7028225d83da4ba22acee1194fcd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18421d12f8e02499b24cbf3972216473"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_input_1_1_input_manager.html#a18421d12f8e02499b24cbf3972216473">IsMouseButtonPressed</a> (<a class="el" href="namespace_arch_game_1_1_input.html#a7600f660d23388959d7872a134071afd">MouseAction</a> mouseAction, bool obstructable=false, int zIndex=0)</td></tr>
 <tr class="memdesc:a18421d12f8e02499b24cbf3972216473"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the mouse button is currently pressed.  <a href="#a18421d12f8e02499b24cbf3972216473">More...</a><br /></td></tr>
 <tr class="separator:a18421d12f8e02499b24cbf3972216473"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -208,7 +214,7 @@ Properties</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents the current state of mouse and keyboard input. See the wiki for help on how the input in <a class="el" href="class_arch_game_1_1_arch_game.html" title="This is the base class for your game. Read the wiki for more info. ">ArchGame</a> works. </p>
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00013">13</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00012">12</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="adebb42e0662eb51f931b073bd3d31b72"></a>
 <div class="memitem">
@@ -233,7 +239,7 @@ Properties</h2></td></tr>
 
 <p>Initializes a new instance of type <a class="el" href="class_arch_game_1_1_input_1_1_input_manager.html" title="Represents the current state of mouse and keyboard input. See the wiki for help on how the input in A...">InputManager</a>. </p>
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00055">55</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00054">54</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 
 </div>
 </div>
@@ -253,7 +259,7 @@ Properties</h2></td></tr>
 
 <p>Returns an array of keys that were pressed during the last update cycle. </p>
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00341">341</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00333">333</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 
 </div>
 </div>
@@ -283,7 +289,7 @@ Properties</h2></td></tr>
 
 <p>Get the mouse coordinates. </p>
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00292">292</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00284">284</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 
 </div>
 </div>
@@ -302,7 +308,7 @@ Properties</h2></td></tr>
 
 <p>Get the movement of the mouse in the last update cycle as a Vector2 </p>
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00307">307</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00299">299</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 
 </div>
 </div>
@@ -321,7 +327,7 @@ Properties</h2></td></tr>
 
 <p>Get the mouse position as a Vector2 </p>
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00300">300</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00292">292</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 
 </div>
 </div>
@@ -340,7 +346,7 @@ Properties</h2></td></tr>
 
 <p>Get the movement of the scroll wheel in the last update cycle. </p>
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00314">314</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00306">306</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 
 </div>
 </div>
@@ -360,7 +366,7 @@ Properties</h2></td></tr>
 
 <p>Returns true if a key has been pressed during this update cycle. </p>
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00132">132</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00131">131</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 
 </div>
 </div>
@@ -380,7 +386,7 @@ Properties</h2></td></tr>
 
 <p>Returns true if a key has been pressed during this update cycle. Also returns true if the key is held and a certain time interval has passed; the timer is then reset to allow for another keypress. This attempts to simulate Windows' behaviour with held keys. Press -&gt; longer interval -&gt; auto-press -&gt; shorter interval -&gt; auto-press (repeat until key is up) </p>
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00156">156</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00155">155</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 
 </div>
 </div>
@@ -400,7 +406,7 @@ Properties</h2></td></tr>
 
 <p>Returns true if a key has been depressed during this update cycle. </p>
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00142">142</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00141">141</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 
 </div>
 </div>
@@ -444,7 +450,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00222">222</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00214">214</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 
 </div>
 </div>
@@ -495,7 +501,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00254">254</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00246">246</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 
 </div>
 </div>
@@ -515,7 +521,7 @@ Properties</h2></td></tr>
 
 <p>Returns true if a key is currently down. </p>
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00125">125</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00124">124</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 
 </div>
 </div>
@@ -535,7 +541,7 @@ Properties</h2></td></tr>
 
 <p>Returns true if one of the modifier is pressed. It considers both keys in the case of pairs (for example, IsModifierPressed(Keys.LeftAlt) will also consider Keys.RightAlt) </p>
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00322">322</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00314">314</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 
 </div>
 </div>
@@ -579,7 +585,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00194">194</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00186">186</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 
 </div>
 </div>
@@ -615,7 +621,7 @@ Properties</h2></td></tr>
 
 <p>Returns true if the pixel at the given coordinates is currently obstructed. </p>
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00168">168</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00167">167</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 
 </div>
 </div>
@@ -652,27 +658,9 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00177">177</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Implements <a class="el" href="interface_arch_game_1_1_input_1_1_i_obstruction_manager.html#abc1d2131487af8c6b5a59e5c0db2b250">ArchGame.Input.IObstructionManager</a>.</p>
 
-</div>
-</div>
-<a class="anchor" id="afba7028225d83da4ba22acee1194fcd2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ArchGame.Input.InputManager.ObstructArea </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="interface_arch_game_1_1_components_1_1_i_arch_obstruction.html">IArchObstruction</a>&#160;</td>
-          <td class="paramname"><em>obstruction</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Prompt an IArchObstruction to register its obstruction. </p>
-
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00184">184</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00176">176</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 
 </div>
 </div>
@@ -706,7 +694,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00359">359</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00351">351</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 
 </div>
 </div>
@@ -742,7 +730,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00280">280</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00272">272</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 
 </div>
 </div>
@@ -768,7 +756,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00285">285</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00277">277</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 
 </div>
 </div>
@@ -820,7 +808,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00083">83</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00082">82</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 
 </div>
 </div>
@@ -837,7 +825,7 @@ Properties</h2></td></tr>
 
 <p>The <a class="el" href="class_arch_game_1_1_input_1_1_string_input_processor.html" title="Facilitates character-based input. ">StringInputProcessor</a> </p>
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00044">44</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00043">43</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 
 </div>
 </div>
@@ -862,7 +850,7 @@ Properties</h2></td></tr>
 
 <p>The X coordinate of the mouse </p>
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00023">23</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00022">22</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 
 </div>
 </div>
@@ -886,7 +874,7 @@ Properties</h2></td></tr>
 
 <p>The Y coordinate of the mouse </p>
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00028">28</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00027">27</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 
 </div>
 </div>
@@ -910,7 +898,7 @@ Properties</h2></td></tr>
 
 <p>How much time has passed since the last keypress </p>
 
-<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00033">33</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_input_manager_8cs_source.html#l00032">32</a> of file <a class="el" href="_input_manager_8cs_source.html">InputManager.cs</a>.</p>
 
 </div>
 </div>
@@ -923,7 +911,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_arch_game.html">ArchGame</a></li><li class="navelem"><a class="el" href="namespace_arch_game_1_1_input.html">Input</a></li><li class="navelem"><a class="el" href="class_arch_game_1_1_input_1_1_input_manager.html">InputManager</a></li>
-    <li class="footer">Generated on Mon Sep 8 2014 12:11:44 for ArchGame by
+    <li class="footer">Generated on Tue Sep 9 2014 17:06:32 for ArchGame by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

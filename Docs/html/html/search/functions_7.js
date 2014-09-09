@@ -7,6 +7,8 @@ var searchData=
   ['ismousebuttonpressed',['IsMouseButtonPressed',['../class_arch_game_1_1_input_1_1_input_manager.html#a18421d12f8e02499b24cbf3972216473',1,'ArchGame::Input::InputManager']]],
   ['isnotnull_3c_20t_20_3e',['IsNotNull&lt; T &gt;',['../class_arch_game_1_1_extensions_1_1_misc_extensions.html#adafb00cc218b7cbd8ac5d5f1c18356af',1,'ArchGame::Extensions::MiscExtensions']]],
   ['isnull_3c_20t_20_3e',['IsNull&lt; T &gt;',['../class_arch_game_1_1_extensions_1_1_misc_extensions.html#a69b0b50d8ed7b02b8be9a873cb576fbb',1,'ArchGame::Extensions::MiscExtensions']]],
+  ['isnullorempty',['IsNullOrEmpty',['../class_arch_game_1_1_extensions_1_1_misc_extensions.html#a6b5d7ad9c428d98b0c99fd046edd6db0',1,'ArchGame::Extensions::MiscExtensions']]],
+  ['isnullorwhitespace',['IsNullOrWhitespace',['../class_arch_game_1_1_extensions_1_1_misc_extensions.html#a1ae5d25e88f29a77f92a6495be31f7b0',1,'ArchGame::Extensions::MiscExtensions']]],
   ['isoneof_3c_20t_20_3e',['IsOneOf&lt; T &gt;',['../class_arch_game_1_1_extensions_1_1_misc_extensions.html#a1e59956be96dd3989659271d1788cb2a',1,'ArchGame::Extensions::MiscExtensions']]],
   ['ispixelobstructed',['IsPixelObstructed',['../class_arch_game_1_1_input_1_1_input_manager.html#a278e535916d00c657721616ded2a64d0',1,'ArchGame::Input::InputManager']]],
   ['isstrictlypositive',['IsStrictlyPositive',['../class_arch_game_1_1_extensions_1_1_xna_extensions.html#ae9f1d804b29320b6855a444818ee4977',1,'ArchGame::Extensions::XnaExtensions']]]

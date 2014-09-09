@@ -8,5 +8,6 @@ var searchData=
   ['modules',['Modules',['../namespace_arch_game_1_1_modules.html',1,'ArchGame']]],
   ['services',['Services',['../namespace_arch_game_1_1_services.html',1,'ArchGame']]],
   ['states',['States',['../namespace_arch_game_1_1_states.html',1,'ArchGame']]],
+  ['uicomponents',['UiComponents',['../namespace_arch_game_1_1_components_1_1_ui_components.html',1,'ArchGame::Components']]],
   ['xnacomponents',['XnaComponents',['../namespace_arch_game_1_1_components_1_1_xna_components.html',1,'ArchGame::Components']]]
 ];

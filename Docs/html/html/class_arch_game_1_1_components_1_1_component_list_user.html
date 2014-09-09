@@ -142,9 +142,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab703bab4f935656ca0b19f43cee96cd8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_components_1_1_component_list_user.html#ab703bab4f935656ca0b19f43cee96cd8">Update</a> (GameTime gameTime)</td></tr>
 <tr class="memdesc:ab703bab4f935656ca0b19f43cee96cd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the <a class="el" href="class_arch_game_1_1_components_1_1_component_list.html" title="The ComponentList keeps lists of IArchLoadables, IArchUpdateables, IArchObstructables, IArchDrawables and IDisposables. Performs the requested operations on all components. Use it to declaratively add behaviour and appearance to your states. ">ComponentList</a> components.  <a href="#ab703bab4f935656ca0b19f43cee96cd8">More...</a><br /></td></tr>
 <tr class="separator:ab703bab4f935656ca0b19f43cee96cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a211056ad3d40691f977cafaf6251b048"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_components_1_1_component_list_user.html#a211056ad3d40691f977cafaf6251b048">ObstructArea</a> (<a class="el" href="class_arch_game_1_1_input_1_1_input_manager.html">InputManager</a> inputManager)</td></tr>
-<tr class="memdesc:a211056ad3d40691f977cafaf6251b048"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prompt the components in the <a class="el" href="class_arch_game_1_1_components_1_1_component_list.html" title="The ComponentList keeps lists of IArchLoadables, IArchUpdateables, IArchObstructables, IArchDrawables and IDisposables. Performs the requested operations on all components. Use it to declaratively add behaviour and appearance to your states. ">ComponentList</a> to obstruct their area.  <a href="#a211056ad3d40691f977cafaf6251b048">More...</a><br /></td></tr>
-<tr class="separator:a211056ad3d40691f977cafaf6251b048"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf2a38dc6e10842c3b3b2720a68f8df1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_components_1_1_component_list_user.html#aaf2a38dc6e10842c3b3b2720a68f8df1">ObstructArea</a> (<a class="el" href="interface_arch_game_1_1_input_1_1_i_obstruction_manager.html">IObstructionManager</a> obstructionManager)</td></tr>
+<tr class="memdesc:aaf2a38dc6e10842c3b3b2720a68f8df1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prompt the components in the <a class="el" href="class_arch_game_1_1_components_1_1_component_list.html" title="The ComponentList keeps lists of IArchLoadables, IArchUpdateables, IArchObstructables, IArchDrawables and IDisposables. Performs the requested operations on all components. Use it to declaratively add behaviour and appearance to your states. ">ComponentList</a> to obstruct their area.  <a href="#aaf2a38dc6e10842c3b3b2720a68f8df1">More...</a><br /></td></tr>
+<tr class="separator:aaf2a38dc6e10842c3b3b2720a68f8df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10d7a0826ea5640462369cd605021e36"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_components_1_1_component_list_user.html#a10d7a0826ea5640462369cd605021e36">Draw</a> (SpriteBatch spriteBatch)</td></tr>
 <tr class="memdesc:a10d7a0826ea5640462369cd605021e36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the <a class="el" href="class_arch_game_1_1_components_1_1_component_list.html" title="The ComponentList keeps lists of IArchLoadables, IArchUpdateables, IArchObstructables, IArchDrawables and IDisposables. Performs the requested operations on all components. Use it to declaratively add behaviour and appearance to your states. ">ComponentList</a> components.  <a href="#a10d7a0826ea5640462369cd605021e36">More...</a><br /></td></tr>
 <tr class="separator:a10d7a0826ea5640462369cd605021e36"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,10 +166,12 @@ Protected Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a641faf077d24dd7e65837618797ebb75"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_components_1_1_component_list_user.html#a641faf077d24dd7e65837618797ebb75">UpdatePriority</a><code> [get]</code></td></tr>
-<tr class="separator:a641faf077d24dd7e65837618797ebb75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add8b90cfcb67eda9ec4b885603bdbc52"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_components_1_1_component_list_user.html#add8b90cfcb67eda9ec4b885603bdbc52">ZIndex</a><code> [get]</code></td></tr>
+<tr class="memdesc:add8b90cfcb67eda9ec4b885603bdbc52"><td class="mdescLeft">&#160;</td><td class="mdescRight">The ZIndex of the <a class="el" href="class_arch_game_1_1_components_1_1_component_list_user.html" title="The ComponentListUser is an abstract class which wraps a ComponentList. Inherit it to easily create e...">ComponentListUser</a>  <a href="#add8b90cfcb67eda9ec4b885603bdbc52">More...</a><br /></td></tr>
 <tr class="separator:add8b90cfcb67eda9ec4b885603bdbc52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a641faf077d24dd7e65837618797ebb75"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_components_1_1_component_list_user.html#a641faf077d24dd7e65837618797ebb75">UpdatePriority</a><code> [get]</code></td></tr>
+<tr class="memdesc:a641faf077d24dd7e65837618797ebb75"><td class="mdescLeft">&#160;</td><td class="mdescRight">The UpdatePriority of the <a class="el" href="class_arch_game_1_1_components_1_1_component_list_user.html" title="The ComponentListUser is an abstract class which wraps a ComponentList. Inherit it to easily create e...">ComponentListUser</a>  <a href="#a641faf077d24dd7e65837618797ebb75">More...</a><br /></td></tr>
+<tr class="separator:a641faf077d24dd7e65837618797ebb75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_interface_arch_game_1_1_components_1_1_i_arch_updateable"><td colspan="2" onclick="javascript:toggleInherit('properties_interface_arch_game_1_1_components_1_1_i_arch_updateable')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_arch_game_1_1_components_1_1_i_arch_updateable.html">ArchGame.Components.IArchUpdateable</a></td></tr>
 <tr class="memitem:a6f16401b1a559342acb88191f6c61428 inherit properties_interface_arch_game_1_1_components_1_1_i_arch_updateable"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_arch_game_1_1_components_1_1_i_arch_updateable.html#a6f16401b1a559342acb88191f6c61428">UpdatePriority</a><code> [get]</code></td></tr>
 <tr class="memdesc:a6f16401b1a559342acb88191f6c61428 inherit properties_interface_arch_game_1_1_components_1_1_i_arch_updateable"><td class="mdescLeft">&#160;</td><td class="mdescRight">The UpdatePriority is a number that represents the order in which components should be updated. An <a class="el" href="interface_arch_game_1_1_components_1_1_i_arch_updateable.html" title="IArchUpdateable is an interface for components that should be updated. ">IArchUpdateable</a> with a higher UpdatePriority will be updated before an <a class="el" href="interface_arch_game_1_1_components_1_1_i_arch_updateable.html" title="IArchUpdateable is an interface for components that should be updated. ">IArchUpdateable</a> with a lower UpdatePriority. Take note that this is reverse to <a class="el" href="interface_arch_game_1_1_components_1_1_i_z_index_component.html#a9edfef25099c2c01cc0445c4c92dbc3c" title="The ZIndex is a number that represents the order in which components should be drawn on the screen...">IZIndexComponent.ZIndex</a> (required by <a class="el" href="interface_arch_game_1_1_components_1_1_i_arch_drawable.html" title="IArchDrawable is an interface for components that should draw objects on the screen. Requires IZIndexComponent to get the order in which the components should be drawn. ">IArchDrawable</a> and <a class="el" href="interface_arch_game_1_1_components_1_1_i_arch_obstruction.html" title="IArchObstruction is an interface for components that obstruct certain parts of the screen...">IArchObstruction</a>).  <a href="#a6f16401b1a559342acb88191f6c61428">More...</a><br /></td></tr>
@@ -218,7 +220,7 @@ Properties</h2></td></tr>
 
 <p>Intialize the <a class="el" href="class_arch_game_1_1_components_1_1_component_list_user.html" title="The ComponentListUser is an abstract class which wraps a ComponentList. Inherit it to easily create e...">ComponentListUser</a> base object. </p>
 
-<p>Definition at line <a class="el" href="_component_list_user_8cs_source.html#l00025">25</a> of file <a class="el" href="_component_list_user_8cs_source.html">ComponentListUser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_component_list_user_8cs_source.html#l00032">32</a> of file <a class="el" href="_component_list_user_8cs_source.html">ComponentListUser.cs</a>.</p>
 
 </div>
 </div>
@@ -248,7 +250,7 @@ Properties</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_arch_game_1_1_states_1_1_state.html#a9df14a6acd899cd99685691b1be4cd3a">ArchGame.States.State</a>.</p>
 
-<p>Definition at line <a class="el" href="_component_list_user_8cs_source.html#l00066">66</a> of file <a class="el" href="_component_list_user_8cs_source.html">ComponentListUser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_component_list_user_8cs_source.html#l00073">73</a> of file <a class="el" href="_component_list_user_8cs_source.html">ComponentListUser.cs</a>.</p>
 
 </div>
 </div>
@@ -286,7 +288,7 @@ Properties</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_arch_game_1_1_states_1_1_state.html#ab4d61ea02ec252d147e0480c086b567d">ArchGame.States.State</a>.</p>
 
-<p>Definition at line <a class="el" href="_component_list_user_8cs_source.html#l00059">59</a> of file <a class="el" href="_component_list_user_8cs_source.html">ComponentListUser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_component_list_user_8cs_source.html#l00066">66</a> of file <a class="el" href="_component_list_user_8cs_source.html">ComponentListUser.cs</a>.</p>
 
 </div>
 </div>
@@ -324,11 +326,11 @@ Properties</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_arch_game_1_1_states_1_1_state.html#ab3819a13c575806cbd3b5657421dffdf">ArchGame.States.State</a>.</p>
 
-<p>Definition at line <a class="el" href="_component_list_user_8cs_source.html#l00035">35</a> of file <a class="el" href="_component_list_user_8cs_source.html">ComponentListUser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_component_list_user_8cs_source.html#l00042">42</a> of file <a class="el" href="_component_list_user_8cs_source.html">ComponentListUser.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a211056ad3d40691f977cafaf6251b048"></a>
+<a class="anchor" id="aaf2a38dc6e10842c3b3b2720a68f8df1"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -338,8 +340,8 @@ Properties</h2></td></tr>
         <tr>
           <td class="memname">virtual void ArchGame.Components.ComponentListUser.ObstructArea </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_arch_game_1_1_input_1_1_input_manager.html">InputManager</a>&#160;</td>
-          <td class="paramname"><em>inputManager</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="interface_arch_game_1_1_input_1_1_i_obstruction_manager.html">IObstructionManager</a>&#160;</td>
+          <td class="paramname"><em>obstructionManager</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -353,16 +355,16 @@ Properties</h2></td></tr>
 <p>Prompt the components in the <a class="el" href="class_arch_game_1_1_components_1_1_component_list.html" title="The ComponentList keeps lists of IArchLoadables, IArchUpdateables, IArchObstructables, IArchDrawables and IDisposables. Performs the requested operations on all components. Use it to declaratively add behaviour and appearance to your states. ">ComponentList</a> to obstruct their area. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">inputManager</td><td>The InputManager to register obstructions to</td></tr>
+    <tr><td class="paramname">obstructionManager</td><td>The IObstructionManager to register obstructions to</td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="interface_arch_game_1_1_components_1_1_i_arch_obstruction.html#a618626124f7b3c8aa634f09a401d7db7">ArchGame.Components.IArchObstruction</a>.</p>
+<p>Implements <a class="el" href="interface_arch_game_1_1_components_1_1_i_arch_obstruction.html#a12e5374f5b4ef83bb417e1aa08f0f10d">ArchGame.Components.IArchObstruction</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_arch_game_1_1_states_1_1_state.html#afc0fcc06856f16408acbcfb4ac1c5ba2">ArchGame.States.State</a>.</p>
+<p>Reimplemented in <a class="el" href="class_arch_game_1_1_states_1_1_state.html#a60f0b6a83b705da549e143f1c26ec6e4">ArchGame.States.State</a>.</p>
 
-<p>Definition at line <a class="el" href="_component_list_user_8cs_source.html#l00051">51</a> of file <a class="el" href="_component_list_user_8cs_source.html">ComponentListUser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_component_list_user_8cs_source.html#l00058">58</a> of file <a class="el" href="_component_list_user_8cs_source.html">ComponentListUser.cs</a>.</p>
 
 </div>
 </div>
@@ -400,7 +402,7 @@ Properties</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_arch_game_1_1_states_1_1_state.html#a1640f0cc134699c0a9c27f2454d04bd3">ArchGame.States.State</a>.</p>
 
-<p>Definition at line <a class="el" href="_component_list_user_8cs_source.html#l00043">43</a> of file <a class="el" href="_component_list_user_8cs_source.html">ComponentListUser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_component_list_user_8cs_source.html#l00050">50</a> of file <a class="el" href="_component_list_user_8cs_source.html">ComponentListUser.cs</a>.</p>
 
 </div>
 </div>
@@ -448,7 +450,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_component_list_user_8cs_source.html#l00019">19</a> of file <a class="el" href="_component_list_user_8cs_source.html">ComponentListUser.cs</a>.</p>
+<p>The UpdatePriority of the <a class="el" href="class_arch_game_1_1_components_1_1_component_list_user.html" title="The ComponentListUser is an abstract class which wraps a ComponentList. Inherit it to easily create e...">ComponentListUser</a> </p>
+
+<p>Definition at line <a class="el" href="_component_list_user_8cs_source.html#l00027">27</a> of file <a class="el" href="_component_list_user_8cs_source.html">ComponentListUser.cs</a>.</p>
 
 </div>
 </div>
@@ -470,7 +474,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_component_list_user_8cs_source.html#l00020">20</a> of file <a class="el" href="_component_list_user_8cs_source.html">ComponentListUser.cs</a>.</p>
+<p>The ZIndex of the <a class="el" href="class_arch_game_1_1_components_1_1_component_list_user.html" title="The ComponentListUser is an abstract class which wraps a ComponentList. Inherit it to easily create e...">ComponentListUser</a> </p>
+
+<p>Definition at line <a class="el" href="_component_list_user_8cs_source.html#l00022">22</a> of file <a class="el" href="_component_list_user_8cs_source.html">ComponentListUser.cs</a>.</p>
 
 </div>
 </div>
@@ -483,7 +489,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_arch_game.html">ArchGame</a></li><li class="navelem"><a class="el" href="namespace_arch_game_1_1_components.html">Components</a></li><li class="navelem"><a class="el" href="class_arch_game_1_1_components_1_1_component_list_user.html">ComponentListUser</a></li>
-    <li class="footer">Generated on Mon Sep 8 2014 12:11:43 for ArchGame by
+    <li class="footer">Generated on Tue Sep 9 2014 17:06:31 for ArchGame by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

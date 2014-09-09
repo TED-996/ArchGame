@@ -7,7 +7,7 @@ var class_arch_game_1_1_components_1_1_component_list =
     [ "Dispose", "class_arch_game_1_1_components_1_1_component_list.html#aa780359eb053c17404b6992b8a5cb00c", null ],
     [ "Draw", "class_arch_game_1_1_components_1_1_component_list.html#ae2817239806f784c4d7e3249650e7824", null ],
     [ "LoadContent", "class_arch_game_1_1_components_1_1_component_list.html#a0f7a98b613d28b1c7a9586a57a90d95f", null ],
-    [ "ObstructArea", "class_arch_game_1_1_components_1_1_component_list.html#a54a689905c177167f1855388bf7a10da", null ],
+    [ "ObstructArea", "class_arch_game_1_1_components_1_1_component_list.html#a90c164197a5add97bb9011ae5ea4731f", null ],
     [ "Remove", "class_arch_game_1_1_components_1_1_component_list.html#a39b8f83c5191cd711a19f13283695ff3", null ],
     [ "Update", "class_arch_game_1_1_components_1_1_component_list.html#ae2fda36a3e22c30534d34ced898003f9", null ],
     [ "Disposables", "class_arch_game_1_1_components_1_1_component_list.html#a828e615f87f3bfecf1e32c5d70781e2b", null ],

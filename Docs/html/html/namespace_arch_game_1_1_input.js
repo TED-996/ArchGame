@@ -4,5 +4,6 @@ var namespace_arch_game_1_1_input =
     [ "ClipboardManager", "class_arch_game_1_1_input_1_1_clipboard_manager.html", "class_arch_game_1_1_input_1_1_clipboard_manager" ],
     [ "EventInputManager", "class_arch_game_1_1_input_1_1_event_input_manager.html", "class_arch_game_1_1_input_1_1_event_input_manager" ],
     [ "InputManager", "class_arch_game_1_1_input_1_1_input_manager.html", "class_arch_game_1_1_input_1_1_input_manager" ],
+    [ "IObstructionManager", "interface_arch_game_1_1_input_1_1_i_obstruction_manager.html", "interface_arch_game_1_1_input_1_1_i_obstruction_manager" ],
     [ "StringInputProcessor", "class_arch_game_1_1_input_1_1_string_input_processor.html", "class_arch_game_1_1_input_1_1_string_input_processor" ]
 ];
