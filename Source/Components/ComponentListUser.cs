@@ -54,7 +54,7 @@ namespace ArchGame.Components {
 		/// <summary>
 		/// Prompt the components in the ComponentList to obstruct their area.
 		/// </summary>
-		/// <param name="obstructionManager">The InputManager to register obstructions to</param>
+		/// <param name="obstructionManager">The IObstructionManager to register obstructions to</param>
 		public virtual void ObstructArea(IObstructionManager obstructionManager) {
 			componentList.ObstructArea(obstructionManager);
 		}

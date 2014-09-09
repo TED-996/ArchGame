@@ -134,7 +134,7 @@ namespace ArchGame.States {
 		/// Prompts the current state to obstruct its area.
 		/// First, it fulfills the stack operation requests.
 		/// </summary>
-		/// <param name="obstructionManager">The InputManager to register the obstructions to</param>
+		/// <param name="obstructionManager">The IObstructionManager to register the obstructions to</param>
 		public void ObstructArea(IObstructionManager obstructionManager) {
 			FulfillCommand();
 
