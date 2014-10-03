@@ -7,12 +7,13 @@ using ArchGame.Services;
 using ArchGame.States;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using System.Linq;
 
 namespace Test.States {
 	/// <summary>
 	/// This will be shown right after the content has been loaded.
 	/// </summary>
-	public class MenuState : State, IModuleRequester {
+	public class MenuState : State {
 		InputManager inputManager;
 		StateManager stateManager;
 
@@ -33,14 +34,14 @@ namespace Test.States {
 			}
 		}
 
-		IEnumerable<string> IModuleRequester.GetRequestedModules() {
-			//We need the InputManager to read the Enter key and the StateManager to request to show the GameState.
-			return new[] {"InputManager", "StateManager"};
+		public override IEnumerable<string> GetRequestedModules() {
+			return base.GetRequestedModules().Concat(new[] {"InputManager", "StateManager"});
 		}
 
-		void IModuleRequester.SetModules(ModuleCollection collection, ModuleFactory factory) {
+		public override void SetModules(ModuleCollection collection, ModuleFactory factory) {
 			inputManager = collection.GetModule<InputManager>();
 			stateManager = collection.GetModule<StateManager>();
+			base.SetModules(collection, factory);
 		}
 	}
 }

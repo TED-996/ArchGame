@@ -7,6 +7,7 @@ using ArchGame.States;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Test.Network;
+using System.Linq;
 
 namespace Test.States {
 	/// <summary>
@@ -14,7 +15,7 @@ namespace Test.States {
 	/// is left on screen. Also, another trace can be left by pressing Space.
 	/// In the top-left corner of the screen, a random number received from RANDOM.ORG will be shown.
 	/// </summary>
-	public class GameState : State, IModuleRequester {
+	public class GameState : State {
 		readonly Sprite sprite;
 		readonly Text text;
 
@@ -88,12 +89,12 @@ namespace Test.States {
 			}
 		}
 
-		IEnumerable<string> IModuleRequester.GetRequestedModules() {
+		public override IEnumerable<string> GetRequestedModules() {
 			//This state requests the InputManager and the NetworkManager.
-			return new[] {"InputManager", "INetworkManager"};
+			return base.GetRequestedModules().Concat(new[] {"InputManager", "INetworkManager"});
 		}
 
-		void IModuleRequester.SetModules(ModuleCollection collection, ModuleFactory factory) {
+		public override void SetModules(ModuleCollection collection, ModuleFactory factory) {
 			//Save the modules from the ModuleCollection
 			inputManager = collection.GetModule<InputManager>();
 			networkManager = collection.GetModule<INetworkManager>();
@@ -103,6 +104,8 @@ namespace Test.States {
 
 			//Create a new NetworkResponseRenderer with the NetworkManager that we just got.
 			componentList.Add(new NetworkResponseRenderer(networkManager));
+
+			base.SetModules(collection, factory);
 		}
 	}
 }

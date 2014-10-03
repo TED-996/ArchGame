@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using ArchGame.Input;
+using ArchGame.Modules;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -10,7 +12,8 @@ namespace ArchGame.Components {
 	/// Do not use it if you only need, for example, to draw the entity, with no update or obstruction step; the unnecessry calls may
 	/// slow down your application.
 	/// </summary>
-	public abstract class ComponentListUser :IArchLoadable, IArchUpdateable, IArchObstruction, IArchDrawable, IDisposable {
+	public abstract class ComponentListUser : IModuleRequester, IArchLoadable, IArchUpdateable, IArchObstruction, IArchDrawable,
+		IDisposable {
 		/// <summary>
 		/// The ComponentList
 		/// </summary>
@@ -33,6 +36,23 @@ namespace ArchGame.Components {
 			componentList = new ComponentList();
 			UpdatePriority = newUpdatePriority;
 			ZIndex = newZIndex;
+		}
+
+		/// <summary>
+		/// Gets the requested modules of the ComponentList.
+		/// Returns an empty array.
+		/// </summary>
+		public virtual IEnumerable<string> GetRequestedModules() {
+			return componentList.GetRequestedModules();
+		}
+
+		/// <summary>
+		/// Sets the modules of the ComponentList components.
+		/// </summary>
+		/// <param name="collection">The empty ModuleCollection built by the ModuleFactory.</param>
+		/// <param name="factory">The ModuleFactory</param>
+		public virtual void SetModules(ModuleCollection collection, ModuleFactory factory) {
+			componentList.SetModules(collection, factory);
 		}
 
 		/// <summary>

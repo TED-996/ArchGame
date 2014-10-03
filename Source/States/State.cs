@@ -1,5 +1,7 @@
-﻿using ArchGame.Components;
+﻿using System.Collections.Generic;
+using ArchGame.Components;
 using ArchGame.Input;
+using ArchGame.Modules;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -16,6 +18,22 @@ namespace ArchGame.States {
 		/// Intialize the State base object.
 		/// </summary>
 		protected State() {
+		}
+
+		/// <summary>
+		/// Gets the requested modules of the State.
+		/// </summary>
+		public override IEnumerable<string> GetRequestedModules() {
+			return base.GetRequestedModules();
+		}
+
+		/// <summary>
+		/// Sets the modules requested by the State.
+		/// </summary>
+		/// <param name="collection">The ModuleCollection built by the ModuleFactory.</param>
+		/// <param name="factory">The ModuleFactory</param>
+		public override void SetModules(ModuleCollection collection, ModuleFactory factory) {
+			base.SetModules(collection, factory);
 		}
 
 		/// <summary>

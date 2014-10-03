@@ -11,7 +11,7 @@ namespace ArchGame.States {
 	/// <summary>
 	/// The stateManager keeps a stack of States and manages operations on that stack.
 	/// It also delegates calls to Update(), Draw() and ObstructArea() to the top state
-	/// Also, it loads and disposes states when pushed or popped from the stack.
+	/// Also, it fulfills the requests, loads the content and disposes of states when pushed or popped from the stack.
 	/// The StateManager is accesible to implementation code through the ModuleFactory, where it's requestable.
 	/// See the wiki for more information.
 	/// </summary>
@@ -42,10 +42,7 @@ namespace ArchGame.States {
 		internal void PushState(State state) {
 			stateStack.Push(state);
 
-			IModuleRequester stateAsRequester = state as IModuleRequester;
-			if (stateAsRequester != null) {
-				factory.FulfillRequestNow(stateAsRequester);
-			}
+			factory.FulfillRequestNow(state);
 
 			state.LoadContent(contentManager);
 		}
