@@ -122,18 +122,25 @@ Inheritance diagram for ArchGame.States.State:</div>
  <div class="center">
   <img src="class_arch_game_1_1_states_1_1_state.png" usemap="#ArchGame.States.State_map" alt=""/>
   <map id="ArchGame.States.State_map" name="ArchGame.States.State_map">
-<area href="class_arch_game_1_1_components_1_1_component_list_user.html" title="The ComponentListUser is an abstract class which wraps a ComponentList. Inherit it to easily create e..." alt="ArchGame.Components.ComponentListUser" shape="rect" coords="534,112,791,136"/>
-<area href="interface_arch_game_1_1_components_1_1_i_arch_loadable.html" title="IArchLoadable is an interface for components that should load content (from files, especially from the Content project) at the LoadContent stage. " alt="ArchGame.Components.IArchLoadable" shape="rect" coords="0,56,257,80"/>
-<area href="interface_arch_game_1_1_components_1_1_i_arch_updateable.html" title="IArchUpdateable is an interface for components that should be updated. " alt="ArchGame.Components.IArchUpdateable" shape="rect" coords="267,56,524,80"/>
-<area href="interface_arch_game_1_1_components_1_1_i_arch_obstruction.html" title="IArchObstruction is an interface for components that obstruct certain parts of the screen..." alt="ArchGame.Components.IArchObstruction" shape="rect" coords="534,56,791,80"/>
-<area href="interface_arch_game_1_1_components_1_1_i_arch_drawable.html" title="IArchDrawable is an interface for components that should draw objects on the screen. Requires IZIndexComponent to get the order in which the components should be drawn. " alt="ArchGame.Components.IArchDrawable" shape="rect" coords="801,56,1058,80"/>
-<area href="interface_arch_game_1_1_components_1_1_i_z_index_component.html" title="IZIndexComponent is an interface for components that follow an order in which they are drawn on the s..." alt="ArchGame.Components.IZIndexComponent" shape="rect" coords="534,0,791,24"/>
+<area href="class_arch_game_1_1_components_1_1_component_list_user.html" title="The ComponentListUser is an abstract class which wraps a ComponentList. Inherit it to easily create e..." alt="ArchGame.Components.ComponentListUser" shape="rect" coords="667,112,924,136"/>
+<area href="interface_arch_game_1_1_modules_1_1_i_module_requester.html" title="The IModuleRequester is an interface for classes that request modules registered in the ModuleFactory..." alt="ArchGame.Modules.IModuleRequester" shape="rect" coords="0,56,257,80"/>
+<area href="interface_arch_game_1_1_components_1_1_i_arch_loadable.html" title="IArchLoadable is an interface for components that should load content (from files, especially from the Content project) at the LoadContent stage. " alt="ArchGame.Components.IArchLoadable" shape="rect" coords="267,56,524,80"/>
+<area href="interface_arch_game_1_1_components_1_1_i_arch_updateable.html" title="IArchUpdateable is an interface for components that should be updated. " alt="ArchGame.Components.IArchUpdateable" shape="rect" coords="534,56,791,80"/>
+<area href="interface_arch_game_1_1_components_1_1_i_arch_obstruction.html" title="IArchObstruction is an interface for components that obstruct certain parts of the screen..." alt="ArchGame.Components.IArchObstruction" shape="rect" coords="801,56,1058,80"/>
+<area href="interface_arch_game_1_1_components_1_1_i_arch_drawable.html" title="IArchDrawable is an interface for components that should draw objects on the screen. Requires IZIndexComponent to get the order in which the components should be drawn. " alt="ArchGame.Components.IArchDrawable" shape="rect" coords="1068,56,1325,80"/>
 <area href="interface_arch_game_1_1_components_1_1_i_z_index_component.html" title="IZIndexComponent is an interface for components that follow an order in which they are drawn on the s..." alt="ArchGame.Components.IZIndexComponent" shape="rect" coords="801,0,1058,24"/>
+<area href="interface_arch_game_1_1_components_1_1_i_z_index_component.html" title="IZIndexComponent is an interface for components that follow an order in which they are drawn on the s..." alt="ArchGame.Components.IZIndexComponent" shape="rect" coords="1068,0,1325,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ad3a67ae36e1ca387939d1c0ade2b0539"><td class="memItemLeft" align="right" valign="top">override IEnumerable&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_states_1_1_state.html#ad3a67ae36e1ca387939d1c0ade2b0539">GetRequestedModules</a> ()</td></tr>
+<tr class="memdesc:ad3a67ae36e1ca387939d1c0ade2b0539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the requested modules of the <a class="el" href="class_arch_game_1_1_states_1_1_state.html" title="A State is a class which is used to define the behaviour and appearance of the game at a given moment...">State</a>.  <a href="#ad3a67ae36e1ca387939d1c0ade2b0539">More...</a><br /></td></tr>
+<tr class="separator:ad3a67ae36e1ca387939d1c0ade2b0539"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a075fe699cc42374a31b29d6ba77079dd"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_states_1_1_state.html#a075fe699cc42374a31b29d6ba77079dd">SetModules</a> (<a class="el" href="class_arch_game_1_1_modules_1_1_module_collection.html">ModuleCollection</a> collection, <a class="el" href="class_arch_game_1_1_modules_1_1_module_factory.html">ModuleFactory</a> factory)</td></tr>
+<tr class="memdesc:a075fe699cc42374a31b29d6ba77079dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the modules requested by the <a class="el" href="class_arch_game_1_1_states_1_1_state.html" title="A State is a class which is used to define the behaviour and appearance of the game at a given moment...">State</a>.  <a href="#a075fe699cc42374a31b29d6ba77079dd">More...</a><br /></td></tr>
+<tr class="separator:a075fe699cc42374a31b29d6ba77079dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3819a13c575806cbd3b5657421dffdf"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_states_1_1_state.html#ab3819a13c575806cbd3b5657421dffdf">LoadContent</a> (ContentManager contentManager)</td></tr>
 <tr class="memdesc:ab3819a13c575806cbd3b5657421dffdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the content of the <a class="el" href="class_arch_game_1_1_states_1_1_state.html" title="A State is a class which is used to define the behaviour and appearance of the game at a given moment...">State</a>. The base implementation loads the content of the componentList items.  <a href="#ab3819a13c575806cbd3b5657421dffdf">More...</a><br /></td></tr>
 <tr class="separator:ab3819a13c575806cbd3b5657421dffdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,7 +171,7 @@ Protected Member Functions</h2></td></tr>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_arch_game_1_1_components_1_1_component_list_user"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_arch_game_1_1_components_1_1_component_list_user')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_arch_game_1_1_components_1_1_component_list_user.html">ArchGame.Components.ComponentListUser</a></td></tr>
 <tr class="memitem:af3e0c4d059d8dd5abd930aec6c2dcbc2 inherit pro_attribs_class_arch_game_1_1_components_1_1_component_list_user"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_arch_game_1_1_components_1_1_component_list.html">ComponentList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_components_1_1_component_list_user.html#af3e0c4d059d8dd5abd930aec6c2dcbc2">componentList</a></td></tr>
-<tr class="memdesc:af3e0c4d059d8dd5abd930aec6c2dcbc2 inherit pro_attribs_class_arch_game_1_1_components_1_1_component_list_user"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="class_arch_game_1_1_components_1_1_component_list.html" title="The ComponentList keeps lists of IArchLoadables, IArchUpdateables, IArchObstructables, IArchDrawables and IDisposables. Performs the requested operations on all components. Use it to declaratively add behaviour and appearance to your states. ">ComponentList</a>  <a href="#af3e0c4d059d8dd5abd930aec6c2dcbc2">More...</a><br /></td></tr>
+<tr class="memdesc:af3e0c4d059d8dd5abd930aec6c2dcbc2 inherit pro_attribs_class_arch_game_1_1_components_1_1_component_list_user"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="class_arch_game_1_1_components_1_1_component_list.html" title="The ComponentList keeps lists of IMoudleRequesters, IArchLoadables, IArchUpdateables, IArchObstructables, IArchDrawables and IDisposables. Performs the requested operations on all components. Use it to declaratively add behaviour and appearance to your states. ">ComponentList</a>  <a href="#af3e0c4d059d8dd5abd930aec6c2dcbc2">More...</a><br /></td></tr>
 <tr class="separator:af3e0c4d059d8dd5abd930aec6c2dcbc2 inherit pro_attribs_class_arch_game_1_1_components_1_1_component_list_user"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_class_arch_game_1_1_components_1_1_component_list_user"><td colspan="2" onclick="javascript:toggleInherit('properties_class_arch_game_1_1_components_1_1_component_list_user')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_arch_game_1_1_components_1_1_component_list_user.html">ArchGame.Components.ComponentListUser</a></td></tr>
 <tr class="memitem:add8b90cfcb67eda9ec4b885603bdbc52 inherit properties_class_arch_game_1_1_components_1_1_component_list_user"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_components_1_1_component_list_user.html#add8b90cfcb67eda9ec4b885603bdbc52">ZIndex</a><code> [get]</code></td></tr>
@@ -185,7 +192,7 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A <a class="el" href="class_arch_game_1_1_states_1_1_state.html" title="A State is a class which is used to define the behaviour and appearance of the game at a given moment...">State</a> is a class which is used to define the behaviour and appearance of the game at a given moment. Examples of <a class="el" href="namespace_arch_game_1_1_states.html">States</a> (not implemented by <a class="el" href="class_arch_game_1_1_arch_game.html" title="This is the base class for your game. Read the wiki for more info. ">ArchGame</a>; game-specific): LoadingState, MenuState, OptionState, GameState. The states' Update and Draw methods are almost the only calls to implementation code during normal program execution. See the github wiki for more info. </p>
 
-<p>Definition at line <a class="el" href="_state_8cs_source.html#l00014">14</a> of file <a class="el" href="_state_8cs_source.html">State.cs</a>.</p>
+<p>Definition at line <a class="el" href="_state_8cs_source.html#l00016">16</a> of file <a class="el" href="_state_8cs_source.html">State.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a651b20639d579d14612a83fdd7a01162"></a>
 <div class="memitem">
@@ -210,7 +217,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Intialize the <a class="el" href="class_arch_game_1_1_states_1_1_state.html" title="A State is a class which is used to define the behaviour and appearance of the game at a given moment...">State</a> base object. </p>
 
-<p>Definition at line <a class="el" href="_state_8cs_source.html#l00018">18</a> of file <a class="el" href="_state_8cs_source.html">State.cs</a>.</p>
+<p>Definition at line <a class="el" href="_state_8cs_source.html#l00020">20</a> of file <a class="el" href="_state_8cs_source.html">State.cs</a>.</p>
 
 </div>
 </div>
@@ -240,7 +247,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_arch_game_1_1_components_1_1_component_list_user.html#a527b46c22bd7efcedbd1b4c5efe2dc8e">ArchGame.Components.ComponentListUser</a>.</p>
 
-<p>Definition at line <a class="el" href="_state_8cs_source.html#l00060">60</a> of file <a class="el" href="_state_8cs_source.html">State.cs</a>.</p>
+<p>Definition at line <a class="el" href="_state_8cs_source.html#l00078">78</a> of file <a class="el" href="_state_8cs_source.html">State.cs</a>.</p>
 
 </div>
 </div>
@@ -276,7 +283,36 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_arch_game_1_1_components_1_1_component_list_user.html#a10d7a0826ea5640462369cd605021e36">ArchGame.Components.ComponentListUser</a>.</p>
 
-<p>Definition at line <a class="el" href="_state_8cs_source.html#l00052">52</a> of file <a class="el" href="_state_8cs_source.html">State.cs</a>.</p>
+<p>Definition at line <a class="el" href="_state_8cs_source.html#l00070">70</a> of file <a class="el" href="_state_8cs_source.html">State.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad3a67ae36e1ca387939d1c0ade2b0539"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override IEnumerable&lt;string&gt; ArchGame.States.State.GetRequestedModules </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the requested modules of the <a class="el" href="class_arch_game_1_1_states_1_1_state.html" title="A State is a class which is used to define the behaviour and appearance of the game at a given moment...">State</a>. </p>
+
+<p>Reimplemented from <a class="el" href="class_arch_game_1_1_components_1_1_component_list_user.html#a6b3403d2bfb33bd502bf94b8d4f0774e">ArchGame.Components.ComponentListUser</a>.</p>
+
+<p>Definition at line <a class="el" href="_state_8cs_source.html#l00026">26</a> of file <a class="el" href="_state_8cs_source.html">State.cs</a>.</p>
 
 </div>
 </div>
@@ -312,7 +348,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_arch_game_1_1_components_1_1_component_list_user.html#abbd22baa1429843e9efa3e2ea2a8f602">ArchGame.Components.ComponentListUser</a>.</p>
 
-<p>Definition at line <a class="el" href="_state_8cs_source.html#l00026">26</a> of file <a class="el" href="_state_8cs_source.html">State.cs</a>.</p>
+<p>Definition at line <a class="el" href="_state_8cs_source.html#l00044">44</a> of file <a class="el" href="_state_8cs_source.html">State.cs</a>.</p>
 
 </div>
 </div>
@@ -348,7 +384,54 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_arch_game_1_1_components_1_1_component_list_user.html#aaf2a38dc6e10842c3b3b2720a68f8df1">ArchGame.Components.ComponentListUser</a>.</p>
 
-<p>Definition at line <a class="el" href="_state_8cs_source.html#l00043">43</a> of file <a class="el" href="_state_8cs_source.html">State.cs</a>.</p>
+<p>Definition at line <a class="el" href="_state_8cs_source.html#l00061">61</a> of file <a class="el" href="_state_8cs_source.html">State.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a075fe699cc42374a31b29d6ba77079dd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void ArchGame.States.State.SetModules </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_arch_game_1_1_modules_1_1_module_collection.html">ModuleCollection</a>&#160;</td>
+          <td class="paramname"><em>collection</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_arch_game_1_1_modules_1_1_module_factory.html">ModuleFactory</a>&#160;</td>
+          <td class="paramname"><em>factory</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the modules requested by the <a class="el" href="class_arch_game_1_1_states_1_1_state.html" title="A State is a class which is used to define the behaviour and appearance of the game at a given moment...">State</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collection</td><td>The ModuleCollection built by the ModuleFactory.</td></tr>
+    <tr><td class="paramname">factory</td><td>The ModuleFactory</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="class_arch_game_1_1_components_1_1_component_list_user.html#ac3a790e97787b4f2e5460f27babb6bf8">ArchGame.Components.ComponentListUser</a>.</p>
+
+<p>Definition at line <a class="el" href="_state_8cs_source.html#l00035">35</a> of file <a class="el" href="_state_8cs_source.html">State.cs</a>.</p>
 
 </div>
 </div>
@@ -384,7 +467,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_arch_game_1_1_components_1_1_component_list_user.html#ab703bab4f935656ca0b19f43cee96cd8">ArchGame.Components.ComponentListUser</a>.</p>
 
-<p>Definition at line <a class="el" href="_state_8cs_source.html#l00035">35</a> of file <a class="el" href="_state_8cs_source.html">State.cs</a>.</p>
+<p>Definition at line <a class="el" href="_state_8cs_source.html#l00053">53</a> of file <a class="el" href="_state_8cs_source.html">State.cs</a>.</p>
 
 </div>
 </div>
@@ -397,7 +480,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_arch_game.html">ArchGame</a></li><li class="navelem"><a class="el" href="namespace_arch_game_1_1_states.html">States</a></li><li class="navelem"><a class="el" href="class_arch_game_1_1_states_1_1_state.html">State</a></li>
-    <li class="footer">Generated on Tue Sep 9 2014 17:06:33 for ArchGame by
+    <li class="footer">Generated on Fri Oct 3 2014 16:08:51 for ArchGame by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

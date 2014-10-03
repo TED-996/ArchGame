@@ -49,6 +49,8 @@ var hierarchy =
       ] ]
     ] ],
     [ "ArchGame.Modules.IModuleRequester", "interface_arch_game_1_1_modules_1_1_i_module_requester.html", [
+      [ "ArchGame.Components.ComponentList", "class_arch_game_1_1_components_1_1_component_list.html", null ],
+      [ "ArchGame.Components.ComponentListUser", "class_arch_game_1_1_components_1_1_component_list_user.html", null ],
       [ "ArchGame.Components.UiComponents.Button", "class_arch_game_1_1_components_1_1_ui_components_1_1_button.html", null ]
     ] ],
     [ "ArchGame.Input.IObstructionManager", "interface_arch_game_1_1_input_1_1_i_obstruction_manager.html", [
