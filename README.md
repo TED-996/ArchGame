@@ -28,7 +28,7 @@ Disclaimer: Some of the feature names might be poorly chosen. Please let me know
 ## Links
 
 * [Github.io page](http://ted-996.github.io/ArchGame/)
-* [Documentation](http://ted-996.github.io/ArchGame/Docs/html/index.html)
+* [Documentation](http://ted-996.github.io/ArchGame/Docs/html/html/index.html)
 * [Documentation .ZIP](http://ted-996.github.io/ArchGame/Docs/Docs.zip)
 * [Github Wiki](https://github.com/TED-996/ArchGame/wiki)
 
