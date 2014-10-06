@@ -105,8 +105,7 @@ $(document).ready(function(){initNavTree('namespace_arch_game.html','');});
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
 <div class="title">Package ArchGame</div>  </div>
 </div><!--header-->
@@ -115,6 +114,8 @@ $(document).ready(function(){initNavTree('namespace_arch_game.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespace_arch_game_1_1_components"><td class="memItemLeft" align="right" valign="top">package &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_arch_game_1_1_components.html">Components</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_arch_game_1_1_content"><td class="memItemLeft" align="right" valign="top">package &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_arch_game_1_1_content.html">Content</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespace_arch_game_1_1_extensions"><td class="memItemLeft" align="right" valign="top">package &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_arch_game_1_1_extensions.html">Extensions</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,72 +135,14 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_arch_game.html">ArchGame</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the base class for your game. Read the wiki for more info.  <a href="class_arch_game_1_1_arch_game.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_console_logger.html">ConsoleLogger</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_arch_game_1_1_logger.html" title="Logger that writes messages synchronously to a file. ">Logger</a> that writes messages synchronously to the console.  <a href="class_arch_game_1_1_console_logger.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_arch_game_1_1_i_logger.html">ILogger</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An <a class="el" href="interface_arch_game_1_1_i_logger.html" title="An ILogger is a class responsible for logging data to a file or the console. Implement this to use yo...">ILogger</a> is a class responsible for logging data to a file or the console. Implement this to use your own logger.  <a href="interface_arch_game_1_1_i_logger.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_loadable_set.html">LoadableSet</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="class_arch_game_1_1_loadable_set.html" title="The LoadableSet is a class that keeps 2 lists of IArchLoadables to be used in the content loading pha...">LoadableSet</a> is a class that keeps 2 lists of IArchLoadables to be used in the content loading phase. The preloadables will be loaded before the window appears and is intended for content critical for the game at any given moment. The loadables will be loaded while the loading state is being shown on screen, in a background thread. It is reccommended to load all the content of the game in one of those lists, and to have the preloadables as few as possible. See the wiki for more information.  <a href="class_arch_game_1_1_loadable_set.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_logger.html">Logger</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_arch_game_1_1_logger.html" title="Logger that writes messages synchronously to a file. ">Logger</a> that writes messages synchronously to a file.  <a href="class_arch_game_1_1_logger.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_arch_game_1_1_log_message.html">LogMessage</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_arch_game_1_1_log_message.html" title="LogMessage is a struct that keeps data about a logger message. ">LogMessage</a> is a struct that keeps data about a logger message.  <a href="struct_arch_game_1_1_log_message.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_null_logger.html">NullLogger</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mock <a class="el" href="class_arch_game_1_1_logger.html" title="Logger that writes messages synchronously to a file. ">Logger</a>, doesn't log any messages. Use this when you want to disable logging.  <a href="class_arch_game_1_1_null_logger.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_threaded_logger.html">ThreadedLogger</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_arch_game_1_1_logger.html" title="Logger that writes messages synchronously to a file. ">Logger</a> that writes messages asynchronously to a file. The messages are saved to a queue and are written every 0.1 seconds.  <a href="class_arch_game_1_1_threaded_logger.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:aa6507993887ac9409911f0171e3d12f4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_arch_game.html#aa6507993887ac9409911f0171e3d12f4">LogMessageType</a> { <a class="el" href="namespace_arch_game.html#aa6507993887ac9409911f0171e3d12f4aa82be0f551b8708bc08eb33cd9ded0cf">LogMessageType.Information</a>, 
-<a class="el" href="namespace_arch_game.html#aa6507993887ac9409911f0171e3d12f4a0eaadb4fcb48a0a0ed7bc9868be9fbaa">LogMessageType.Warning</a>, 
-<a class="el" href="namespace_arch_game.html#aa6507993887ac9409911f0171e3d12f4a902b0d55fddef6f8d651fe1035b7d4bd">LogMessageType.Error</a>
- }</td></tr>
-<tr class="memdesc:aa6507993887ac9409911f0171e3d12f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enum represents the type of the message that will be logged by the application's logger.  <a href="namespace_arch_game.html#aa6507993887ac9409911f0171e3d12f4">More...</a><br /></td></tr>
-<tr class="separator:aa6507993887ac9409911f0171e3d12f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a class="anchor" id="aa6507993887ac9409911f0171e3d12f4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="namespace_arch_game.html#aa6507993887ac9409911f0171e3d12f4">ArchGame.LogMessageType</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This enum represents the type of the message that will be logged by the application's logger. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="aa6507993887ac9409911f0171e3d12f4aa82be0f551b8708bc08eb33cd9ded0cf"></a>Information&#160;</td><td class="fielddoc">
-<p>This message is an information. It is only a trace of events and does not signal a problem. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="aa6507993887ac9409911f0171e3d12f4a0eaadb4fcb48a0a0ed7bc9868be9fbaa"></a>Warning&#160;</td><td class="fielddoc">
-<p>This message signals a potential problem. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="aa6507993887ac9409911f0171e3d12f4a902b0d55fddef6f8d651fe1035b7d4bd"></a>Error&#160;</td><td class="fielddoc">
-<p>This message signals a severe problem. </p>
-</td></tr>
-</table>
-
-<p>Definition at line <a class="el" href="_logger_8cs_source.html#l00367">367</a> of file <a class="el" href="_logger_8cs_source.html">Logger.cs</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_arch_game.html">ArchGame</a></li>
-    <li class="footer">Generated on Fri Oct 3 2014 16:08:48 for ArchGame by
+    <li class="footer">Generated on Mon Oct 6 2014 18:11:07 for ArchGame by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

@@ -113,7 +113,7 @@ $(document).ready(function(){initNavTree('class_arch_game_1_1_services_1_1_logge
 </div><!--header-->
 <div class="contents">
 
-<p>The provider for the <a class="el" href="interface_arch_game_1_1_i_logger.html" title="An ILogger is a class responsible for logging data to a file or the console. Implement this to use yo...">ILogger</a> service. If null (as a mock), it will return a <a class="el" href="class_arch_game_1_1_null_logger.html" title="Mock Logger, doesn&#39;t log any messages. Use this when you want to disable logging. ...">NullLogger</a>. Use this if you want to disable logging.  
+<p>The provider for the ILogger service. If null (as a mock), it will return a NullLogger. Use this if you want to disable logging.  
  <a href="class_arch_game_1_1_services_1_1_logger_provider.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for ArchGame.Services.LoggerProvider:</div>
@@ -128,8 +128,8 @@ Inheritance diagram for ArchGame.Services.LoggerProvider:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a467df4daf04f4e37de1349454407b574"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="interface_arch_game_1_1_i_logger.html">ILogger</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_services_1_1_logger_provider.html#a467df4daf04f4e37de1349454407b574">GetMockService</a> ()</td></tr>
-<tr class="memdesc:a467df4daf04f4e37de1349454407b574"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the logger is not set, a <a class="el" href="class_arch_game_1_1_null_logger.html" title="Mock Logger, doesn&#39;t log any messages. Use this when you want to disable logging. ...">NullLogger</a> will be returned.  <a href="#a467df4daf04f4e37de1349454407b574">More...</a><br /></td></tr>
+<tr class="memitem:a467df4daf04f4e37de1349454407b574"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="interface_arch_game_1_1_misc_1_1_i_logger.html">ILogger</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_services_1_1_logger_provider.html#a467df4daf04f4e37de1349454407b574">GetMockService</a> ()</td></tr>
+<tr class="memdesc:a467df4daf04f4e37de1349454407b574"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the logger is not set, a NullLogger will be returned.  <a href="#a467df4daf04f4e37de1349454407b574">More...</a><br /></td></tr>
 <tr class="separator:a467df4daf04f4e37de1349454407b574"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_arch_game_1_1_services_1_1_service_provider_3_01_t_01_4"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_arch_game_1_1_services_1_1_service_provider_3_01_t_01_4')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_arch_game_1_1_services_1_1_service_provider_3_01_t_01_4.html">ArchGame.Services.ServiceProvider&lt; T &gt;</a></td></tr>
 <tr class="memitem:a855d61f521011a55618382e4ada63506 inherit pro_methods_class_arch_game_1_1_services_1_1_service_provider_3_01_t_01_4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arch_game_1_1_services_1_1_service_provider_3_01_t_01_4.html#a855d61f521011a55618382e4ada63506">ServiceProvider</a> ()</td></tr>
@@ -154,9 +154,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a2511038be3a5bcdfb6d11c2e86c90b46 inherit pub_methods_interface_arch_game_1_1_services_1_1_i_service_provider"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The provider for the <a class="el" href="interface_arch_game_1_1_i_logger.html" title="An ILogger is a class responsible for logging data to a file or the console. Implement this to use yo...">ILogger</a> service. If null (as a mock), it will return a <a class="el" href="class_arch_game_1_1_null_logger.html" title="Mock Logger, doesn&#39;t log any messages. Use this when you want to disable logging. ...">NullLogger</a>. Use this if you want to disable logging. </p>
+<div class="textblock"><p>The provider for the ILogger service. If null (as a mock), it will return a NullLogger. Use this if you want to disable logging. </p>
 
-<p>Definition at line <a class="el" href="_service_providers_8cs_source.html#l00006">6</a> of file <a class="el" href="_service_providers_8cs_source.html">ServiceProviders.cs</a>.</p>
+<p>Definition at line <a class="el" href="_service_providers_8cs_source.html#l00008">8</a> of file <a class="el" href="_service_providers_8cs_source.html">ServiceProviders.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a467df4daf04f4e37de1349454407b574"></a>
 <div class="memitem">
@@ -166,7 +166,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">override <a class="el" href="interface_arch_game_1_1_i_logger.html">ILogger</a> ArchGame.Services.LoggerProvider.GetMockService </td>
+          <td class="memname">override <a class="el" href="interface_arch_game_1_1_misc_1_1_i_logger.html">ILogger</a> ArchGame.Services.LoggerProvider.GetMockService </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -179,11 +179,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>If the logger is not set, a <a class="el" href="class_arch_game_1_1_null_logger.html" title="Mock Logger, doesn&#39;t log any messages. Use this when you want to disable logging. ...">NullLogger</a> will be returned. </p>
+<p>If the logger is not set, a NullLogger will be returned. </p>
 
 <p>Implements <a class="el" href="class_arch_game_1_1_services_1_1_service_provider_3_01_t_01_4.html#a226a16265e03ce772f7872a5884c5e05">ArchGame.Services.ServiceProvider&lt; T &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="_service_providers_8cs_source.html#l00010">10</a> of file <a class="el" href="_service_providers_8cs_source.html">ServiceProviders.cs</a>.</p>
+<p>Definition at line <a class="el" href="_service_providers_8cs_source.html#l00012">12</a> of file <a class="el" href="_service_providers_8cs_source.html">ServiceProviders.cs</a>.</p>
 
 </div>
 </div>
@@ -196,7 +196,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_arch_game.html">ArchGame</a></li><li class="navelem"><a class="el" href="namespace_arch_game_1_1_services.html">Services</a></li><li class="navelem"><a class="el" href="class_arch_game_1_1_services_1_1_logger_provider.html">LoggerProvider</a></li>
-    <li class="footer">Generated on Fri Oct 3 2014 16:08:51 for ArchGame by
+    <li class="footer">Generated on Mon Oct 6 2014 18:11:11 for ArchGame by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

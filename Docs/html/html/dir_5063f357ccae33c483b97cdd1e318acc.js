@@ -8,9 +8,6 @@ var dir_5063f357ccae33c483b97cdd1e318acc =
     [ "ComponentListUser.cs", "_component_list_user_8cs.html", [
       [ "ComponentListUser", "class_arch_game_1_1_components_1_1_component_list_user.html", "class_arch_game_1_1_components_1_1_component_list_user" ]
     ] ],
-    [ "ContentToIArchLoadable.cs", "_content_to_i_arch_loadable_8cs.html", [
-      [ "ContentToIArchLoadable< T >", "class_arch_game_1_1_components_1_1_content_to_i_arch_loadable_3_01_t_01_4.html", "class_arch_game_1_1_components_1_1_content_to_i_arch_loadable_3_01_t_01_4" ]
-    ] ],
     [ "IArchDrawable.cs", "_i_arch_drawable_8cs.html", [
       [ "IArchDrawable", "interface_arch_game_1_1_components_1_1_i_arch_drawable.html", "interface_arch_game_1_1_components_1_1_i_arch_drawable" ]
     ] ],

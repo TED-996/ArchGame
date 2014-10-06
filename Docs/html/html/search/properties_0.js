@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['caretposition',['CaretPosition',['../class_arch_game_1_1_input_1_1_string_input_processor.html#ac7fcf8ae987ccce34c75e9ba12a1a318',1,'ArchGame::Input::StringInputProcessor']]],
-  ['center',['Center',['../class_arch_game_1_1_components_1_1_xna_components_1_1_sprite.html#a161c7f32b6be23d4b1935e2d7ef77027',1,'ArchGame.Components.XnaComponents.Sprite.Center()'],['../class_arch_game_1_1_components_1_1_xna_components_1_1_text.html#a192d2ed2d113aec21873e23b7410aaa7',1,'ArchGame.Components.XnaComponents.Text.Center()']]],
-  ['character',['Character',['../class_arch_game_1_1_input_1_1_character_event_args.html#adc5e98ce5f486b31835541f5045b02e8',1,'ArchGame::Input::CharacterEventArgs']]]
+  ['asset',['Asset',['../class_arch_game_1_1_content_1_1_asset_as_i_arch_loadable_3_01_t_01_4.html#ab04e55ed40bc1268ee2cebf003058feb',1,'ArchGame::Content::AssetAsIArchLoadable&lt; T &gt;']]],
+  ['assets',['Assets',['../class_arch_game_1_1_content_1_1_multiple_assets_as_i_arch_loadable_3_01_t_01_4.html#aa38774f5159a61c7344781cbb0211944',1,'ArchGame::Content::MultipleAssetsAsIArchLoadable&lt; T &gt;']]]
 ];
