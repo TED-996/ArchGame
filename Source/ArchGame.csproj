@@ -73,8 +73,8 @@
     <Compile Include="Input\InputManager.cs" />
     <Compile Include="Input\IObstructionManager.cs" />
     <Compile Include="Input\StringInputProcessor.cs" />
-    <Compile Include="LoadableSet.cs" />
-    <Compile Include="Logger.cs" />
+    <Compile Include="Content\LoadableSet.cs" />
+    <Compile Include="Misc\Logger.cs" />
     <Compile Include="Misc\Win32Utils.cs" />
     <Compile Include="Modules\IModuleRequester.cs" />
     <Compile Include="Modules\IModuleConstructor.cs" />

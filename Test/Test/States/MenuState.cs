@@ -2,6 +2,7 @@
 using ArchGame;
 using ArchGame.Components.XnaComponents;
 using ArchGame.Input;
+using ArchGame.Misc;
 using ArchGame.Modules;
 using ArchGame.Services;
 using ArchGame.States;

@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading;
 
-namespace ArchGame {
+namespace ArchGame.Misc {
 	/// <summary>
 	/// An ILogger is a class responsible for logging data to a file or the console.
 	/// Implement this to use your own logger.

@@ -2,7 +2,7 @@
 using ArchGame.Components;
 using Microsoft.Xna.Framework.Content;
 
-namespace ArchGame {
+namespace ArchGame.Content {
 	/// <summary>
 	/// The LoadableSet is a class that keeps 2 lists of IArchLoadables to be used in the content loading phase.
 	/// The preloadables will be loaded before the window appears and is intended for content critical for the game at any given moment.
@@ -42,6 +42,7 @@ namespace ArchGame {
 			foreach (IArchLoadable loadable in preLoadables) {
 				loadable.LoadContent(contentManager);
 			}
+			
 		}
 
 		/// <summary>

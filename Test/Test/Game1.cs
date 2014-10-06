@@ -1,5 +1,6 @@
 using ArchGame;
 using ArchGame.Components;
+using ArchGame.Content;
 using ArchGame.States;
 using Microsoft.Xna.Framework.Graphics;
 using Test.Network;
