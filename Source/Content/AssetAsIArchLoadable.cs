@@ -10,7 +10,7 @@ namespace ArchGame.Content {
 	/// You may also use it as a component in the ComponentList.
 	/// </summary>
 	/// <typeparam name="T">The type of the asset</typeparam>
-	public class AssetAsILoadable<T> : IArchLoadable {
+	public class AssetAsIArchLoadable<T> : IArchLoadable {
 		readonly string filename;
 
 		/// <summary>
@@ -22,7 +22,7 @@ namespace ArchGame.Content {
 		/// Initialize a new object of type AssetAsIArchLoadable
 		/// </summary>
 		/// <param name="newFilename">The filename of the asset</param>
-		public AssetAsILoadable(string newFilename) {
+		public AssetAsIArchLoadable(string newFilename) {
 			filename = newFilename;
 		}
 
@@ -40,7 +40,7 @@ namespace ArchGame.Content {
 	/// Use it to add content to the LoadableSet or to load assets in bulk.
 	/// </summary>
 	/// <typeparam name="T">The type of the assets</typeparam>
-	public class MultipleAssetsAsILoadable<T> : IArchLoadable {
+	public class MultipleAssetsAsIArchLoadable<T> : IArchLoadable {
 		readonly string[] filenames;
 
 		/// <summary>
@@ -52,7 +52,7 @@ namespace ArchGame.Content {
 		/// Initialize a new object of type MultipleAssetsAsIArchLoadable
 		/// </summary>
 		/// <param name="newFilenames">The filenames of the assets</param>
-		public MultipleAssetsAsILoadable(params string[] newFilenames) {
+		public MultipleAssetsAsIArchLoadable(params string[] newFilenames) {
 			filenames = newFilenames;
 			Assets = null;
 		}
