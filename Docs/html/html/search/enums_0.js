@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logmessagetype',['LogMessageType',['../namespace_arch_game.html#aa6507993887ac9409911f0171e3d12f4',1,'ArchGame']]]
+  ['logmessagetype',['LogMessageType',['../namespace_arch_game_1_1_misc.html#a6bd6a473963f84b88181cc49ae55e568',1,'ArchGame::Misc']]]
 ];

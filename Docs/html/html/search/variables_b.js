@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['writer',['writer',['../class_arch_game_1_1_logger.html#ae00ab0c8ca0be94f9e026d17dbe42b4b',1,'ArchGame::Logger']]]
+  ['writer',['writer',['../class_arch_game_1_1_misc_1_1_logger.html#a7d1cea07d78e07677459fb44a7a4cc9b',1,'ArchGame::Misc::Logger']]]
 ];

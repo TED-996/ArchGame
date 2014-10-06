@@ -13,10 +13,11 @@ var hierarchy =
       [ "ArchGame.Components.ComponentListUser", "class_arch_game_1_1_components_1_1_component_list_user.html", [
         [ "ArchGame.States.State", "class_arch_game_1_1_states_1_1_state.html", null ]
       ] ],
-      [ "ArchGame.Components.ContentToIArchLoadable< T >", "class_arch_game_1_1_components_1_1_content_to_i_arch_loadable_3_01_t_01_4.html", null ],
       [ "ArchGame.Components.UiComponents.Button", "class_arch_game_1_1_components_1_1_ui_components_1_1_button.html", null ],
       [ "ArchGame.Components.XnaComponents.Sprite", "class_arch_game_1_1_components_1_1_xna_components_1_1_sprite.html", null ],
       [ "ArchGame.Components.XnaComponents.Text", "class_arch_game_1_1_components_1_1_xna_components_1_1_text.html", null ],
+      [ "ArchGame.Content.AssetAsIArchLoadable< T >", "class_arch_game_1_1_content_1_1_asset_as_i_arch_loadable_3_01_t_01_4.html", null ],
+      [ "ArchGame.Content.MultipleAssetsAsIArchLoadable< T >", "class_arch_game_1_1_content_1_1_multiple_assets_as_i_arch_loadable_3_01_t_01_4.html", null ],
       [ "ArchGame.Modules.ModuleFactory", "class_arch_game_1_1_modules_1_1_module_factory.html", null ],
       [ "ArchGame.States.StateManager", "class_arch_game_1_1_states_1_1_state_manager.html", null ]
     ] ],
@@ -29,12 +30,12 @@ var hierarchy =
     [ "IDisposable", null, [
       [ "ArchGame.Components.ComponentList", "class_arch_game_1_1_components_1_1_component_list.html", null ],
       [ "ArchGame.Components.ComponentListUser", "class_arch_game_1_1_components_1_1_component_list_user.html", null ],
-      [ "ArchGame.ILogger", "interface_arch_game_1_1_i_logger.html", [
-        [ "ArchGame.ConsoleLogger", "class_arch_game_1_1_console_logger.html", null ],
-        [ "ArchGame.Logger", "class_arch_game_1_1_logger.html", [
-          [ "ArchGame.ThreadedLogger", "class_arch_game_1_1_threaded_logger.html", null ]
+      [ "ArchGame.Misc.ILogger", "interface_arch_game_1_1_misc_1_1_i_logger.html", [
+        [ "ArchGame.Misc.ConsoleLogger", "class_arch_game_1_1_misc_1_1_console_logger.html", null ],
+        [ "ArchGame.Misc.Logger", "class_arch_game_1_1_misc_1_1_logger.html", [
+          [ "ArchGame.Misc.ThreadedLogger", "class_arch_game_1_1_misc_1_1_threaded_logger.html", null ]
         ] ],
-        [ "ArchGame.NullLogger", "class_arch_game_1_1_null_logger.html", null ]
+        [ "ArchGame.Misc.NullLogger", "class_arch_game_1_1_misc_1_1_null_logger.html", null ]
       ] ],
       [ "ArchGame.Modules.ModuleFactory", "class_arch_game_1_1_modules_1_1_module_factory.html", null ],
       [ "ArchGame.States.StateManager", "class_arch_game_1_1_states_1_1_state_manager.html", null ]
@@ -77,8 +78,10 @@ var hierarchy =
         [ "ArchGame.States.StateManager", "class_arch_game_1_1_states_1_1_state_manager.html", null ]
       ] ]
     ] ],
-    [ "ArchGame.LoadableSet", "class_arch_game_1_1_loadable_set.html", null ],
-    [ "ArchGame.LogMessage", "struct_arch_game_1_1_log_message.html", null ],
+    [ "List", null, [
+      [ "ArchGame.Content.LoadableSet", "class_arch_game_1_1_content_1_1_loadable_set.html", null ]
+    ] ],
+    [ "ArchGame.Misc.LogMessage", "struct_arch_game_1_1_misc_1_1_log_message.html", null ],
     [ "ArchGame.Extensions.MathAsExtensions", "class_arch_game_1_1_extensions_1_1_math_as_extensions.html", null ],
     [ "ArchGame.Extensions.MiscExtensions", "class_arch_game_1_1_extensions_1_1_misc_extensions.html", null ],
     [ "ArchGame.Modules.ModuleCollection", "class_arch_game_1_1_modules_1_1_module_collection.html", null ],
