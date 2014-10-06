@@ -23,7 +23,7 @@ namespace ArchGame.Content {
 		/// <typeparam name="T">The type of the asset</typeparam>
 		/// <param name="filename">The filename of the asset</param>
 		public void Add<T>(string filename) {
-			Add(new AssetAsILoadable<T>(filename));
+			Add(new AssetAsIArchLoadable<T>(filename));
 		}
 
 		/// <summary>
