@@ -126,7 +126,7 @@ namespace ArchGame {
 		/// Returns the LoadableSet that 
 		/// </summary>
 		protected virtual LoadableSet GetLoadableSet() {
-			return new LoadableSet(new IArchLoadable[0], new IArchLoadable[0]);
+			return new LoadableSet(new IArchLoadable[0]);
 		}
 
 		/// <summary>
@@ -148,7 +148,6 @@ namespace ArchGame {
 
 			logger.Log("Started preloading content.", "Game");
 			loadableSet = GetLoadableSet();
-			loadableSet.Preload(Content);
 
 			stateManager = new StateManager(moduleFactory);
 			stateManager.LoadContent(Content);

@@ -19,8 +19,7 @@ namespace Test {
 		protected override LoadableSet GetLoadableSet() {
 			//The font must be loaded before because the LoadingState uses it. The logo can be loaded during the loading phase,
 			//it will not be needed until later.
-			return new LoadableSet(new IArchLoadable[] {new ContentToIArchLoadable<Texture2D>("logo")},
-				new IArchLoadable[] {new ContentToIArchLoadable<SpriteFont>("font")});
+			return new LoadableSet( new IArchLoadable[] { new AssetAsIArchLoadable<SpriteFont>("font")});
 		}
 
 		protected override State GetLoadingState() {
