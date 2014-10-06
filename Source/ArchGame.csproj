@@ -53,7 +53,6 @@
   <ItemGroup>
     <Compile Include="Components\ComponentList.cs" />
     <Compile Include="Components\ComponentListUser.cs" />
-    <Compile Include="Components\ContentToIArchLoadable.cs" />
     <Compile Include="Components\IArchDrawable.cs" />
     <Compile Include="Components\IArchUpdateable.cs" />
     <Compile Include="Components\IArchObstruction.cs" />
@@ -61,6 +60,7 @@
     <Compile Include="Components\UiComponents\Button.cs" />
     <Compile Include="Components\XnaComponents\Sprite.cs" />
     <Compile Include="Components\XnaComponents\Text.cs" />
+    <Compile Include="Content\AssetAsIArchLoadable.cs" />
     <Compile Include="Extensions\MathAsExtensions.cs" />
     <Compile Include="Extensions\MiscExtensions.cs" />
     <Compile Include="Extensions\SpriteBatchExtensions.cs" />
